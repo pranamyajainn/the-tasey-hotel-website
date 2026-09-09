@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-gold: #c5a059;
+    --primary-gold-dark: #9e7b32;
+    --cream-bg: #fdfbf7;
+    --sand-card: #f8f3ea;
+    --ivory-white: #fffdf9;
+    --espresso-dark: #1c1815;
+    --espresso-body: #2c2621;
+    --muted-stone: #6e645a;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--cream-bg);
+    color: var(--espresso-body);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Luxury Design System Classes */
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #a67c1e 0%, #c5a059 50%, #8c6310 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #c5a059 0%, #b88e36 50%, #9e7b32 100%);
+}
+
+.bg-gold-gradient-hover {
+  background: linear-gradient(135deg, #d8b36c 0%, #c5a059 50%, #ab883f 100%);
+}
+
+.glass-panel-light {
+  background: rgba(253, 251, 247, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.glass-card-light {
+  background: rgba(255, 253, 249, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.08);
+}
+
+.glass-card-light:hover {
+  border-color: rgba(197, 160, 89, 0.5);
+  box-shadow: 0 20px 40px -10px rgba(197, 160, 89, 0.18);
+}
+
+/* Custom Light Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f3ea;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8c29d;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
