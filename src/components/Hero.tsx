@@ -16,24 +16,24 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
   const heroSlides = [
     {
-      image: "/images/tasey-01.jpeg",
+      image: "/images/tasey-08.jpeg",
       subtitle: "Boutique Sanctuary in Amer, Jaipur",
       title: "Where Royal Heritage Meets Aravalli Serenity",
     },
     {
-      image: "/images/tasey-02.jpeg",
-      subtitle: "Wildlife & Nature Excursions",
-      title: "Elephant Village & Leopard Safari Adventures",
-    },
-    {
-      image: "/images/tasey-03.jpeg",
+      image: "/images/tasey-09.jpeg",
       subtitle: "Rooftop Pool & Gastronomy",
       title: "Romantic Sunset Dining at Jhumka Rooftop",
     },
     {
-      image: "/images/tasey-04.jpeg",
-      subtitle: "Steps Away from Amer Fort",
+      image: "/images/tasey-17.jpeg",
+      subtitle: "Luxurious Rooms & Suites",
       title: "Experience Rajasthan in Pure Luxury",
+    },
+    {
+      image: "/images/tasey-03.jpeg",
+      subtitle: "Steps Away from Amer Fort",
+      title: "Welcome to The TASEY Hotel, Amer",
     },
   ];
 

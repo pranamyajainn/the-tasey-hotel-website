@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Camera, X, Maximize2, Sparkles } from "lucide-react";
+import { Camera, X, Maximize2 } from "lucide-react";
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -11,121 +11,115 @@ export default function Gallery() {
   const galleryItems = [
     {
       id: 1,
-      title: "Exterior & Aravalli Sunset Panorama",
-      category: "Heritage & Views",
-      image: "/images/tasey-01.jpeg",
-    },
-    {
-      id: 2,
-      title: "Scenic Aravalli Mountain Drive",
-      category: "Heritage & Views",
-      image: "/images/tasey-02.jpeg",
-    },
-    {
-      id: 3,
-      title: "Rooftop Sunset & Sky Lounge",
-      category: "Rooftop & Pool",
-      image: "/images/tasey-03.jpeg",
-    },
-    {
-      id: 4,
-      title: "Amer Fort Royal Architecture View",
-      category: "Heritage & Views",
-      image: "/images/tasey-04.jpeg",
-    },
-    {
-      id: 5,
-      title: "Elephant Village Meeting & Feeding",
-      category: "Wildlife & Safaris",
-      image: "/images/tasey-05.jpeg",
-    },
-    {
-      id: 6,
-      title: "Jhalana Guided Leopard Safari",
-      category: "Wildlife & Safaris",
-      image: "/images/tasey-06.jpeg",
-    },
-    {
-      id: 7,
-      title: "Nahargarh Biological Lion Sanctuary",
-      category: "Wildlife & Safaris",
-      image: "/images/tasey-07.jpeg",
-    },
-    {
-      id: 8,
-      title: "Rajasthani Cultural Performance Night",
+      title: "The TASEY Hotel — Night Grand Facade",
       category: "Heritage & Views",
       image: "/images/tasey-08.jpeg",
     },
     {
-      id: 9,
-      title: "The TASEY Boutique Facade & Hills",
+      id: 2,
+      title: "Hotel Exterior — Daytime Street View",
       category: "Heritage & Views",
-      image: "/images/tasey-09.jpeg",
+      image: "/images/tasey-03.jpeg",
     },
     {
-      id: 10,
-      title: "Opulent Lobby & Reception Lounge",
-      category: "Rooms & Suites",
-      image: "/images/tasey-10.jpeg",
-    },
-    {
-      id: 11,
-      title: "Luxury Room King Bed & Teak Wood",
-      category: "Rooms & Suites",
-      image: "/images/tasey-11.jpeg",
-    },
-    {
-      id: 12,
-      title: "Executive Room Sitting Lounge & Balcony",
-      category: "Rooms & Suites",
-      image: "/images/tasey-12.jpeg",
-    },
-    {
-      id: 13,
-      title: "Royal Penthouse Suite & Panoramic Windows",
-      category: "Rooms & Suites",
-      image: "/images/tasey-13.jpeg",
-    },
-    {
-      id: 14,
-      title: "Haldi Fine Dining Royal Indoor Ambiance",
-      category: "Dining & Banquets",
+      id: 3,
+      title: "Hotel Reception — Check-In Desk",
+      category: "Heritage & Views",
       image: "/images/tasey-14.jpeg",
     },
     {
-      id: 15,
-      title: "Authentic Royal Rajasthani Culinary Delights",
-      category: "Dining & Banquets",
+      id: 4,
+      title: "Hotel Lobby — Chesterfield Lounge",
+      category: "Heritage & Views",
+      image: "/images/tasey-13.jpeg",
+    },
+    {
+      id: 5,
+      title: "Lobby Waiting Area — Marble & Leather",
+      category: "Heritage & Views",
       image: "/images/tasey-15.jpeg",
     },
     {
-      id: 16,
-      title: "Jhumka Open-Air Rooftop Swimming Pool",
-      category: "Rooftop & Pool",
-      image: "/images/tasey-16.jpeg",
-    },
-    {
-      id: 17,
-      title: "Grand Amber Banquet Hall Wedding Setup",
-      category: "Dining & Banquets",
+      id: 6,
+      title: "Luxury Bedroom — Gold Headboard Suite",
+      category: "Rooms & Suites",
       image: "/images/tasey-17.jpeg",
     },
     {
-      id: 18,
-      title: "Aravalli Executive Conference Room",
-      category: "Dining & Banquets",
+      id: 7,
+      title: "Suite Sitting Room — Warm Wood Interior",
+      category: "Rooms & Suites",
+      image: "/images/tasey-16.jpeg",
+    },
+    {
+      id: 8,
+      title: "Room Interior — Cane Chairs & Natural Light",
+      category: "Rooms & Suites",
+      image: "/images/tasey-04.jpeg",
+    },
+    {
+      id: 9,
+      title: "Hotel Corridor — Marble Floors & Art Gallery",
+      category: "Rooms & Suites",
       image: "/images/tasey-18.jpeg",
     },
     {
-      id: 19,
-      title: "Twilight Aravalli Horizon & Stargazing View",
-      category: "Heritage & Views",
+      id: 10,
+      title: "Room Furnishing — Teak Wardrobe & TV Unit",
+      category: "Rooms & Suites",
       image: "/images/tasey-19.jpeg",
+    },
+    {
+      id: 11,
+      title: "Bedroom — Classic Curtains & Warm Tones",
+      category: "Rooms & Suites",
+      image: "/images/tasey-07.jpeg",
+    },
+    {
+      id: 12,
+      title: "Rooftop Pool — Aravalli Hills & Open Sky",
+      category: "Rooftop & Pool",
+      image: "/images/tasey-09.jpeg",
+    },
+    {
+      id: 13,
+      title: "Rooftop Terrace — Green Wall & Pool View",
+      category: "Rooftop & Pool",
+      image: "/images/tasey-06.jpeg",
+    },
+    {
+      id: 14,
+      title: "Infinity Pool — Palm Trees & Panorama",
+      category: "Rooftop & Pool",
+      image: "/images/tasey-05.jpeg",
+    },
+    {
+      id: 15,
+      title: "Haldi Restaurant — Warm Pendant Lights",
+      category: "Dining & Banquets",
+      image: "/images/tasey-11.jpeg",
+    },
+    {
+      id: 16,
+      title: "Haldi Restaurant — Daytime Interior",
+      category: "Dining & Banquets",
+      image: "/images/tasey-02.jpeg",
+    },
+    {
+      id: 17,
+      title: "Private Dining Room — AV & Intimate Seating",
+      category: "Dining & Banquets",
+      image: "/images/tasey-12.jpeg",
+    },
+    {
+      id: 18,
+      title: "Banquet Hall — Grand Opening Event",
+      category: "Dining & Banquets",
+      image: "/images/tasey-10.jpeg",
     },
   ];
 
-  const categories = ["All", "Rooms & Suites", "Rooftop & Pool", "Dining & Banquets", "Wildlife & Safaris", "Heritage & Views"];
+  const categories = ["All", "Heritage & Views", "Rooms & Suites", "Rooftop & Pool", "Dining & Banquets"];
 
   const filteredItems =
     activeCategory === "All"
@@ -139,13 +133,13 @@ export default function Gallery() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-[#8C6310] font-bold flex items-center justify-center gap-2 mb-3">
             <Camera className="w-3.5 h-3.5 text-[#C5A059]" />
-            Visual Splendor (19 Curated Photos)
+            Visual Splendor (18 Curated Photos)
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
             The TASEY <span className="text-gold-gradient">Gallery</span>
           </h2>
           <p className="mt-4 text-[#5C5248] text-sm sm:text-base font-normal">
-            Explore all 19 authentic captures of our boutique hotel rooms, rooftop pool, Haldi restaurant, banquets, and wildlife safaris.
+            Explore authentic captures of our boutique hotel rooms, rooftop pool, Haldi restaurant, lobby, and banquets.
           </p>
         </div>
 
@@ -231,4 +225,3 @@ export default function Gallery() {
     </section>
   );
 }
-

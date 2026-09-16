@@ -16,7 +16,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
       name: "Haldi",
       subtitle: "The Indoor Restaurant",
       tagline: "Authentic Rajasthani & Indian Culinary Heritage",
-      image: "/images/tasey-14.jpeg",
+      image: "/images/tasey-11.jpeg",
       ambience: "Traditional Rajasthani Royal Decor & Warm Brass Lighting",
       timings: "7:00 AM – 11:00 PM (Daily)",
       highlights: [
@@ -33,7 +33,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
       name: "Jhumka",
       subtitle: "The Rooftop Restaurant & Pool",
       tagline: "Rooftop Dining with Swimming Pool & 3-Side Aravalli Hill Views",
-      image: "/images/tasey-16.jpeg",
+      image: "/images/tasey-05.jpeg",
       ambience: "Open-Air Rooftop, Poolside Candlelight & Starry Night Sky",
       timings: "5:00 PM – 12:00 Midnight (Daily)",
       highlights: [

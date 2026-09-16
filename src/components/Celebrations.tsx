@@ -44,7 +44,7 @@ export default function Celebrations({ onOpenBooking }: CelebrationsProps) {
         <div className="bg-[#FFFDF9] rounded-3xl overflow-hidden border border-[#C5A059]/40 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-0">
           <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[440px] group overflow-hidden">
             <Image
-              src="/images/tasey-17.jpeg"
+              src="/images/tasey-10.jpeg"
               alt="The Tasey Banquet Hall Setup"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
