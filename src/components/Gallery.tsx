@@ -133,18 +133,18 @@ export default function Gallery() {
       : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-24 relative bg-[#070A12] text-gray-100 border-t border-b border-[#D4AF37]/20">
+    <section id="gallery" className="py-24 relative bg-[#F8F3EA] text-[#1C1815] border-t border-b border-[#E5DCCB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#E5C365] font-bold flex items-center justify-center gap-2 mb-3">
-            <Camera className="w-3.5 h-3.5 text-[#D4AF37]" />
+          <span className="text-xs uppercase tracking-[0.3em] text-[#8C6310] font-bold flex items-center justify-center gap-2 mb-3">
+            <Camera className="w-3.5 h-3.5 text-[#C5A059]" />
             Visual Splendor (19 Curated Photos)
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
             The TASEY <span className="text-gold-gradient">Gallery</span>
           </h2>
-          <p className="mt-4 text-gray-300 text-sm sm:text-base font-light">
+          <p className="mt-4 text-[#5C5248] text-sm sm:text-base font-normal">
             Explore all 19 authentic captures of our boutique hotel rooms, rooftop pool, Haldi restaurant, banquets, and wildlife safaris.
           </p>
         </div>
@@ -157,8 +157,8 @@ export default function Gallery() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider transition-all border ${
                 activeCategory === cat
-                  ? "bg-gradient-to-r from-[#D4AF37] to-[#B38F24] text-black border-transparent shadow-lg scale-105"
-                  : "bg-[#0F172A] text-gray-300 border-[#D4AF37]/20 hover:border-[#D4AF37] hover:text-white"
+                  ? "bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white border-transparent shadow-md scale-105"
+                  : "bg-[#FFFDF9] text-[#3B332B] border-[#E5DCCB] hover:border-[#C5A059] hover:text-[#1C1815]"
               }`}
             >
               {cat}
@@ -172,7 +172,7 @@ export default function Gallery() {
             <div
               key={item.id}
               onClick={() => setSelectedImage({ url: item.image, title: item.title })}
-              className="glass-card-dark relative h-72 rounded-2xl overflow-hidden border border-[#D4AF37]/25 shadow-xl group cursor-pointer"
+              className="bg-[#FFFDF9] relative h-72 rounded-2xl overflow-hidden border border-[#C5A059]/30 shadow-md group cursor-pointer"
             >
               <Image
                 src={item.image}
@@ -180,18 +180,18 @@ export default function Gallery() {
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#070A12] via-[#070A12]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1815]/90 via-[#1C1815]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
 
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#D4AF37] block mb-0.5">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#E5C365] block mb-0.5">
                     {item.category}
                   </span>
                   <h3 className="font-serif-luxury text-base sm:text-lg font-bold text-white group-hover:text-[#E5C365] transition-colors">
                     {item.title}
                   </h3>
                 </div>
-                <div className="w-9 h-9 rounded-full bg-[#070A12]/80 backdrop-blur-md border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-colors shrink-0">
+                <div className="w-9 h-9 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/40 flex items-center justify-center text-[#8C6310] group-hover:bg-[#C5A059] group-hover:text-white transition-colors shrink-0 shadow-md">
                   <Maximize2 className="w-4 h-4" />
                 </div>
               </div>

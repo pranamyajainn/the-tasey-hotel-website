@@ -83,18 +83,18 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
   const activeRoom = rooms[activeRoomIndex];
 
   return (
-    <section id="rooms" className="py-24 relative bg-[#070A12] text-gray-100 border-t border-b border-[#D4AF37]/20">
+    <section id="rooms" className="py-24 relative bg-[#F8F3EA] text-[#1C1815] border-t border-b border-[#E5DCCB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#E5C365] font-bold flex items-center justify-center gap-2 mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+          <span className="text-xs uppercase tracking-[0.3em] text-[#8C6310] font-bold flex items-center justify-center gap-2 mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
             Luxurious Stay Categories
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
             Well-Appointed <span className="text-gold-gradient">Rooms & Suites</span>
           </h2>
-          <p className="mt-4 text-gray-300 text-sm sm:text-base font-light">
+          <p className="mt-4 text-[#5C5248] text-sm sm:text-base font-normal">
             Every room at The TASEY Hotel is thoughtfully curated with modern luxury amenities, warm lighting, and captivating Aravalli hill views.
           </p>
         </div>
@@ -107,18 +107,18 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
               onClick={() => setActiveRoomIndex(idx)}
               className={`px-6 py-3.5 rounded-2xl text-xs sm:text-sm font-bold tracking-wider transition-all duration-300 flex items-center gap-2 border ${
                 activeRoomIndex === idx
-                  ? "bg-gradient-to-r from-[#D4AF37] to-[#B38F24] text-black border-transparent shadow-lg scale-105"
-                  : "bg-[#0F172A] text-gray-300 border-[#D4AF37]/20 hover:border-[#D4AF37] hover:text-white"
+                  ? "bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white border-transparent shadow-md scale-105"
+                  : "bg-[#FFFDF9] text-[#3B332B] border-[#E5DCCB] hover:border-[#C5A059] hover:text-[#1C1815]"
               }`}
             >
-              <Bed className={`w-4 h-4 ${activeRoomIndex === idx ? "text-black" : "text-[#D4AF37]"}`} />
+              <Bed className={`w-4 h-4 ${activeRoomIndex === idx ? "text-white" : "text-[#C5A059]"}`} />
               <span>{room.name}</span>
             </button>
           ))}
         </div>
 
         {/* Active Room Showcase Card */}
-        <div className="glass-card-dark rounded-3xl overflow-hidden border border-[#D4AF37]/35 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-0">
+        <div className="bg-[#FFFDF9] rounded-3xl overflow-hidden border border-[#C5A059]/40 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-0">
           {/* Room Image Display */}
           <div className="lg:col-span-7 relative min-h-[360px] sm:min-h-[480px] group overflow-hidden">
             <Image
@@ -128,29 +128,29 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
               className="object-cover group-hover:scale-105 transition-transform duration-700"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#070A12] via-[#070A12]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1C1815]/80 via-[#1C1815]/20 to-transparent" />
 
             {/* Floating Room Badge */}
             <div className="absolute top-6 left-6 flex items-center gap-2">
-              <span className="px-3.5 py-1.5 rounded-full bg-[#070A12]/80 backdrop-blur-md border border-[#D4AF37]/40 text-[#E5C365] text-xs font-bold uppercase tracking-wider shadow-md">
+              <span className="px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#C5A059]/40 text-[#8C6310] text-xs font-bold uppercase tracking-wider shadow-md">
                 {activeRoom.badge}
               </span>
             </div>
 
             {/* Room Quick Specs Strip */}
-            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-4 text-xs text-white bg-[#070A12]/80 backdrop-blur-md p-4 rounded-xl border border-[#D4AF37]/30">
+            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-4 text-xs text-[#1C1815] bg-[#FFFDF9]/95 backdrop-blur-md p-4 rounded-xl border border-[#E5DCCB] font-semibold shadow-md">
               <div className="flex items-center gap-1.5">
-                <Maximize2 className="w-4 h-4 text-[#D4AF37]" />
+                <Maximize2 className="w-4 h-4 text-[#C5A059]" />
                 <span>{activeRoom.size}</span>
               </div>
-              <span className="text-gray-500">•</span>
+              <span className="text-[#C5A059]">•</span>
               <div className="flex items-center gap-1.5">
-                <Eye className="w-4 h-4 text-[#D4AF37]" />
+                <Eye className="w-4 h-4 text-[#C5A059]" />
                 <span>{activeRoom.view}</span>
               </div>
-              <span className="text-gray-500">•</span>
+              <span className="text-[#C5A059]">•</span>
               <div className="flex items-center gap-1.5">
-                <Bed className="w-4 h-4 text-[#D4AF37]" />
+                <Bed className="w-4 h-4 text-[#C5A059]" />
                 <span>{activeRoom.occupancy}</span>
               </div>
             </div>
@@ -160,45 +160,45 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
           <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between space-y-6">
             <div>
               <div className="flex justify-between items-baseline mb-2">
-                <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-white">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#1C1815]">
                   {activeRoom.name}
                 </h3>
                 <div className="text-right">
-                  <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#E5C365]">
+                  <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#8C6310]">
                     {activeRoom.price}
                   </span>
-                  <span className="text-[11px] text-gray-400 block font-medium">{activeRoom.per}</span>
+                  <span className="text-[11px] text-[#5C5248] block font-medium">{activeRoom.per}</span>
                 </div>
               </div>
 
-              <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-bold mb-4">
+              <p className="text-xs uppercase tracking-widest text-[#8C6310] font-bold mb-4">
                 {activeRoom.tagline}
               </p>
 
-              <p className="text-gray-300 text-xs sm:text-sm font-light leading-relaxed mb-6">
+              <p className="text-[#5C5248] text-xs sm:text-sm font-normal leading-relaxed mb-6">
                 {activeRoom.desc}
               </p>
 
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#1C1815] mb-3">
                 Room Amenities & Privileges
               </h4>
               <ul className="space-y-2.5">
                 {activeRoom.amenities.map((amenity, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs text-gray-200 font-normal">
-                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-[#3B332B] font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
                     <span>{amenity}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="pt-6 border-t border-[#D4AF37]/20 flex flex-col sm:flex-row gap-3">
+            <div className="pt-6 border-t border-[#E5DCCB] flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => onOpenBooking(activeRoom.name)}
-                className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B38F24] text-black font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:shadow-[#D4AF37]/30 hover:scale-102 transition-all flex items-center justify-center gap-2"
+                className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-[#C5A059]/40 hover:scale-102 transition-all flex items-center justify-center gap-2"
               >
                 <span>Reserve {activeRoom.name}</span>
-                <ArrowRight className="w-4 h-4 text-black" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </button>
             </div>
           </div>

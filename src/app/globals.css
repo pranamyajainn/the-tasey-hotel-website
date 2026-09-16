@@ -2,36 +2,35 @@
 
 @layer base {
   :root {
-    --bg-dark: #070A12;
-    --bg-card: #0D1220;
-    --bg-card-hover: #131A2D;
-    --primary-gold: #D4AF37;
-    --primary-gold-light: #E5C365;
-    --primary-gold-dark: #B38F24;
-    --accent-amber: #F59E0B;
-    --text-primary: #F7F3EB;
-    --text-secondary: #9CA3AF;
-    --text-muted: #6B7280;
-    --border-gold: rgba(212, 175, 55, 0.25);
-    --border-gold-hover: rgba(212, 175, 55, 0.6);
+    --bg-cream: #FDFBF7;
+    --bg-sand: #F8F3EA;
+    --bg-card: #FFFDF9;
+    --primary-gold: #C5A059;
+    --primary-gold-dark: #9E7B32;
+    --accent-amber: #B88E36;
+    --espresso-dark: #1C1815;
+    --espresso-body: #2C2621;
+    --espresso-muted: #5C5046;
+    --border-gold: rgba(197, 160, 89, 0.3);
+    --border-gold-hover: rgba(197, 160, 89, 0.6);
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
+    background-color: var(--bg-cream);
+    color: var(--espresso-body);
     font-family: var(--font-body);
     overflow-x: hidden;
   }
 }
 
-/* Custom Luxury Design Utilities */
+/* Custom Warm Light Luxury Design System */
 .font-serif-luxury {
   font-family: 'Playfair Display', Georgia, serif;
 }
@@ -41,58 +40,53 @@
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 40%, #AA7C11 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-silver-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+  background: linear-gradient(135deg, #A67C1E 0%, #C5A059 50%, #8C6310 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #B38F24 100%);
+  background: linear-gradient(135deg, #C5A059 0%, #B88E36 50%, #9E7B32 100%);
 }
 
 .bg-gold-gradient-hover {
-  background: linear-gradient(135deg, #E5C365 0%, #D4AF37 50%, #C5A059 100%);
+  background: linear-gradient(135deg, #D8B36C 0%, #C5A059 50%, #AB883F 100%);
 }
 
-.glass-panel-dark {
-  background: rgba(13, 18, 32, 0.75);
+.glass-panel-light {
+  background: rgba(253, 251, 247, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(197, 160, 89, 0.3);
 }
 
-.glass-card-dark {
-  background: rgba(15, 23, 42, 0.65);
+.glass-card-light {
+  background: rgba(255, 253, 249, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.18);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.12);
 }
 
-.glass-card-dark:hover {
-  border-color: rgba(212, 175, 55, 0.45);
-  box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.15);
+.glass-card-light:hover {
+  border-color: rgba(197, 160, 89, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(197, 160, 89, 0.22);
 }
 
-/* Custom Scrollbar */
+/* Custom Warm Light Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070A12;
+  background: #F8F3EA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2D2513;
+  background: #D8C29D;
   border-radius: 4px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(197, 160, 89, 0.4);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: #C5A059;
 }
+
 

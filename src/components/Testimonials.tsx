@@ -31,18 +31,18 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 relative bg-[#070A12] text-gray-100 overflow-hidden">
+    <section className="py-24 relative bg-[#FDFBF7] text-[#1C1815] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#E5C365] font-bold flex items-center justify-center gap-2 mb-3">
-            <Quote className="w-3.5 h-3.5 text-[#D4AF37]" />
+          <span className="text-xs uppercase tracking-[0.3em] text-[#8C6310] font-bold flex items-center justify-center gap-2 mb-3">
+            <Quote className="w-3.5 h-3.5 text-[#C5A059]" />
             Guest Memories & Reviews
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
             Cherished by <span className="text-gold-gradient">Global Guests</span>
           </h2>
-          <p className="mt-4 text-gray-300 text-sm sm:text-base font-light">
+          <p className="mt-4 text-[#5C5248] text-sm sm:text-base font-normal">
             Read what travelers and event hosts say about their stay, safaris, and dining experiences at The TASEY Hotel.
           </p>
         </div>
@@ -52,32 +52,32 @@ export default function Testimonials() {
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="glass-card-dark p-8 rounded-3xl border border-[#D4AF37]/25 shadow-xl flex flex-col justify-between hover:border-[#D4AF37]/60 transition-all duration-300 group"
+              className="bg-[#FFFDF9] p-8 rounded-3xl border border-[#E5DCCB] shadow-md flex flex-col justify-between hover:border-[#C5A059] transition-all duration-300 group"
             >
               <div>
                 {/* Rating Stars */}
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(rev.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
+                    <Star key={i} className="w-4 h-4 fill-[#C5A059] text-[#C5A059]" />
                   ))}
                 </div>
 
-                <p className="text-gray-300 text-xs sm:text-sm font-light leading-relaxed italic mb-6">
+                <p className="text-[#5C5248] text-xs sm:text-sm font-normal leading-relaxed italic mb-6">
                   "{rev.comment}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#D4AF37]/15 flex items-center justify-between">
+              <div className="pt-4 border-t border-[#E5DCCB] flex items-center justify-between">
                 <div>
-                  <h4 className="font-serif-luxury text-base font-bold text-white group-hover:text-[#E5C365] transition-colors">
+                  <h4 className="font-serif-luxury text-base font-bold text-[#1C1815] group-hover:text-[#8C6310] transition-colors">
                     {rev.name}
                   </h4>
-                  <div className="text-[11px] text-gray-400 font-medium flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3 text-[#D4AF37]" />
+                  <div className="text-[11px] text-[#8C6310] font-medium flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-[#C5A059]" />
                     <span>{rev.stay}</span>
                   </div>
                 </div>
-                <span className="text-[10px] text-gray-400 font-medium">{rev.date}</span>
+                <span className="text-[10px] text-[#5C5248] font-medium">{rev.date}</span>
               </div>
             </div>
           ))}

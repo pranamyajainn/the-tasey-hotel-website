@@ -47,22 +47,22 @@ export default function Overview() {
   ];
 
   return (
-    <section id="overview" className="py-24 relative bg-[#070A12] text-gray-100 overflow-hidden">
+    <section id="overview" className="py-24 relative bg-[#FDFBF7] text-[#1C1815] overflow-hidden">
       {/* Background Architectural Scrim */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#131A2D] border border-[#D4AF37]/30 text-[#E5C365] text-xs font-bold uppercase tracking-widest mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 text-[#8C6310] text-xs font-bold uppercase tracking-widest mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
             <span>Heritage & Prime Location</span>
           </div>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight leading-tight">
             An Enchanting Haven in Jaipur's <span className="text-gold-gradient">Aravalli Hills</span>
           </h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto my-5" />
-          <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto my-5" />
+          <p className="text-[#5C5248] text-sm sm:text-base leading-relaxed font-normal">
             Situated at Jaipur's most serene hillside destination near Amer Fort, <strong>The TASEY Hotel</strong> offers an unmatched blend of royal Rajasthani warmth, modern opulence, and refreshing mountain air.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Overview() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column: Grand Feature Card */}
           <div className="lg:col-span-6 relative">
-            <div className="relative h-[480px] sm:h-[580px] rounded-3xl overflow-hidden border border-[#D4AF37]/35 shadow-2xl group">
+            <div className="relative h-[480px] sm:h-[580px] rounded-3xl overflow-hidden border border-[#C5A059]/40 shadow-xl group">
               <Image
                 src="/images/tasey-09.jpeg"
                 alt="The Tasey Aravali Fort View"
@@ -79,32 +79,32 @@ export default function Overview() {
                 className="object-cover group-hover:scale-105 transition-transform duration-1000"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#070A12] via-[#070A12]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1815]/90 via-[#1C1815]/20 to-transparent" />
 
               {/* Top Floating Badge */}
               <div className="absolute top-6 left-6 right-6 flex justify-between items-center">
-                <span className="px-4 py-1.5 rounded-full bg-[#070A12]/80 backdrop-blur-md border border-[#D4AF37]/40 text-[#E5C365] text-xs font-bold uppercase tracking-wider shadow-md flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span className="px-4 py-1.5 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#C5A059]/50 text-[#8C6310] text-xs font-bold uppercase tracking-wider shadow-md flex items-center gap-1.5">
+                  <Award className="w-3.5 h-3.5 text-[#C5A059]" />
                   Boutique Heritage Resort
                 </span>
-                <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[#D4AF37] text-xs font-mono border border-[#D4AF37]/30">
+                <span className="px-3 py-1 rounded-full bg-[#1C1815]/80 backdrop-blur-md text-[#FFFDF9] text-xs font-mono border border-[#C5A059]/40">
                   Amer, Jaipur
                 </span>
               </div>
 
               {/* Bottom Quote & Stats Overlay */}
-              <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl glass-panel-dark border border-[#D4AF37]/30 shadow-xl space-y-4">
-                <p className="font-serif-luxury text-sm sm:text-base text-white italic font-semibold leading-snug">
+              <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#FFFDF9]/95 backdrop-blur-md border border-[#C5A059]/40 shadow-xl space-y-4">
+                <p className="font-serif-luxury text-sm sm:text-base text-[#1C1815] italic font-semibold leading-snug">
                   "Enjoy the tranquil peace of Aravalli nature reserves with historic monuments just a heartbeat away."
                 </p>
 
-                <div className="grid grid-cols-4 gap-2 pt-3 border-t border-[#D4AF37]/20">
+                <div className="grid grid-cols-4 gap-2 pt-3 border-t border-[#E5DCCB]">
                   {stats.map((st, i) => (
                     <div key={i} className="text-center">
-                      <div className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#E5C365]">
+                      <div className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#8C6310]">
                         {st.value}
                       </div>
-                      <div className="text-[9px] text-gray-400 uppercase font-bold tracking-wider mt-0.5">
+                      <div className="text-[9px] text-[#5C5248] uppercase font-bold tracking-wider mt-0.5">
                         {st.label}
                       </div>
                     </div>
@@ -120,30 +120,30 @@ export default function Overview() {
               return (
                 <div
                   key={idx}
-                  className="glass-card-dark p-6 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 flex items-start gap-5 group cursor-pointer"
+                  className="bg-[#FFFDF9] p-6 rounded-2xl border border-[#E5DCCB] hover:border-[#C5A059] shadow-sm hover:shadow-md transition-all duration-300 flex items-start gap-5 group cursor-pointer"
                 >
                   {/* Number Badge */}
-                  <div className="font-serif-luxury text-2xl font-bold text-[#D4AF37]/50 group-hover:text-[#D4AF37] transition-colors shrink-0 mt-1">
+                  <div className="font-serif-luxury text-2xl font-bold text-[#C5A059] group-hover:text-[#8C6310] transition-colors shrink-0 mt-1">
                     {item.num}
                   </div>
 
                   <div className="flex-1">
                     <div className="flex flex-wrap justify-between items-center gap-2 mb-1.5">
-                      <h3 className="font-serif-luxury text-lg font-bold text-white group-hover:text-[#E5C365] transition-colors">
+                      <h3 className="font-serif-luxury text-lg font-bold text-[#1C1815] group-hover:text-[#8C6310] transition-colors">
                         {item.title}
                       </h3>
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-[#131A2D] text-[#E5C365] border border-[#D4AF37]/30">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-[#F8F3EA] text-[#8C6310] border border-[#C5A059]/30">
                         {item.distance}
                       </span>
                     </div>
 
-                    <p className="text-xs text-gray-300 font-light leading-relaxed mb-2">
+                    <p className="text-xs text-[#5C5248] font-normal leading-relaxed mb-2">
                       {item.desc}
                     </p>
 
-                    <div className="flex items-center justify-between text-[11px] text-gray-400 font-semibold pt-1">
+                    <div className="flex items-center justify-between text-[11px] text-[#8C6310] font-semibold pt-1">
                       <span>{item.tag}</span>
-                      <span className="text-[#D4AF37] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span className="text-[#C5A059] flex items-center gap-1 group-hover:translate-x-1 transition-transform font-bold">
                         Discover <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>

@@ -57,7 +57,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-between pt-28 pb-16 overflow-hidden bg-[#070A12]">
+    <section className="relative min-h-screen flex flex-col justify-between pt-28 pb-16 overflow-hidden bg-[#FDFBF7]">
       {/* Background Slideshow */}
       {heroSlides.map((slide, idx) => (
         <div
@@ -73,24 +73,24 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             priority={idx === 0}
             className="object-cover object-center"
           />
-          {/* Obsidian dark luxury scrims */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#070A12] via-[#070A12]/60 to-[#070A12]/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070A12]/80 via-transparent to-[#070A12]/80" />
+          {/* Soft elegant warm light luxury scrims */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FDFBF7] via-black/40 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FFFDF9]/80 via-transparent to-[#FDFBF7]" />
         </div>
       ))}
 
       {/* Main Hero Banner Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto text-center flex flex-col items-center">
         {/* Location Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F172A]/80 backdrop-blur-md border border-[#D4AF37]/40 text-[#E5C365] text-xs font-bold uppercase tracking-widest mb-6 shadow-xl animate-fade-in">
-          <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#C5A059]/40 text-[#1C1815] text-xs font-bold uppercase tracking-widest mb-6 shadow-md">
+          <Sparkles className="w-4 h-4 text-[#B88E36]" />
           <span>The TASEY Hotel, Amer</span>
-          <span className="text-[#D4AF37]">•</span>
-          <span className="text-gray-300">5 KM from Amber Fort</span>
+          <span className="text-[#C5A059]">•</span>
+          <span className="text-[#9E7B32]">5 KM from Amber Fort</span>
         </div>
 
         {/* Hero Dynamic Subtitle & Title */}
-        <p className="text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold text-[#D4AF37] mb-3">
+        <p className="text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold text-amber-200 mb-3 drop-shadow-md">
           {heroSlides[currentSlide].subtitle}
         </p>
 
@@ -98,23 +98,23 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           {heroSlides[currentSlide].title}
         </h1>
 
-        <p className="mt-6 text-sm sm:text-lg text-gray-300 max-w-3xl font-light leading-relaxed">
-          Welcome to <strong className="text-white font-semibold">The TASEY Hotel</strong> — your gateway to royal luxury rooms, authentic dining at <em className="font-serif text-[#D4AF37]">Haldi</em>, rooftop poolside views at <em className="font-serif text-[#D4AF37]">Jhumka</em>, and curated <span className="text-[#E5C365] font-normal underline decoration-[#D4AF37]/40">Elephant & Wildlife Safaris</span>.
+        <p className="mt-6 text-sm sm:text-lg text-gray-100 max-w-3xl font-normal leading-relaxed drop-shadow-md">
+          Welcome to <strong className="text-white font-bold">The TASEY Hotel</strong> — your gateway to royal luxury rooms, authentic dining at <em className="font-serif text-amber-300 font-semibold">Haldi</em>, rooftop poolside views at <em className="font-serif text-amber-300 font-semibold">Jhumka</em>, and curated <span className="text-amber-200 font-semibold underline decoration-[#C5A059]">Elephant & Wildlife Safaris</span>.
         </p>
 
         {/* Location Badges & Highlights */}
-        <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 text-xs text-gray-200">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F172A]/70 backdrop-blur-md border border-[#D4AF37]/25 shadow-md">
-            <MapPin className="w-4 h-4 text-[#D4AF37]" />
+        <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 text-xs text-[#1C1815]">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-md font-semibold">
+            <MapPin className="w-4 h-4 text-[#B88E36]" />
             <span>5 KM from Amber Fort</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F172A]/70 backdrop-blur-md border border-[#D4AF37]/25 shadow-md">
-            <Compass className="w-4 h-4 text-[#D4AF37]" />
-            <span>50m from Nahargarh Zoological Park</span>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-md font-semibold">
+            <Compass className="w-4 h-4 text-[#B88E36]" />
+            <span>50m from Zoological Park</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F172A]/70 backdrop-blur-md border border-[#D4AF37]/25 shadow-md">
-            <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-            <span>Elephant Village & Safari Assistance</span>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-md font-semibold">
+            <Sparkles className="w-4 h-4 text-[#B88E36]" />
+            <span>Elephant Village & Safaris</span>
           </div>
         </div>
 
@@ -125,7 +125,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               key={i}
               onClick={() => setCurrentSlide(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === currentSlide ? "w-8 bg-[#D4AF37]" : "w-2 bg-white/30 hover:bg-white/60"
+                i === currentSlide ? "w-8 bg-[#C5A059]" : "w-2 bg-white/40 hover:bg-white/80"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -133,50 +133,50 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </div>
       </div>
 
-      {/* Floating Dark Luxury Availability Bar */}
+      {/* Floating Light Luxury Availability Bar */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full mt-10">
         <form
           onSubmit={handleSearchSubmit}
-          className="glass-panel-dark p-5 sm:p-7 rounded-2xl sm:rounded-3xl shadow-2xl border border-[#D4AF37]/35 grid grid-cols-1 md:grid-cols-4 gap-4 items-end"
+          className="bg-[#FFFDF9]/95 backdrop-blur-md p-5 sm:p-7 rounded-2xl sm:rounded-3xl shadow-xl border border-[#C5A059]/35 grid grid-cols-1 md:grid-cols-4 gap-4 items-end"
         >
           {/* Check-In */}
           <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-wider text-[#E5C365] font-bold flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <label className="text-[11px] uppercase tracking-wider text-[#7A6E63] font-bold flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-[#B88E36]" />
               Check-In Date
             </label>
             <input
               type="date"
               value={checkIn}
               onChange={(e) => setCheckIn(e.target.value)}
-              className="w-full bg-[#070A12]/90 border border-[#D4AF37]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white font-medium focus:outline-none focus:border-[#D4AF37]"
+              className="w-full bg-[#F8F3EA] border border-[#C5A059]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-[#1C1815] font-semibold focus:outline-none focus:border-[#B88E36]"
             />
           </div>
 
           {/* Check-Out */}
           <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-wider text-[#E5C365] font-bold flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <label className="text-[11px] uppercase tracking-wider text-[#7A6E63] font-bold flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-[#B88E36]" />
               Check-Out Date
             </label>
             <input
               type="date"
               value={checkOut}
               onChange={(e) => setCheckOut(e.target.value)}
-              className="w-full bg-[#070A12]/90 border border-[#D4AF37]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white font-medium focus:outline-none focus:border-[#D4AF37]"
+              className="w-full bg-[#F8F3EA] border border-[#C5A059]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-[#1C1815] font-semibold focus:outline-none focus:border-[#B88E36]"
             />
           </div>
 
           {/* Category */}
           <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-wider text-[#E5C365] font-bold flex items-center gap-1.5">
-              <Users className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <label className="text-[11px] uppercase tracking-wider text-[#7A6E63] font-bold flex items-center gap-1.5">
+              <Users className="w-3.5 h-3.5 text-[#B88E36]" />
               Select Experience
             </label>
             <select
               value={experience}
               onChange={(e) => setExperience(e.target.value)}
-              className="w-full bg-[#070A12]/90 border border-[#D4AF37]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white font-medium focus:outline-none focus:border-[#D4AF37] cursor-pointer"
+              className="w-full bg-[#F8F3EA] border border-[#C5A059]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-[#1C1815] font-semibold focus:outline-none focus:border-[#B88E36] cursor-pointer"
             >
               <option value="Luxury Stay">Luxury Stay (Rooms & Suites)</option>
               <option value="Elephant Village Excursion">Elephant Village Interaction</option>
@@ -191,9 +191,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <div>
             <button
               type="submit"
-              className="w-full h-11 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B38F24] text-black font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:shadow-[#D4AF37]/30 hover:scale-102 transition-all"
+              className="w-full h-11 flex items-center justify-center gap-2 rounded-xl bg-[#1C1815] text-[#FDFBF7] font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:bg-[#B88E36] hover:text-white transition-all transform hover:-translate-y-0.5"
             >
-              <Search className="w-4 h-4 text-black" />
+              <Search className="w-4 h-4 text-[#C5A059]" />
               Check Availability
             </button>
           </div>
@@ -202,4 +202,5 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     </section>
   );
 }
+
 

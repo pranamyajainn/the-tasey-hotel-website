@@ -36,7 +36,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#070A12] text-[#F7F3EB] flex flex-col selection:bg-[#D4AF37] selection:text-black">
+    <main className="min-h-screen bg-[#FDFBF7] text-[#1C1815] flex flex-col selection:bg-[#C5A059] selection:text-white">
       {/* Navbar */}
       <Navbar onOpenBooking={handleOpenBooking} />
 

@@ -149,25 +149,25 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
     : experiences.filter(exp => exp.category === activeTab);
 
   return (
-    <section id="adventures" className="py-24 relative bg-[#070A12] text-gray-100 overflow-hidden">
+    <section id="adventures" className="py-24 relative bg-[#FDFBF7] text-[#1C1815] overflow-hidden border-t border-b border-[#C5A059]/20">
       {/* Ambient background glows */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-[#F59E0B]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-[#B88E36]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1A1F33] border border-[#D4AF37]/30 text-[#E5C365] text-xs font-bold uppercase tracking-widest mb-4 shadow-sm">
-            <Compass className="w-3.5 h-3.5 text-[#D4AF37]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F8F3EA] border border-[#C5A059]/35 text-[#9E7B32] text-xs font-bold uppercase tracking-widest mb-4 shadow-sm">
+            <Compass className="w-3.5 h-3.5 text-[#B88E36]" />
             <span>Assistance by TASEY</span>
           </div>
-          <h2 className="font-serif-luxury text-4xl sm:text-6xl font-bold tracking-tight text-white leading-tight">
+          <h2 className="font-serif-luxury text-4xl sm:text-6xl font-bold tracking-tight text-[#1C1815] leading-tight">
             Your Adventure. <span className="text-gold-gradient">Assistance by Tasey.</span>
           </h2>
-          <div className="w-28 h-0.5 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto my-6" />
-          <p className="text-gray-300 text-base sm:text-lg font-light leading-relaxed max-w-3xl mx-auto">
-            <strong className="text-white font-medium">Discover Jaipur Beyond the Ordinary.</strong> At The TASEY Hotel, Amer, Jaipur, your stay is more than just a comfortable retreat. Located amidst the beautiful Aravalli surroundings of Amer, we help you discover the royal heritage, wildlife and vibrant culture of Rajasthan through carefully arranged local experiences and excursions.
+          <div className="w-28 h-0.5 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto my-6" />
+          <p className="text-[#5C5046] text-base sm:text-lg font-normal leading-relaxed max-w-3xl mx-auto">
+            <strong className="text-[#1C1815] font-bold">Discover Jaipur Beyond the Ordinary.</strong> At The TASEY Hotel, Amer, Jaipur, your stay is more than just a comfortable retreat. Located amidst the beautiful Aravalli surroundings of Amer, we help you discover the royal heritage, wildlife and vibrant culture of Rajasthan through carefully arranged local experiences and excursions.
           </p>
         </div>
 
@@ -184,8 +184,8 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
               onClick={() => setActiveTab(tab.id as any)}
               className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${
                 activeTab === tab.id
-                  ? "bg-gradient-to-r from-[#D4AF37] to-[#B38F24] text-black border-transparent shadow-lg shadow-[#D4AF37]/20 scale-105"
-                  : "bg-[#0F172A]/80 text-gray-300 border-[#D4AF37]/20 hover:border-[#D4AF37]/50 hover:text-white"
+                  ? "bg-[#1C1815] text-[#FFFDF9] border-[#1C1815] shadow-lg scale-105"
+                  : "bg-[#FFFDF9] text-[#2C2621] border-[#C5A059]/30 hover:border-[#B88E36] hover:text-[#B88E36]"
               }`}
             >
               {tab.label}
@@ -198,7 +198,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
           {filteredExperiences.map((exp) => (
             <div
               key={exp.id}
-              className="glass-card-dark rounded-3xl overflow-hidden border border-[#D4AF37]/25 hover:border-[#D4AF37]/60 transition-all duration-500 flex flex-col group"
+              className="bg-[#FFFDF9] rounded-3xl overflow-hidden border border-[#C5A059]/35 shadow-lg hover:shadow-2xl hover:border-[#C5A059] transition-all duration-500 flex flex-col group"
             >
               {/* Image Container */}
               <div className="relative h-64 sm:h-80 overflow-hidden shrink-0">
@@ -208,20 +208,20 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                   fill
                   className="object-cover group-hover:scale-108 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070A12] via-[#070A12]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
                 
                 {/* Floating Badge */}
                 <div className="absolute top-5 left-5 right-5 flex justify-between items-center z-10">
-                  <span className="px-3.5 py-1 rounded-full bg-[#070A12]/80 backdrop-blur-md border border-[#D4AF37]/40 text-[#E5C365] text-[11px] font-bold uppercase tracking-wider">
+                  <span className="px-3.5 py-1 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#C5A059]/40 text-[#9E7B32] text-[11px] font-bold uppercase tracking-wider shadow-sm">
                     {exp.badge}
                   </span>
                 </div>
 
                 <div className="absolute bottom-4 left-6 right-6 z-10">
-                  <div className="text-xs uppercase font-bold text-[#D4AF37] tracking-widest mb-1">
+                  <div className="text-xs uppercase font-bold text-amber-300 tracking-widest mb-1">
                     {exp.tagline}
                   </div>
-                  <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-white group-hover:text-[#E5C365] transition-colors">
+                  <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-200 transition-colors">
                     {exp.title}
                   </h3>
                 </div>
@@ -230,18 +230,18 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
               {/* Card Body */}
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
-                  <p className="text-sm text-gray-300 font-light leading-relaxed">
+                  <p className="text-sm text-[#4E443C] font-normal leading-relaxed">
                     {exp.desc}
                   </p>
 
                   {exp.detailText && (
-                    <div className="p-4 rounded-2xl bg-[#131B2E] border border-[#D4AF37]/20 text-xs text-gray-300 leading-relaxed font-normal">
+                    <div className="p-4 rounded-2xl bg-[#F8F3EA] border border-[#C5A059]/25 text-xs text-[#5C5046] leading-relaxed font-normal">
                       {exp.detailText}
                     </div>
                   )}
 
                   {exp.audience && (
-                    <div className="text-xs text-[#E5C365] font-semibold italic">
+                    <div className="text-xs text-[#9E7B32] font-semibold italic">
                       ✨ {exp.audience}
                     </div>
                   )}
@@ -249,14 +249,14 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                   {/* Emojis list for Lion Safari */}
                   {exp.perfectFor && (
                     <div className="pt-2">
-                      <div className="text-xs font-bold uppercase tracking-wider text-[#D4AF37] mb-3">
+                      <div className="text-xs font-bold uppercase tracking-wider text-[#9E7B32] mb-3">
                         A Perfect Experience For:
                       </div>
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                         {exp.perfectFor.map((item, idx) => (
-                          <div key={idx} className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0F172A] border border-[#D4AF37]/15 text-xs text-gray-200">
+                          <div key={idx} className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#F8F3EA] border border-[#C5A059]/20 text-xs text-[#1C1815]">
                             <span>{item.emoji}</span>
-                            <span className="font-medium text-[11px]">{item.text}</span>
+                            <span className="font-semibold text-[11px]">{item.text}</span>
                           </div>
                         ))}
                       </div>
@@ -266,16 +266,16 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                   {/* Highlights Bullet List */}
                   {exp.highlights && (
                     <div className="pt-2">
-                      <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">
+                      <div className="text-xs font-bold uppercase tracking-wider text-[#7A6E63] mb-2">
                         Key Highlights:
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {exp.highlights.map((hl, idx) => (
                           <span 
                             key={idx}
-                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1A2338] border border-[#D4AF37]/25 text-xs text-[#F7F3EB]"
+                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F8F3EA] border border-[#C5A059]/30 text-xs text-[#2C2621] font-medium"
                           >
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#B88E36]" />
                             {hl}
                           </span>
                         ))}
@@ -284,12 +284,12 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                   )}
                 </div>
 
-                <div className="pt-4 border-t border-[#D4AF37]/15">
+                <div className="pt-4 border-t border-[#C5A059]/20">
                   <button
                     onClick={() => onOpenBooking(`Excursion: ${exp.title}`)}
-                    className="w-full py-3 rounded-xl bg-[#1A2338] hover:bg-gradient-to-r hover:from-[#D4AF37] hover:to-[#B38F24] hover:text-black text-[#E5C365] border border-[#D4AF37]/30 text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-md"
+                    className="w-full py-3.5 rounded-xl bg-[#1C1815] hover:bg-[#B88E36] text-[#FFFDF9] font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-md"
                   >
-                    <Calendar className="w-4 h-4" />
+                    <Calendar className="w-4 h-4 text-[#C5A059]" />
                     <span>Arrange {exp.title}</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -300,31 +300,31 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
         </div>
 
         {/* Excursion Assistance Banner */}
-        <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#0F172A] via-[#131B2E] to-[#0A0E1A] border-2 border-[#D4AF37]/35 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#FFFDF9] via-[#F8F3EA] to-[#FDFBF7] border-2 border-[#C5A059]/40 shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1A2338] border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold uppercase tracking-widest">
-              <Car className="w-4 h-4 text-[#D4AF37]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F8F3EA] border border-[#C5A059]/35 text-[#9E7B32] text-xs font-bold uppercase tracking-widest">
+              <Car className="w-4 h-4 text-[#B88E36]" />
               <span>Convenient Excursion Assistance</span>
             </div>
 
-            <h3 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-white">
+            <h3 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815]">
               Our Concierge Assistance Team
             </h3>
 
-            <p className="text-gray-300 text-sm sm:text-base font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#5C5046] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
               Our front desk and travel desk team will seamlessly arrange tickets, private luxury transport, licensed guides, and custom day itineraries for your stay.
             </p>
 
             {/* Assistance Services Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
               {assistanceServices.map((service, idx) => (
-                <div key={idx} className="p-4 rounded-2xl bg-[#070A12]/70 border border-[#D4AF37]/20 text-left hover:border-[#D4AF37]/50 transition-colors">
-                  <div className="text-xs font-bold text-[#E5C365] uppercase tracking-wider mb-1">
+                <div key={idx} className="p-4 rounded-2xl bg-[#FFFDF9] border border-[#C5A059]/30 text-left hover:border-[#B88E36] transition-colors shadow-sm">
+                  <div className="text-xs font-bold text-[#9E7B32] uppercase tracking-wider mb-1">
                     {service.name}
                   </div>
-                  <div className="text-[11px] text-gray-400 font-light">
+                  <div className="text-[11px] text-[#6E645A] font-normal">
                     {service.desc}
                   </div>
                 </div>
@@ -332,19 +332,20 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
             </div>
 
             {/* Final Tagline Callout */}
-            <div className="pt-8 border-t border-[#D4AF37]/20">
-              <p className="font-serif-luxury text-xl sm:text-2xl text-[#E5C365] italic mb-2">
+            <div className="pt-8 border-t border-[#C5A059]/25">
+              <p className="font-serif-luxury text-xl sm:text-2xl text-[#9E7B32] italic mb-2">
                 "Your Adventure. Our Assistance."
               </p>
-              <p className="text-sm text-gray-300 font-light mb-6">
+              <p className="text-sm text-[#4E443C] font-normal mb-6">
                 Whether you are looking for wildlife, heritage, culture, adventure or simply a peaceful escape into the Aravallis, The TASEY Hotel helps you make the most of your Jaipur experience.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <button
                   onClick={() => onOpenBooking("Custom Excursion Request")}
-                  className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B38F24] text-black font-bold text-xs sm:text-sm uppercase tracking-widest shadow-xl hover:shadow-[#D4AF37]/30 hover:scale-105 transition-all"
+                  className="px-8 py-4 rounded-xl bg-[#1C1815] hover:bg-[#B88E36] text-[#FFFDF9] font-bold text-xs sm:text-sm uppercase tracking-widest shadow-xl hover:scale-105 transition-all flex items-center gap-2"
                 >
-                  Plan Your Jaipur Adventure Now
+                  <span>Plan Your Jaipur Adventure Now</span>
+                  <ArrowRight className="w-4 h-4 text-[#C5A059]" />
                 </button>
               </div>
             </div>
@@ -355,3 +356,4 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
     </section>
   );
 }
+

@@ -42,11 +42,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${jakarta.variable} ${cormorant.variable} scroll-smooth dark`}>
-      <body className="bg-[#070A12] text-[#F7F3EB] antialiased selection:bg-[#D4AF37] selection:text-black">
+    <html lang="en" className={`${playfair.variable} ${jakarta.variable} ${cormorant.variable} scroll-smooth`}>
+      <body className="bg-[#FDFBF7] text-[#1C1815] antialiased selection:bg-[#C5A059] selection:text-white">
         {children}
       </body>
     </html>
   );
 }
+
 
