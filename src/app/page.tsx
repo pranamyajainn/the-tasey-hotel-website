@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Overview from "@/components/Overview";
+import Excursions from "@/components/Excursions";
 import Rooms from "@/components/Rooms";
 import Dining from "@/components/Dining";
 import Celebrations from "@/components/Celebrations";
@@ -35,7 +36,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#070a14] text-gray-100 flex flex-col selection:bg-[#d4af37] selection:text-black">
+    <main className="min-h-screen bg-[#070A12] text-[#F7F3EB] flex flex-col selection:bg-[#D4AF37] selection:text-black">
       {/* Navbar */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
@@ -44,6 +45,9 @@ export default function Home() {
 
       {/* Overview & Location Advantage */}
       <Overview />
+
+      {/* Excursions: Elephant Village, Safaris & Cultural Tours */}
+      <Excursions onOpenBooking={handleOpenBooking} />
 
       {/* Rooms & Suites Showcase */}
       <Rooms onOpenBooking={handleOpenBooking} />
@@ -57,7 +61,7 @@ export default function Home() {
       {/* Nearby Attractions */}
       <Attractions />
 
-      {/* Photo Gallery */}
+      {/* Photo Gallery (19 Photos) */}
       <Gallery />
 
       {/* Guest Reviews & Testimonials */}
@@ -78,3 +82,4 @@ export default function Home() {
     </main>
   );
 }
+
