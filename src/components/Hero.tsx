@@ -1,18 +1,59 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Calendar, Users, Sparkles, MapPin, Search, ChevronRight, Compass } from "lucide-react";
+import {
+  Calendar as CalendarIcon,
+  Users,
+  Sparkles,
+  MapPin,
+  Search,
+  Compass,
+  Moon,
+  ChevronLeft,
+  ChevronRight,
+  Plus,
+  Minus,
+  Check,
+  ShieldCheck,
+  Crown
+} from "lucide-react";
 
 interface HeroProps {
   onOpenBooking: (details?: { category?: string; checkIn?: string; checkOut?: string; guests?: string }) => void;
 }
 
 export default function Hero({ onOpenBooking }: HeroProps) {
+  // Booking state
   const [checkIn, setCheckIn] = useState("2026-09-20");
   const [checkOut, setCheckOut] = useState("2026-09-22");
-  const [guests, setGuests] = useState("2 Guests, 1 Room");
+  const [adults, setAdults] = useState(2);
+  const [children, setChildren] = useState(0);
+  const [rooms, setRooms] = useState(1);
   const [experience, setExperience] = useState("Luxury Stay");
+
+  // Popover controls
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [guestsOpen, setGuestsOpen] = useState(false);
+  const [selectingTarget, setSelectingTarget] = useState<"in" | "out">("in");
+
+  // Calendar month state (defaults to Sep 2026 for demonstration, easily navigable)
+  const [calYear, setCalYear] = useState(2026);
+  const [calMonth, setCalMonth] = useState(8); // 8 is September (0-indexed)
+
+  const bookingBarRef = useRef<HTMLDivElement>(null);
+
+  // Close popovers on click outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (bookingBarRef.current && !bookingBarRef.current.contains(event.target as Node)) {
+        setCalendarOpen(false);
+        setGuestsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const heroSlides = [
     {
@@ -46,15 +87,84 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     return () => clearInterval(timer);
   }, [heroSlides.length]);
 
+  // Date utilities
+  const parseDate = (dateStr: string) => {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    return new Date(y, m - 1, d);
+  };
+
+  const formatDateStr = (year: number, month: number, day: number) => {
+    const mm = String(month + 1).padStart(2, "0");
+    const dd = String(day).padStart(2, "0");
+    return `${year}-${mm}-${dd}`;
+  };
+
+  const inDateObj = parseDate(checkIn);
+  const outDateObj = parseDate(checkOut);
+
+  const calculateNights = () => {
+    const diff = Math.round((outDateObj.getTime() - inDateObj.getTime()) / (1000 * 60 * 60 * 24));
+    return diff > 0 ? diff : 1;
+  };
+
+  const nightsCount = calculateNights();
+
+  // Calendar days generator
+  const daysInMonth = (year: number, month: number) => new Date(year, month + 1, 0).getDate();
+  const firstDayOfMonth = (year: number, month: number) => new Date(year, month, 1).getDay();
+
+  const handleDateClick = (day: number) => {
+    const clickedStr = formatDateStr(calYear, calMonth, day);
+    const clickedDate = new Date(calYear, calMonth, day);
+
+    if (selectingTarget === "in") {
+      setCheckIn(clickedStr);
+      // If checkout is before or equal to new checkin, push checkout by 1 day
+      if (clickedDate >= outDateObj) {
+        const nextDay = new Date(clickedDate);
+        nextDay.setDate(clickedDate.getDate() + 1);
+        setCheckOut(formatDateStr(nextDay.getFullYear(), nextDay.getMonth(), nextDay.getDate()));
+      }
+      setSelectingTarget("out");
+    } else {
+      if (clickedDate <= inDateObj) {
+        // Reset checkin if clicked date is earlier than checkin
+        setCheckIn(clickedStr);
+        const nextDay = new Date(clickedDate);
+        nextDay.setDate(clickedDate.getDate() + 1);
+        setCheckOut(formatDateStr(nextDay.getFullYear(), nextDay.getMonth(), nextDay.getDate()));
+      } else {
+        setCheckOut(clickedStr);
+        setCalendarOpen(false);
+      }
+    }
+  };
+
+  const handleQuickDuration = (nights: number) => {
+    const newOut = new Date(inDateObj);
+    newOut.setDate(inDateObj.getDate() + nights);
+    setCheckOut(formatDateStr(newOut.getFullYear(), newOut.getMonth(), newOut.getDate()));
+    setCalendarOpen(false);
+  };
+
+  const guestsSummary = `${adults} ${adults === 1 ? "Adult" : "Adults"}${
+    children > 0 ? `, ${children} ${children === 1 ? "Child" : "Children"}` : ""
+  }, ${rooms} ${rooms === 1 ? "Room" : "Rooms"}`;
+
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onOpenBooking({
       category: experience,
       checkIn,
       checkOut,
-      guests,
+      guests: guestsSummary,
     });
   };
+
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
 
   return (
     <section className="relative min-h-screen flex flex-col justify-between pt-28 pb-16 overflow-hidden bg-[#FDFBF7]">
@@ -133,74 +243,414 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </div>
       </div>
 
-      {/* Floating Light Luxury Availability Bar */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full mt-10">
+      {/* Bespoke Luxury Booking & Availability Engine */}
+      <div ref={bookingBarRef} className="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 w-full mt-10">
+        {/* Experience Selector Tabs */}
+        <div className="flex justify-center sm:justify-start gap-2 mb-2 px-3">
+          {[
+            { id: "Luxury Stay", label: "Rooms & Suites", icon: Crown },
+            { id: "Nahargarh Lion Safari", label: "Wildlife Safaris", icon: Compass },
+            { id: "Elephant Village Excursion", label: "Elephant Village", icon: Sparkles },
+            { id: "Haldi Restaurant", label: "Dining & Rooftop", icon: Sparkles },
+          ].map((tab) => {
+            const Icon = tab.icon;
+            const active = experience === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setExperience(tab.id)}
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-t-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 ${
+                  active
+                    ? "bg-[#FFFDF9] text-[#8C6310] border-t-2 border-x border-[#C5A059] shadow-sm -mb-px z-10"
+                    : "bg-[#F8F3EA]/90 text-[#7A6E63] hover:text-[#1C1815] border-t border-x border-[#C5A059]/30"
+                }`}
+              >
+                <Icon className={`w-3.5 h-3.5 ${active ? "text-[#C5A059]" : "text-[#7A6E63]"}`} />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Main Floating Booking Card */}
         <form
           onSubmit={handleSearchSubmit}
-          className="bg-[#FFFDF9]/95 backdrop-blur-md p-5 sm:p-7 rounded-2xl sm:rounded-3xl shadow-xl border border-[#C5A059]/35 grid grid-cols-1 md:grid-cols-4 gap-4 items-end"
+          className="bg-[#FFFDF9] backdrop-blur-xl p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-2xl border border-[#C5A059]/40 relative"
         >
-          {/* Check-In */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-wider text-[#7A6E63] font-bold flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#B88E36]" />
-              Check-In Date
-            </label>
-            <input
-              type="date"
-              value={checkIn}
-              onChange={(e) => setCheckIn(e.target.value)}
-              className="w-full bg-[#F8F3EA] border border-[#C5A059]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-[#1C1815] font-semibold focus:outline-none focus:border-[#B88E36]"
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+            
+            {/* Check-In & Check-Out Interactive Dual Tile */}
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-2 p-1.5 bg-[#F8F3EA]/70 rounded-2xl border border-[#C5A059]/30 relative">
+              {/* Check-In Tile */}
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectingTarget("in");
+                  setCalendarOpen(!calendarOpen);
+                  setGuestsOpen(false);
+                }}
+                className={`flex flex-col text-left p-3 rounded-xl transition-all ${
+                  calendarOpen && selectingTarget === "in"
+                    ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm"
+                    : "hover:bg-[#FFFDF9]/80"
+                }`}
+              >
+                <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold">
+                  <CalendarIcon className="w-3.5 h-3.5 text-[#C5A059]" />
+                  <span>Check-In</span>
+                </div>
+                <div className="mt-1 flex items-baseline gap-2">
+                  <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#1C1815]">
+                    {inDateObj.getDate()}
+                  </span>
+                  <div className="flex flex-col text-xs leading-tight text-[#5C5046]">
+                    <span className="font-semibold">{monthNames[inDateObj.getMonth()].slice(0, 3)} {inDateObj.getFullYear()}</span>
+                    <span className="text-[11px] text-[#8C6310] font-medium">
+                      {inDateObj.toLocaleDateString("en-US", { weekday: "short" })}
+                    </span>
+                  </div>
+                </div>
+              </button>
+
+              {/* Nights Center Badge (floating on desktop) */}
+              <div className="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#FFFDF9] border border-[#C5A059]/50 shadow-md text-[10px] font-bold text-[#8C6310] whitespace-nowrap">
+                  <Moon className="w-2.5 h-2.5 text-[#C5A059]" />
+                  {nightsCount} {nightsCount === 1 ? "Night" : "Nights"}
+                </span>
+              </div>
+
+              {/* Check-Out Tile */}
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectingTarget("out");
+                  setCalendarOpen(!calendarOpen);
+                  setGuestsOpen(false);
+                }}
+                className={`flex flex-col text-left p-3 rounded-xl transition-all ${
+                  calendarOpen && selectingTarget === "out"
+                    ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm"
+                    : "hover:bg-[#FFFDF9]/80"
+                }`}
+              >
+                <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold">
+                  <CalendarIcon className="w-3.5 h-3.5 text-[#C5A059]" />
+                  <span>Check-Out</span>
+                </div>
+                <div className="mt-1 flex items-baseline gap-2">
+                  <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#1C1815]">
+                    {outDateObj.getDate()}
+                  </span>
+                  <div className="flex flex-col text-xs leading-tight text-[#5C5046]">
+                    <span className="font-semibold">{monthNames[outDateObj.getMonth()].slice(0, 3)} {outDateObj.getFullYear()}</span>
+                    <span className="text-[11px] text-[#8C6310] font-medium">
+                      {outDateObj.toLocaleDateString("en-US", { weekday: "short" })}
+                    </span>
+                  </div>
+                </div>
+              </button>
+            </div>
+
+            {/* Guests & Experience Tile */}
+            <div className="lg:col-span-3">
+              <button
+                type="button"
+                onClick={() => {
+                  setGuestsOpen(!guestsOpen);
+                  setCalendarOpen(false);
+                }}
+                className={`w-full flex flex-col text-left p-3 rounded-2xl border border-[#C5A059]/30 bg-[#F8F3EA]/70 transition-all ${
+                  guestsOpen ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm" : "hover:bg-[#F8F3EA]"
+                }`}
+              >
+                <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold">
+                  <div className="flex items-center gap-1.5">
+                    <Users className="w-3.5 h-3.5 text-[#C5A059]" />
+                    <span>Guests & Rooms</span>
+                  </div>
+                </div>
+                <div className="mt-1.5">
+                  <div className="font-serif-luxury text-lg sm:text-xl font-bold text-[#1C1815] truncate">
+                    {adults} {adults === 1 ? "Adult" : "Adults"}{children > 0 ? `, ${children} Ch` : ""}
+                  </div>
+                  <div className="text-xs text-[#5C5046] font-medium">
+                    {rooms} {rooms === 1 ? "Room" : "Rooms"} • Standard / Suite
+                  </div>
+                </div>
+              </button>
+            </div>
+
+            {/* Search Availability Button */}
+            <div className="lg:col-span-3">
+              <button
+                type="submit"
+                className="w-full h-[68px] sm:h-[72px] flex flex-col items-center justify-center gap-1 rounded-2xl bg-[#1C1815] text-[#FFFDF9] font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:bg-[#8C6310] transition-all transform hover:-translate-y-0.5 active:translate-y-0 group border border-[#C5A059]/50"
+              >
+                <div className="flex items-center gap-2">
+                  <Search className="w-4 h-4 text-[#C5A059] group-hover:text-white transition-colors" />
+                  <span className="tracking-widest">Check Availability</span>
+                </div>
+                <span className="text-[10px] font-normal tracking-wide text-amber-200/90 lowercase group-hover:text-white/90">
+                  best direct rates & perks
+                </span>
+              </button>
+            </div>
           </div>
 
-          {/* Check-Out */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-wider text-[#7A6E63] font-bold flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#B88E36]" />
-              Check-Out Date
-            </label>
-            <input
-              type="date"
-              value={checkOut}
-              onChange={(e) => setCheckOut(e.target.value)}
-              className="w-full bg-[#F8F3EA] border border-[#C5A059]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-[#1C1815] font-semibold focus:outline-none focus:border-[#B88E36]"
-            />
+          {/* Direct Booking Trust Guarantees */}
+          <div className="mt-4 pt-3 border-t border-[#C5A059]/20 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#7A6E63]">
+            <div className="flex items-center gap-4">
+              <span className="flex items-center gap-1.5 font-medium text-[#1C1815]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#C5A059]" />
+                Best Rate Direct Guarantee
+              </span>
+              <span className="hidden sm:inline text-[#C5A059]/40">•</span>
+              <span className="hidden sm:flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
+                Complimentary Welcome High Tea
+              </span>
+              <span className="hidden md:inline text-[#C5A059]/40">•</span>
+              <span className="hidden md:flex items-center gap-1.5">
+                <Compass className="w-3.5 h-3.5 text-[#C5A059]" />
+                Concierge Safari Coordination
+              </span>
+            </div>
+            <span className="font-semibold text-[#8C6310]">Amer, Jaipur • No Advance Deposit Needed</span>
           </div>
 
-          {/* Category */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-wider text-[#7A6E63] font-bold flex items-center gap-1.5">
-              <Users className="w-3.5 h-3.5 text-[#B88E36]" />
-              Select Experience
-            </label>
-            <select
-              value={experience}
-              onChange={(e) => setExperience(e.target.value)}
-              className="w-full bg-[#F8F3EA] border border-[#C5A059]/30 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-[#1C1815] font-semibold focus:outline-none focus:border-[#B88E36] cursor-pointer"
-            >
-              <option value="Luxury Stay">Luxury Stay (Rooms & Suites)</option>
-              <option value="Elephant Village Excursion">Elephant Village Interaction</option>
-              <option value="Jhalana Leopard Safari">Jhalana Leopard Safari</option>
-              <option value="Nahargarh Lion Safari">Nahargarh Lion Safari</option>
-              <option value="Haldi Restaurant">Haldi Indoor Dining</option>
-              <option value="Jhumka Rooftop Pool">Jhumka Rooftop Pool</option>
-            </select>
-          </div>
+          {/* Bespoke Interactive Calendar Popover */}
+          {calendarOpen && (
+            <div className="absolute top-[102%] left-4 right-4 sm:left-6 sm:right-auto sm:w-[380px] bg-[#FFFDF9] rounded-2xl border border-[#C5A059]/50 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E5DCCB]">
+                <div className="flex flex-col text-left">
+                  <span className="text-[10px] uppercase font-bold text-[#8C6310] tracking-wider">
+                    Select {selectingTarget === "in" ? "Check-In" : "Check-Out"} Date
+                  </span>
+                  <span className="font-serif-luxury text-base font-bold text-[#1C1815]">
+                    {monthNames[calMonth]} {calYear}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (calMonth === 0) {
+                        setCalMonth(11);
+                        setCalYear(calYear - 1);
+                      } else {
+                        setCalMonth(calMonth - 1);
+                      }
+                    }}
+                    className="p-1.5 rounded-lg hover:bg-[#F8F3EA] text-[#1C1815]"
+                    aria-label="Previous Month"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (calMonth === 11) {
+                        setCalMonth(0);
+                        setCalYear(calYear + 1);
+                      } else {
+                        setCalMonth(calMonth + 1);
+                      }
+                    }}
+                    className="p-1.5 rounded-lg hover:bg-[#F8F3EA] text-[#1C1815]"
+                    aria-label="Next Month"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
 
-          {/* Search CTA */}
-          <div>
-            <button
-              type="submit"
-              className="w-full h-11 flex items-center justify-center gap-2 rounded-xl bg-[#1C1815] text-[#FDFBF7] font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:bg-[#B88E36] hover:text-white transition-all transform hover:-translate-y-0.5"
-            >
-              <Search className="w-4 h-4 text-[#C5A059]" />
-              Check Availability
-            </button>
-          </div>
+              {/* Quick Duration Shortcuts */}
+              <div className="flex items-center gap-1.5 mb-3 overflow-x-auto pb-1">
+                {[
+                  { label: "1 Night", nights: 1 },
+                  { label: "2 Nights", nights: 2 },
+                  { label: "3 Nights", nights: 3 },
+                  { label: "Weekend", nights: 2 },
+                ].map((sc) => (
+                  <button
+                    key={sc.label}
+                    type="button"
+                    onClick={() => handleQuickDuration(sc.nights)}
+                    className="px-2.5 py-1 rounded-full bg-[#F8F3EA] hover:bg-[#EBDDC5] text-[#8C6310] text-[11px] font-bold transition-colors whitespace-nowrap"
+                  >
+                    {sc.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Calendar Days of Week */}
+              <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-[#7A6E63] uppercase mb-1">
+                <span>Su</span>
+                <span>Mo</span>
+                <span>Tu</span>
+                <span>We</span>
+                <span>Th</span>
+                <span>Fr</span>
+                <span>Sa</span>
+              </div>
+
+              {/* Days Grid */}
+              <div className="grid grid-cols-7 gap-1 text-xs">
+                {/* Empty leading padding */}
+                {Array.from({ length: firstDayOfMonth(calYear, calMonth) }).map((_, idx) => (
+                  <div key={`empty-${idx}`} className="h-8" />
+                ))}
+
+                {/* Month Days */}
+                {Array.from({ length: daysInMonth(calYear, calMonth) }).map((_, idx) => {
+                  const dayNum = idx + 1;
+                  const dayDateStr = formatDateStr(calYear, calMonth, dayNum);
+                  const isCheckIn = dayDateStr === checkIn;
+                  const isCheckOut = dayDateStr === checkOut;
+                  const isInRange = dayDateStr > checkIn && dayDateStr < checkOut;
+
+                  return (
+                    <button
+                      key={dayNum}
+                      type="button"
+                      onClick={() => handleDateClick(dayNum)}
+                      className={`h-8 rounded-lg flex items-center justify-center font-semibold transition-all ${
+                        isCheckIn || isCheckOut
+                          ? "bg-[#C5A059] text-white shadow-md font-bold scale-105"
+                          : isInRange
+                          ? "bg-[#C5A059]/15 text-[#8C6310] rounded-none"
+                          : "text-[#1C1815] hover:bg-[#F8F3EA]"
+                      }`}
+                    >
+                      {dayNum}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Footer */}
+              <div className="mt-3 pt-2 border-t border-[#E5DCCB] flex justify-between items-center text-xs">
+                <span className="text-[#8C6310] font-semibold">
+                  {nightsCount} {nightsCount === 1 ? "Night Stay" : "Nights Stay"}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setCalendarOpen(false)}
+                  className="px-3 py-1 rounded-lg bg-[#1C1815] text-white text-[11px] font-bold hover:bg-[#8C6310] transition-colors"
+                >
+                  Done
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Bespoke Guests & Rooms Popover */}
+          {guestsOpen && (
+            <div className="absolute top-[102%] left-4 right-4 sm:left-auto sm:right-6 sm:w-[320px] bg-[#FFFDF9] rounded-2xl border border-[#C5A059]/50 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
+              <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E5DCCB]">
+                <span className="font-serif-luxury text-base font-bold text-[#1C1815]">
+                  Guests & Rooms
+                </span>
+                <span className="text-[11px] font-bold text-[#8C6310]">Max 6 Guests</span>
+              </div>
+
+              {/* Adults Counter */}
+              <div className="flex items-center justify-between py-2 border-b border-[#F8F3EA]">
+                <div>
+                  <div className="text-xs font-bold text-[#1C1815]">Adults</div>
+                  <div className="text-[11px] text-[#7A6E63]">Age 12+ years</div>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <button
+                    type="button"
+                    disabled={adults <= 1}
+                    onClick={() => setAdults(Math.max(1, adults - 1))}
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] disabled:opacity-30 hover:bg-[#EBDDC5]"
+                  >
+                    <Minus className="w-3.5 h-3.5" />
+                  </button>
+                  <span className="font-bold text-sm text-[#1C1815] w-4 text-center">{adults}</span>
+                  <button
+                    type="button"
+                    disabled={adults >= 8}
+                    onClick={() => setAdults(adults + 1)}
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] hover:bg-[#EBDDC5]"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Children Counter */}
+              <div className="flex items-center justify-between py-2 border-b border-[#F8F3EA]">
+                <div>
+                  <div className="text-xs font-bold text-[#1C1815]">Children</div>
+                  <div className="text-[11px] text-[#7A6E63]">Age 0-11 years</div>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <button
+                    type="button"
+                    disabled={children <= 0}
+                    onClick={() => setChildren(Math.max(0, children - 1))}
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] disabled:opacity-30 hover:bg-[#EBDDC5]"
+                  >
+                    <Minus className="w-3.5 h-3.5" />
+                  </button>
+                  <span className="font-bold text-sm text-[#1C1815] w-4 text-center">{children}</span>
+                  <button
+                    type="button"
+                    disabled={children >= 4}
+                    onClick={() => setChildren(children + 1)}
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] hover:bg-[#EBDDC5]"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Rooms Counter */}
+              <div className="flex items-center justify-between py-2 border-b border-[#F8F3EA]">
+                <div>
+                  <div className="text-xs font-bold text-[#1C1815]">Rooms</div>
+                  <div className="text-[11px] text-[#7A6E63]">Standard / Suite</div>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <button
+                    type="button"
+                    disabled={rooms <= 1}
+                    onClick={() => setRooms(Math.max(1, rooms - 1))}
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] disabled:opacity-30 hover:bg-[#EBDDC5]"
+                  >
+                    <Minus className="w-3.5 h-3.5" />
+                  </button>
+                  <span className="font-bold text-sm text-[#1C1815] w-4 text-center">{rooms}</span>
+                  <button
+                    type="button"
+                    disabled={rooms >= 4}
+                    onClick={() => setRooms(rooms + 1)}
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] hover:bg-[#EBDDC5]"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="mt-3 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setGuestsOpen(false)}
+                  className="px-4 py-1.5 rounded-lg bg-[#1C1815] text-white text-xs font-bold hover:bg-[#8C6310] transition-colors"
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+          )}
         </form>
       </div>
     </section>
   );
 }
-
-

@@ -11,7 +11,7 @@ export default function Attractions() {
       category: "UNESCO Heritage Fort",
       desc: "Jaipur's iconic 16th-century fortress featuring Sheesh Mahal (Mirror Palace) and hilltop light-and-sound shows.",
       badge: "Must Visit",
-      image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Amber_Fort_front_view%2C_Jaipur.jpg",
+      image: "/images/attractions/amber-fort.jpg",
       span: "lg:col-span-2 h-96",
     },
     {
@@ -20,7 +20,7 @@ export default function Attractions() {
       category: "Sanctuary Interaction",
       desc: "Experience meeting, feeding, and walking alongside elephants in their natural village sanctuary.",
       badge: "Signature Experience",
-      image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Elephants_at_Amber_Fort%2C_Jaipur_-_panoramio.jpg",
+      image: "/images/attractions/elephant-village.jpg",
       span: "lg:col-span-1 h-96",
     },
     {
@@ -29,7 +29,7 @@ export default function Attractions() {
       category: "Nature & Wildlife Reserve",
       desc: "Pristine wildlife sanctuary offering lion safaris, birdwatching, and forest trails right across our entrance.",
       badge: "Across the Road",
-      image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/View_from_Nahargarh_Fort%2C_Jaipur%2C_20191218_1510_9281.jpg",
+      image: "/images/attractions/nahargarh-fort.jpg",
       span: "lg:col-span-1 h-84",
     },
     {
@@ -38,7 +38,7 @@ export default function Attractions() {
       category: "Palace on Lake",
       desc: "Stunning Rajput style palace floating gracefully in the middle of Man Sagar Lake.",
       badge: "Scenic Spot",
-      image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Jal_Mahal_in_Jaipur_in_Rajasthan.jpg",
+      image: "/images/attractions/jal-mahal.jpg",
       span: "lg:col-span-2 h-84",
     },
   ];

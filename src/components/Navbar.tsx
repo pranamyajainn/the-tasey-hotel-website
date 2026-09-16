@@ -21,13 +21,13 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: "Overview", href: "#overview" },
-    { name: "Safaris & Adventures", href: "#adventures" },
-    { name: "Rooms & Suites", href: "#rooms" },
-    { name: "Dining & Rooftop", href: "#dining" },
-    { name: "Celebrations", href: "#celebrations" },
-    { name: "Attractions", href: "#attractions" },
-    { name: "Gallery", href: "#gallery" },
+    { name: "Overview", short: "Overview", href: "#overview" },
+    { name: "Safaris & Adventures", short: "Safaris", href: "#adventures" },
+    { name: "Rooms & Suites", short: "Rooms", href: "#rooms" },
+    { name: "Dining & Rooftop", short: "Dining", href: "#dining" },
+    { name: "Celebrations", short: "Events", href: "#celebrations" },
+    { name: "Attractions", short: "Attractions", href: "#attractions" },
+    { name: "Gallery", short: "Gallery", href: "#gallery" },
   ];
 
   return (
@@ -62,57 +62,59 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
         {/* Logo & Monogram */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#C5A059] via-[#D4AF37] to-[#8C6310] p-0.5 shadow-md group-hover:scale-105 transition-transform">
+        <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+          <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-[#C5A059] via-[#D4AF37] to-[#8C6310] p-0.5 shadow-md group-hover:scale-105 transition-transform shrink-0">
             <div className="w-full h-full bg-[#FFFDF9] rounded-full overflow-hidden flex items-center justify-center p-1">
               <Image
                 src="/logo.png"
                 alt="The Tasey Logo"
-                width={46}
-                height={46}
+                width={42}
+                height={42}
                 className="object-contain"
                 priority
               />
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-serif-luxury text-xl sm:text-2xl font-bold tracking-wider text-[#1C1815] group-hover:text-[#C5A059] transition-colors">
+            <span className="font-serif-luxury text-lg sm:text-xl xl:text-2xl font-bold tracking-wider text-[#1C1815] group-hover:text-[#C5A059] transition-colors whitespace-nowrap">
               THE TASEY
             </span>
-            <span className="text-[9px] sm:text-[10px] tracking-[0.25em] text-[#8C6310] uppercase font-bold">
+            <span className="text-[8px] sm:text-[9px] xl:text-[10px] tracking-[0.2em] xl:tracking-[0.25em] text-[#8C6310] uppercase font-bold whitespace-nowrap">
               Boutique Hotel & Excursions
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-7">
+        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-7">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-xs sm:text-sm font-semibold tracking-wide text-[#3B332B] hover:text-[#C5A059] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#C5A059] hover:after:w-full after:transition-all after:duration-300"
+              className="text-xs xl:text-[13px] 2xl:text-sm font-semibold tracking-wide text-[#3B332B] hover:text-[#C5A059] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#C5A059] hover:after:w-full after:transition-all after:duration-300 whitespace-nowrap"
             >
-              {link.name}
+              <span className="hidden xl:inline">{link.name}</span>
+              <span className="xl:hidden">{link.short}</span>
             </a>
           ))}
         </nav>
 
         {/* Action CTA & Phone */}
-        <div className="hidden sm:flex items-center space-x-4">
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
           <a
             href="tel:+919876543210"
-            className="lg:hidden p-2.5 rounded-full bg-[#F8F3EA] text-[#8C6310] border border-[#C5A059]/40"
+            className="hidden xl:flex items-center gap-1.5 px-3 py-2 rounded-full bg-[#F8F3EA] text-[#8C6310] border border-[#C5A059]/40 hover:bg-[#F0E8D9] transition-colors text-xs font-semibold"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-3.5 h-3.5 text-[#C5A059]" />
+            <span>Call Us</span>
           </a>
           <button
             onClick={() => onOpenBooking()}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-[#C5A059]/40 hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 rounded-full bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white font-bold text-xs sm:text-xs xl:text-sm tracking-wider uppercase shadow-md hover:shadow-[#C5A059]/40 hover:scale-105 transition-all shrink-0 whitespace-nowrap"
           >
-            <Calendar className="w-4 h-4 text-white" />
+            <Calendar className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-white" />
             Reserve Your Stay
           </button>
         </div>

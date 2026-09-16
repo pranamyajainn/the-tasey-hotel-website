@@ -37,7 +37,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       tagline: "Unforgettable Elephant Interaction at Amer",
       desc: "Experience the charm of Jaipur's famous elephant village at Amer. Guests can enjoy memorable elephant interactions, including meeting, feeding and walking alongside these magnificent animals, subject to availability and applicable regulations.",
       audience: "Arranged exclusively for TASEY guests — our concierge handles all bookings & transfers.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Elephants_at_Amber_Fort%2C_Jaipur_-_panoramio.jpg",
+      image: "/images/attractions/elephant-village.jpg",
       highlights: [
         "Elephant Village Visit",
         "Elephant Feeding Experience",
@@ -53,7 +53,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       tagline: "Guided Jhalana Leopard Expedition",
       desc: "Discover the wild side of Jaipur with a guided Jhalana Leopard Safari. Explore the natural landscape and look out for leopards, blue bulls, wild boar, spotted deer and a variety of birds.",
       audience: "Our travel desk books your safari slot, guide & jeep — you just relax at The TASEY.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Indian_male_leopard_%28cropped%29.jpg",
+      image: "/images/attractions/leopard-safari.jpg",
       highlights: [
         "High Leopard Sighting Probability",
         "Spot Blue Bulls, Wild Boar & Deer",
@@ -69,7 +69,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       tagline: "720 Hectares of Aravalli Wilderness",
       desc: "Experience the thrill of wildlife at Nahargarh Lion Safari, located amidst the beautiful Aravalli hills near Jaipur. Literally right across our hotel entrance — just step outside The TASEY and you are at the gate.",
       detailText: "The Nahargarh Biological Park is spread across approximately 720 hectares and is home to a variety of wildlife, including Asiatic lions, Bengal tigers, panthers, hyenas, wolves, deer and other species.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/View_from_Nahargarh_Fort%2C_Jaipur%2C_20191218_1510_9281.jpg",
+      image: "/images/attractions/lion-safari.jpg",
       perfectFor: [
         { emoji: "🦁", text: "Wildlife & Lion Safari" },
         { emoji: "🌿", text: "Nature and forest exploration" },
@@ -93,7 +93,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       tagline: "Centuries of Majestic Rajput Splendor",
       desc: "Explore the magnificent Amer Fort, one of Jaipur's most celebrated heritage attractions. Discover Rajput architecture, historic palaces, courtyards and spectacular views of the surrounding Aravalli hills — all just 5 KM from The TASEY Hotel.",
       audience: "Our concierge arranges private guided tours & priority entry from The TASEY.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Amber_Fort_front_view%2C_Jaipur.jpg",
+      image: "/images/attractions/amber-fort.jpg",
       highlights: [
         "Sheesh Mahal (Mirror Palace)",
         "Grand Courtyards & Diwan-i-Aam",
@@ -109,7 +109,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       tagline: "Sunrise, Sunset & Scenic Hill Drives",
       desc: "Enjoy the peaceful surroundings of Amer with specially arranged nature excursions, sunrise and sunset experiences, photography opportunities and scenic drives through the Aravalli landscape — all starting from The TASEY's doorstep.",
       audience: "Perfect for peaceful retreats, couples, and photography enthusiasts staying at The TASEY.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Jal_Mahal_in_Jaipur_in_Rajasthan.jpg",
+      image: "/images/attractions/jal-mahal.jpg",
       highlights: [
         "Curated Sunrise & Sunset Excursions",
         "Landscape Photography Points",
@@ -124,7 +124,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       badge: "Authentic Traditions",
       tagline: "Immersion into Rajasthan's Rich Heritage",
       desc: "Discover the colours and traditions of Rajasthan through curated experiences designed to immerse you into local art, music, and flavors — all thoughtfully arranged by The TASEY Hotel concierge team.",
-      image: "https://upload.wikimedia.org/wikipedia/commons/3/39/Amber_Fort%2C_Jaipur%2C_Rajasthan.JPG",
+      image: "/images/attractions/jaipur-culture.jpg",
       highlights: [
         "Rajasthani Folk Performances",
         "Traditional Rajasthani Cuisine",
