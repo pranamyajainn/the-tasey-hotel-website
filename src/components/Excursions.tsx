@@ -36,8 +36,8 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       badge: "Signature Experience",
       tagline: "Unforgettable Elephant Interaction at Amer",
       desc: "Experience the charm of Jaipur's famous elephant village at Amer. Guests can enjoy memorable elephant interactions, including meeting, feeding and walking alongside these magnificent animals, subject to availability and applicable regulations.",
-      audience: "A memorable experience for families, couples and international travellers.",
-      image: "/images/tasey-05.jpeg",
+      audience: "Arranged exclusively for TASEY guests — our concierge handles all bookings & transfers.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Elephants_at_Amber_Fort%2C_Jaipur_-_panoramio.jpg",
       highlights: [
         "Elephant Village Visit",
         "Elephant Feeding Experience",
@@ -52,8 +52,8 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       badge: "Thrilling Wildlife",
       tagline: "Guided Jhalana Leopard Expedition",
       desc: "Discover the wild side of Jaipur with a guided Jhalana Leopard Safari. Explore the natural landscape and look out for leopards, blue bulls, wild boar, spotted deer and a variety of birds.",
-      audience: "An exciting wildlife experience just a short drive from Jaipur's city attractions.",
-      image: "/images/tasey-06.jpeg",
+      audience: "Our travel desk books your safari slot, guide & jeep — you just relax at The TASEY.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Indian_male_leopard_%28cropped%29.jpg",
       highlights: [
         "High Leopard Sighting Probability",
         "Spot Blue Bulls, Wild Boar & Deer",
@@ -67,9 +67,9 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       title: "Nahargarh Lion Safari",
       badge: "Near The TASEY",
       tagline: "720 Hectares of Aravalli Wilderness",
-      desc: "Experience the thrill of wildlife at Nahargarh Lion Safari, located amidst the beautiful Aravalli hills near Jaipur. Just a short drive from The TASEY Hotel, Amer, the safari offers guests an opportunity to experience the natural surroundings of Nahargarh Biological Park and discover its diverse wildlife.",
+      desc: "Experience the thrill of wildlife at Nahargarh Lion Safari, located amidst the beautiful Aravalli hills near Jaipur. Literally right across our hotel entrance — just step outside The TASEY and you are at the gate.",
       detailText: "The Nahargarh Biological Park is spread across approximately 720 hectares and is home to a variety of wildlife, including Asiatic lions, Bengal tigers, panthers, hyenas, wolves, deer and other species.",
-      image: "/images/tasey-07.jpeg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/View_from_Nahargarh_Fort%2C_Jaipur%2C_20191218_1510_9281.jpg",
       perfectFor: [
         { emoji: "🦁", text: "Wildlife & Lion Safari" },
         { emoji: "🌿", text: "Nature and forest exploration" },
@@ -91,9 +91,9 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       title: "Amer Fort & Royal Heritage",
       badge: "UNESCO World Heritage",
       tagline: "Centuries of Majestic Rajput Splendor",
-      desc: "Explore the magnificent Amer Fort, one of Jaipur's most celebrated heritage attractions. Discover Rajput architecture, historic palaces, courtyards and spectacular views of the surrounding Aravalli hills.",
-      audience: "5 KM from hotel (10 min scenic drive).",
-      image: "/images/tasey-04.jpeg",
+      desc: "Explore the magnificent Amer Fort, one of Jaipur's most celebrated heritage attractions. Discover Rajput architecture, historic palaces, courtyards and spectacular views of the surrounding Aravalli hills — all just 5 KM from The TASEY Hotel.",
+      audience: "Our concierge arranges private guided tours & priority entry from The TASEY.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Amber_Fort_front_view%2C_Jaipur.jpg",
       highlights: [
         "Sheesh Mahal (Mirror Palace)",
         "Grand Courtyards & Diwan-i-Aam",
@@ -107,9 +107,9 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       title: "Aravalli Nature Experiences",
       badge: "Serene Wilderness",
       tagline: "Sunrise, Sunset & Scenic Hill Drives",
-      desc: "Enjoy the peaceful surroundings of Amer with specially arranged nature excursions, sunrise and sunset experiences, photography opportunities and scenic drives through the Aravalli landscape.",
-      audience: "Perfect for peaceful retreats, couples, and photography enthusiasts.",
-      image: "/images/tasey-02.jpeg",
+      desc: "Enjoy the peaceful surroundings of Amer with specially arranged nature excursions, sunrise and sunset experiences, photography opportunities and scenic drives through the Aravalli landscape — all starting from The TASEY's doorstep.",
+      audience: "Perfect for peaceful retreats, couples, and photography enthusiasts staying at The TASEY.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Jal_Mahal_in_Jaipur_in_Rajasthan.jpg",
       highlights: [
         "Curated Sunrise & Sunset Excursions",
         "Landscape Photography Points",
@@ -123,8 +123,8 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       title: "Jaipur Cultural Experiences",
       badge: "Authentic Traditions",
       tagline: "Immersion into Rajasthan's Rich Heritage",
-      desc: "Discover the colours and traditions of Rajasthan through curated experiences designed to immerse you into local art, music, and flavors.",
-      image: "/images/tasey-08.jpeg",
+      desc: "Discover the colours and traditions of Rajasthan through curated experiences designed to immerse you into local art, music, and flavors — all thoughtfully arranged by The TASEY Hotel concierge team.",
+      image: "https://upload.wikimedia.org/wikipedia/commons/3/39/Amber_Fort%2C_Jaipur%2C_Rajasthan.JPG",
       highlights: [
         "Rajasthani Folk Performances",
         "Traditional Rajasthani Cuisine",
@@ -160,14 +160,14 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F8F3EA] border border-[#C5A059]/35 text-[#9E7B32] text-xs font-bold uppercase tracking-widest mb-4 shadow-sm">
             <Compass className="w-3.5 h-3.5 text-[#B88E36]" />
-            <span>Assistance by TASEY</span>
+            <span>Exclusive to TASEY Guests</span>
           </div>
           <h2 className="font-serif-luxury text-4xl sm:text-6xl font-bold tracking-tight text-[#1C1815] leading-tight">
-            Your Adventure. <span className="text-gold-gradient">Assistance by Tasey.</span>
+            Stay at <span className="text-gold-gradient">The TASEY.</span> Explore All of Jaipur.
           </h2>
           <div className="w-28 h-0.5 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto my-6" />
           <p className="text-[#5C5046] text-base sm:text-lg font-normal leading-relaxed max-w-3xl mx-auto">
-            <strong className="text-[#1C1815] font-bold">Discover Jaipur Beyond the Ordinary.</strong> At The TASEY Hotel, Amer, Jaipur, your stay is more than just a comfortable retreat. Located amidst the beautiful Aravalli surroundings of Amer, we help you discover the royal heritage, wildlife and vibrant culture of Rajasthan through carefully arranged local experiences and excursions.
+            <strong className="text-[#1C1815] font-bold">The TASEY Hotel is your perfect base in Jaipur.</strong> Our prime location in Amer puts you steps from Nahargarh Park, 5 KM from Amber Fort, and within easy reach of every royal experience Rajasthan has to offer. Our concierge team handles all arrangements — you simply enjoy.
           </p>
         </div>
 
@@ -206,6 +206,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                   src={exp.image}
                   alt={exp.title}
                   fill
+                  unoptimized
                   className="object-cover group-hover:scale-108 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />

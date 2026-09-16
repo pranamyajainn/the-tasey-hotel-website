@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Navigation, Compass, ExternalLink, Sparkles } from "lucide-react";
+import { MapPin, Navigation, Compass, ExternalLink } from "lucide-react";
 
 export default function Attractions() {
   const attractions = [
@@ -11,7 +11,7 @@ export default function Attractions() {
       category: "UNESCO Heritage Fort",
       desc: "Jaipur's iconic 16th-century fortress featuring Sheesh Mahal (Mirror Palace) and hilltop light-and-sound shows.",
       badge: "Must Visit",
-      image: "/images/tasey-04.jpeg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Amber_Fort_front_view%2C_Jaipur.jpg",
       span: "lg:col-span-2 h-96",
     },
     {
@@ -20,7 +20,7 @@ export default function Attractions() {
       category: "Sanctuary Interaction",
       desc: "Experience meeting, feeding, and walking alongside elephants in their natural village sanctuary.",
       badge: "Signature Experience",
-      image: "/images/tasey-05.jpeg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Elephants_at_Amber_Fort%2C_Jaipur_-_panoramio.jpg",
       span: "lg:col-span-1 h-96",
     },
     {
@@ -29,7 +29,7 @@ export default function Attractions() {
       category: "Nature & Wildlife Reserve",
       desc: "Pristine wildlife sanctuary offering lion safaris, birdwatching, and forest trails right across our entrance.",
       badge: "Across the Road",
-      image: "/images/tasey-07.jpeg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/View_from_Nahargarh_Fort%2C_Jaipur%2C_20191218_1510_9281.jpg",
       span: "lg:col-span-1 h-84",
     },
     {
@@ -38,7 +38,7 @@ export default function Attractions() {
       category: "Palace on Lake",
       desc: "Stunning Rajput style palace floating gracefully in the middle of Man Sagar Lake.",
       badge: "Scenic Spot",
-      image: "/images/tasey-02.jpeg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Jal_Mahal_in_Jaipur_in_Rajasthan.jpg",
       span: "lg:col-span-2 h-84",
     },
   ];
@@ -57,7 +57,7 @@ export default function Attractions() {
           </h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto my-5" />
           <p className="text-[#5C5248] text-sm sm:text-base font-normal">
-            Enjoy peace of the hills with Jaipur's most famous monuments and wildlife sanctuaries right at your doorstep.
+            Enjoy peace of the hills with Jaipur&apos;s most famous monuments and wildlife sanctuaries right at your doorstep.
           </p>
         </div>
 
@@ -73,6 +73,7 @@ export default function Attractions() {
                 alt={att.name}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
+                unoptimized
               />
               {/* Gradient Scrim */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#1C1815]/90 via-[#1C1815]/30 to-transparent" />
@@ -126,7 +127,7 @@ export default function Attractions() {
             </div>
           </div>
           <a
-            href="https://maps.google.com/?q=Amber+Fort+Jaipur"
+            href="https://maps.google.com/?q=The+Tasey+Hotel+Amer+Jaipur"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white font-bold text-xs uppercase tracking-wider transition-all shrink-0 flex items-center gap-2 shadow-md hover:scale-105"
@@ -139,4 +140,3 @@ export default function Attractions() {
     </section>
   );
 }
-
