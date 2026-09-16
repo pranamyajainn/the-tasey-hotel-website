@@ -208,28 +208,28 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           {heroSlides[currentSlide].title}
         </h1>
 
-        <p className="mt-6 text-sm sm:text-lg text-gray-100 max-w-3xl font-normal leading-relaxed drop-shadow-md">
-          Welcome to <strong className="text-white font-bold">The TASEY Hotel</strong> — your gateway to royal luxury rooms, authentic dining at <em className="font-serif text-amber-300 font-semibold">Haldi</em>, rooftop poolside views at <em className="font-serif text-amber-300 font-semibold">Jhumka</em>, and curated <span className="text-amber-200 font-semibold underline decoration-[#C5A059]">Elephant & Wildlife Safaris</span>.
+        <p className="mt-5 text-sm sm:text-base md:text-lg text-gray-100 max-w-2xl font-normal leading-relaxed drop-shadow-md">
+          A boutique sanctuary nestled at the foot of the Aravalli hills in Amer, Jaipur. Featuring luxury suites, authentic dining at Haldi, and sunset pool views at Jhumka Rooftop.
         </p>
 
-        {/* Location Badges & Highlights */}
-        <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 text-xs text-[#1C1815]">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-md font-semibold">
-            <MapPin className="w-4 h-4 text-[#B88E36]" />
+        {/* Location Credentials */}
+        <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:gap-4 text-xs text-[#1C1815]">
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-sm font-medium">
+            <MapPin className="w-3.5 h-3.5 text-[#8C6310]" />
             <span>5 KM from Amber Fort</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-md font-semibold">
-            <Compass className="w-4 h-4 text-[#B88E36]" />
-            <span>50m from Zoological Park</span>
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-sm font-medium">
+            <Compass className="w-3.5 h-3.5 text-[#8C6310]" />
+            <span>Facing Nahargarh Park</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-md font-semibold">
-            <Sparkles className="w-4 h-4 text-[#B88E36]" />
-            <span>Elephant Village & Safaris</span>
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-sm font-medium">
+            <Sparkles className="w-3.5 h-3.5 text-[#8C6310]" />
+            <span>Rooftop Pool & Panoramas</span>
           </div>
         </div>
 
         {/* Slide Indicators */}
-        <div className="mt-8 flex items-center gap-2">
+        <div className="mt-7 flex items-center gap-2">
           {heroSlides.map((_, i) => (
             <button
               key={i}
@@ -244,9 +244,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       </div>
 
       {/* Bespoke Luxury Booking & Availability Engine */}
-      <div ref={bookingBarRef} className="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 w-full mt-10">
+      <div ref={bookingBarRef} className="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 w-full mt-8">
         {/* Experience Selector Tabs */}
-        <div className="flex justify-center sm:justify-start gap-2 mb-2 px-3">
+        <div className="flex justify-center sm:justify-start gap-1.5 mb-2 px-2 overflow-x-auto pb-1">
           {[
             { id: "Luxury Stay", label: "Rooms & Suites", icon: Crown },
             { id: "Nahargarh Lion Safari", label: "Wildlife Safaris", icon: Compass },
@@ -260,7 +260,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 key={tab.id}
                 type="button"
                 onClick={() => setExperience(tab.id)}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-t-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 ${
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-t-xl text-xs font-bold tracking-wider uppercase transition-all duration-200 whitespace-nowrap ${
                   active
                     ? "bg-[#FFFDF9] text-[#8C6310] border-t-2 border-x border-[#C5A059] shadow-sm -mb-px z-10"
                     : "bg-[#F8F3EA]/90 text-[#7A6E63] hover:text-[#1C1815] border-t border-x border-[#C5A059]/30"
@@ -276,13 +276,12 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         {/* Main Floating Booking Card */}
         <form
           onSubmit={handleSearchSubmit}
-          className="bg-[#FFFDF9] backdrop-blur-xl p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-2xl border border-[#C5A059]/40 relative"
+          className="bg-[#FFFDF9] backdrop-blur-xl p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-xl border border-[#C5A059]/40 relative"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch">
             
-            {/* Check-In & Check-Out Interactive Dual Tile */}
-            <div className="lg:col-span-6 flex flex-col sm:flex-row items-center p-1.5 bg-[#F8F3EA]/70 rounded-2xl border border-[#C5A059]/30">
-              {/* Check-In Tile */}
+            {/* 1. Check-In Dedicated Tile */}
+            <div className="lg:col-span-3">
               <button
                 type="button"
                 onClick={() => {
@@ -290,17 +289,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   setCalendarOpen(!calendarOpen);
                   setGuestsOpen(false);
                 }}
-                className={`flex-1 w-full flex flex-col text-left p-3 rounded-xl transition-all ${
+                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#C5A059]/30 bg-[#F8F3EA]/60 transition-all ${
                   calendarOpen && selectingTarget === "in"
                     ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm"
-                    : "hover:bg-[#FFFDF9]/80"
+                    : "hover:bg-[#FFFDF9]"
                 }`}
               >
-                <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold">
+                <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold mb-1">
                   <CalendarIcon className="w-3.5 h-3.5 text-[#C5A059]" />
                   <span>Check-In</span>
                 </div>
-                <div className="mt-1 flex items-baseline gap-2">
+                <div className="mt-auto flex items-baseline gap-2">
                   <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#1C1815]">
                     {inDateObj.getDate()}
                   </span>
@@ -312,16 +311,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   </div>
                 </div>
               </button>
+            </div>
 
-              {/* Nights Center Badge (dedicated non-overlapping center element) */}
-              <div className="py-1 sm:py-0 px-2 shrink-0 flex items-center justify-center">
-                <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#FFFDF9] border border-[#C5A059]/50 shadow-sm text-[10px] font-bold text-[#8C6310] whitespace-nowrap">
-                  <Moon className="w-2.5 h-2.5 text-[#C5A059]" />
-                  <span>{nightsCount} {nightsCount === 1 ? "Night" : "Nights"}</span>
-                </span>
-              </div>
-
-              {/* Check-Out Tile */}
+            {/* 2. Check-Out Dedicated Tile (With Duration Pill In Header - Never Overlaps!) */}
+            <div className="lg:col-span-3">
               <button
                 type="button"
                 onClick={() => {
@@ -329,17 +322,23 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   setCalendarOpen(!calendarOpen);
                   setGuestsOpen(false);
                 }}
-                className={`flex-1 w-full flex flex-col text-left p-3 rounded-xl transition-all ${
+                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#C5A059]/30 bg-[#F8F3EA]/60 transition-all ${
                   calendarOpen && selectingTarget === "out"
                     ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm"
-                    : "hover:bg-[#FFFDF9]/80"
+                    : "hover:bg-[#FFFDF9]"
                 }`}
               >
-                <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold">
-                  <CalendarIcon className="w-3.5 h-3.5 text-[#C5A059]" />
-                  <span>Check-Out</span>
+                <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold mb-1">
+                  <div className="flex items-center gap-1.5">
+                    <CalendarIcon className="w-3.5 h-3.5 text-[#C5A059]" />
+                    <span>Check-Out</span>
+                  </div>
+                  <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#FFFDF9] border border-[#C5A059]/40 text-[10px] font-bold text-[#8C6310] shadow-xs">
+                    <Moon className="w-2.5 h-2.5 text-[#C5A059]" />
+                    <span>{nightsCount} {nightsCount === 1 ? "Night" : "Nights"}</span>
+                  </span>
                 </div>
-                <div className="mt-1 flex items-baseline gap-2">
+                <div className="mt-auto flex items-baseline gap-2">
                   <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#1C1815]">
                     {outDateObj.getDate()}
                   </span>
@@ -353,7 +352,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               </button>
             </div>
 
-            {/* Guests & Experience Tile */}
+            {/* 3. Guests & Rooms Dedicated Tile */}
             <div className="lg:col-span-3">
               <button
                 type="button"
@@ -361,63 +360,63 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   setGuestsOpen(!guestsOpen);
                   setCalendarOpen(false);
                 }}
-                className={`w-full flex flex-col text-left p-3 rounded-2xl border border-[#C5A059]/30 bg-[#F8F3EA]/70 transition-all ${
-                  guestsOpen ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm" : "hover:bg-[#F8F3EA]"
+                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#C5A059]/30 bg-[#F8F3EA]/60 transition-all ${
+                  guestsOpen ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm" : "hover:bg-[#FFFDF9]"
                 }`}
               >
-                <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold">
+                <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold mb-1">
                   <div className="flex items-center gap-1.5">
                     <Users className="w-3.5 h-3.5 text-[#C5A059]" />
                     <span>Guests & Rooms</span>
                   </div>
                 </div>
-                <div className="mt-1.5">
+                <div className="mt-auto">
                   <div className="font-serif-luxury text-lg sm:text-xl font-bold text-[#1C1815] truncate">
                     {adults} {adults === 1 ? "Adult" : "Adults"}{children > 0 ? `, ${children} Ch` : ""}
                   </div>
-                  <div className="text-xs text-[#5C5046] font-medium">
+                  <div className="text-xs text-[#5C5046] font-medium mt-0.5">
                     {rooms} {rooms === 1 ? "Room" : "Rooms"} • Standard / Suite
                   </div>
                 </div>
               </button>
             </div>
 
-            {/* Search Availability Button */}
-            <div className="lg:col-span-3">
+            {/* 4. Search Availability Button */}
+            <div className="lg:col-span-3 flex">
               <button
                 type="submit"
-                className="w-full h-[68px] sm:h-[72px] flex flex-col items-center justify-center gap-1 rounded-2xl bg-[#1C1815] text-[#FFFDF9] font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:bg-[#8C6310] transition-all transform hover:-translate-y-0.5 active:translate-y-0 group border border-[#C5A059]/50"
+                className="w-full min-h-[64px] sm:min-h-[72px] flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-[#1C1815] to-[#2C2621] hover:from-[#8C6310] hover:to-[#C5A059] text-[#FFFDF9] font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md transition-all group border border-[#C5A059]/40 active:scale-[0.98]"
               >
                 <div className="flex items-center gap-2">
                   <Search className="w-4 h-4 text-[#C5A059] group-hover:text-white transition-colors" />
-                  <span className="tracking-widest">Check Availability</span>
+                  <span className="tracking-wider">Check Rates</span>
                 </div>
                 <span className="text-[10px] font-normal tracking-wide text-amber-200/90 lowercase group-hover:text-white/90">
-                  best direct rates & perks
+                  direct best price guarantee
                 </span>
               </button>
             </div>
           </div>
 
           {/* Direct Booking Trust Guarantees */}
-          <div className="mt-4 pt-3 border-t border-[#C5A059]/20 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#7A6E63]">
+          <div className="mt-3.5 pt-3 border-t border-[#C5A059]/20 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#7A6E63]">
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1.5 font-medium text-[#1C1815]">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#C5A059]" />
-                Best Rate Direct Guarantee
+                Best Direct Rate Guarantee
               </span>
               <span className="hidden sm:inline text-[#C5A059]/40">•</span>
               <span className="hidden sm:flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
-                Complimentary Welcome High Tea
+                Welcome High Tea
               </span>
               <span className="hidden md:inline text-[#C5A059]/40">•</span>
               <span className="hidden md:flex items-center gap-1.5">
                 <Compass className="w-3.5 h-3.5 text-[#C5A059]" />
-                Concierge Safari Coordination
+                Concierge Safari Permits
               </span>
             </div>
-            <span className="font-semibold text-[#8C6310]">Amer, Jaipur • No Advance Deposit Needed</span>
+            <span className="font-semibold text-[#8C6310]">Amer, Jaipur • Free Cancellation Options</span>
           </div>
 
           {/* Bespoke Interactive Calendar Popover */}

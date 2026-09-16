@@ -8,7 +8,6 @@ import Excursions from "@/components/Excursions";
 import Rooms from "@/components/Rooms";
 import Dining from "@/components/Dining";
 import Celebrations from "@/components/Celebrations";
-import Attractions from "@/components/Attractions";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
@@ -43,25 +42,22 @@ export default function Home() {
       {/* Hero Section with Quick Availability Bar */}
       <Hero onOpenBooking={handleOpenBooking} />
 
-      {/* Overview & Location Advantage */}
+      {/* Overview & Architectural Sanctuary */}
       <Overview />
 
-      {/* Excursions: Elephant Village, Safaris & Cultural Tours */}
-      <Excursions onOpenBooking={handleOpenBooking} />
-
-      {/* Rooms & Suites Showcase */}
+      {/* Hotel Portfolio Core: Rooms & Suites Showcase */}
       <Rooms onOpenBooking={handleOpenBooking} />
 
-      {/* Dining: Haldi & Jhumka Rooftop Pool */}
+      {/* Gastronomy: Haldi Fine Dining & Jhumka Rooftop Pool */}
       <Dining onOpenBooking={handleOpenBooking} />
 
-      {/* Celebrations & Banquet Halls */}
+      {/* Celebrations & Royal Banquet Halls */}
       <Celebrations onOpenBooking={handleOpenBooking} />
 
-      {/* Nearby Attractions */}
-      <Attractions />
+      {/* Concierge Portfolio: Safaris & Heritage Excursions */}
+      <Excursions onOpenBooking={handleOpenBooking} />
 
-      {/* Photo Gallery (19 Photos) */}
+      {/* Authentic Photo Gallery (19 Real Hotel Photos) */}
       <Gallery />
 
       {/* Guest Reviews & Testimonials */}

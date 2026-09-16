@@ -28,15 +28,14 @@ export default function Celebrations({ onOpenBooking }: CelebrationsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#8C6310] font-bold flex items-center justify-center gap-2 mb-3">
-            <PartyPopper className="w-3.5 h-3.5 text-[#C5A059]" />
-            Celebrations & Banquets
+          <span className="text-xs uppercase tracking-[0.25em] text-[#8C6310] font-bold block mb-3">
+            Bespoke Gatherings & Receptions
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
-            Host Your Special Occasions in <span className="text-gold-gradient">Grand Style</span>
+            Two Grand <span className="text-gold-gradient">Banquet Halls</span>
           </h2>
-          <p className="mt-4 text-[#5C5248] text-sm sm:text-base font-normal">
-            With two spacious, elegant banquet halls, The TASEY Hotel is the ideal venue for destination weddings, corporate summits, birthday galas, and memorable parties in Jaipur.
+          <p className="mt-3 text-[#5C5046] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+            Distinguished venues for intimate weddings, corporate symposiums, and private celebrations against the Aravalli hills.
           </p>
         </div>
 

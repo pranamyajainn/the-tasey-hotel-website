@@ -131,15 +131,14 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#8C6310] font-bold flex items-center justify-center gap-2 mb-3">
-            <Camera className="w-3.5 h-3.5 text-[#C5A059]" />
-            Visual Splendor (18 Curated Photos)
+          <span className="text-xs uppercase tracking-[0.25em] text-[#8C6310] font-bold block mb-3">
+            Visual Portfolio
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
             The TASEY <span className="text-gold-gradient">Gallery</span>
           </h2>
-          <p className="mt-4 text-[#5C5248] text-sm sm:text-base font-normal">
-            Explore authentic captures of our boutique hotel rooms, rooftop pool, Haldi restaurant, lobby, and banquets.
+          <p className="mt-3 text-[#5C5046] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+            Authentic architectural captures of our suites, rooftop infinity pool, Haldi restaurant, and royal lobby lounges.
           </p>
         </div>
 

@@ -56,14 +56,14 @@ export default function Overview() {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 text-[#8C6310] text-xs font-bold uppercase tracking-widest mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
-            <span>Heritage & Prime Location</span>
+            <span>Architectural Sanctuary</span>
           </div>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight leading-tight">
-            An Enchanting Haven in Jaipur's <span className="text-gold-gradient">Aravalli Hills</span>
+            Hillside Sanctuary in <span className="text-gold-gradient">Amer, Jaipur</span>
           </h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto my-5" />
-          <p className="text-[#5C5248] text-sm sm:text-base leading-relaxed font-normal">
-            Situated at Jaipur's most serene hillside destination near Amer Fort, <strong>The TASEY Hotel</strong> offers an unmatched blend of royal Rajasthani warmth, modern opulence, and refreshing mountain air.
+          <p className="text-[#5C5248] text-sm sm:text-base leading-relaxed font-normal max-w-2xl mx-auto">
+            Perched at the base of the Aravalli ranges, <strong>The TASEY Hotel</strong> offers an intimate retreat combining Rajput elegance, panoramic mountain vistas, and immediate access to Jaipur&apos;s historic landmarks.
           </p>
         </div>
 

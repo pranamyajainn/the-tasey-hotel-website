@@ -35,15 +35,14 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#8C6310] font-bold flex items-center justify-center gap-2 mb-3">
-            <Quote className="w-3.5 h-3.5 text-[#C5A059]" />
-            Guest Memories & Reviews
+          <span className="text-xs uppercase tracking-[0.25em] text-[#8C6310] font-bold block mb-3">
+            Guest Endorsements
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
-            Cherished by <span className="text-gold-gradient">Global Guests</span>
+            Guest <span className="text-gold-gradient">Perspectives</span>
           </h2>
-          <p className="mt-4 text-[#5C5248] text-sm sm:text-base font-normal">
-            Read what travelers and event hosts say about their stay, safaris, and dining experiences at The TASEY Hotel.
+          <p className="mt-3 text-[#5C5046] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+            Reflections from travelers, families, and conference organizers who have experienced The TASEY Hotel.
           </p>
         </div>
 

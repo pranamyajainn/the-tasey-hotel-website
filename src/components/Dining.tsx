@@ -55,15 +55,14 @@ export default function Dining({ onOpenBooking }: DiningProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#8C6310] font-bold flex items-center justify-center gap-2 mb-3">
-            <Utensils className="w-3.5 h-3.5 text-[#C5A059]" />
-            Exquisite Gastronomy
+          <span className="text-xs uppercase tracking-[0.25em] text-[#8C6310] font-bold block mb-3">
+            Culinary Arts & Rooftop Lounge
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
-            Dining Experiences at <span className="text-gold-gradient">The TASEY Hotel</span>
+            Two Signature <span className="text-gold-gradient">Dining Destinations</span>
           </h2>
-          <p className="mt-4 text-[#5C5248] text-sm sm:text-base font-normal">
-            Savour exquisite flavours at our two signature restaurants — choose traditional indoor royal warmth or starry rooftop poolside hill views.
+          <p className="mt-3 text-[#5C5046] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+            From royal Rajasthani recipes at indoor fine-dining restaurant Haldi, to sunset cocktails by the infinity pool at Jhumka Rooftop.
           </p>
         </div>
 
