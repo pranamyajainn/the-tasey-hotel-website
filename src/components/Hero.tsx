@@ -281,7 +281,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
             
             {/* Check-In & Check-Out Interactive Dual Tile */}
-            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-2 p-1.5 bg-[#F8F3EA]/70 rounded-2xl border border-[#C5A059]/30 relative">
+            <div className="lg:col-span-6 flex flex-col sm:flex-row items-center p-1.5 bg-[#F8F3EA]/70 rounded-2xl border border-[#C5A059]/30">
               {/* Check-In Tile */}
               <button
                 type="button"
@@ -290,7 +290,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   setCalendarOpen(!calendarOpen);
                   setGuestsOpen(false);
                 }}
-                className={`flex flex-col text-left p-3 rounded-xl transition-all ${
+                className={`flex-1 w-full flex flex-col text-left p-3 rounded-xl transition-all ${
                   calendarOpen && selectingTarget === "in"
                     ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm"
                     : "hover:bg-[#FFFDF9]/80"
@@ -313,11 +313,11 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 </div>
               </button>
 
-              {/* Nights Center Badge (floating on desktop) */}
-              <div className="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#FFFDF9] border border-[#C5A059]/50 shadow-md text-[10px] font-bold text-[#8C6310] whitespace-nowrap">
+              {/* Nights Center Badge (dedicated non-overlapping center element) */}
+              <div className="py-1 sm:py-0 px-2 shrink-0 flex items-center justify-center">
+                <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#FFFDF9] border border-[#C5A059]/50 shadow-sm text-[10px] font-bold text-[#8C6310] whitespace-nowrap">
                   <Moon className="w-2.5 h-2.5 text-[#C5A059]" />
-                  {nightsCount} {nightsCount === 1 ? "Night" : "Nights"}
+                  <span>{nightsCount} {nightsCount === 1 ? "Night" : "Nights"}</span>
                 </span>
               </div>
 
@@ -329,7 +329,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   setCalendarOpen(!calendarOpen);
                   setGuestsOpen(false);
                 }}
-                className={`flex flex-col text-left p-3 rounded-xl transition-all ${
+                className={`flex-1 w-full flex flex-col text-left p-3 rounded-xl transition-all ${
                   calendarOpen && selectingTarget === "out"
                     ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm"
                     : "hover:bg-[#FFFDF9]/80"

@@ -21,13 +21,13 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: "Overview", short: "Overview", href: "#overview" },
-    { name: "Safaris & Adventures", short: "Safaris", href: "#adventures" },
-    { name: "Rooms & Suites", short: "Rooms", href: "#rooms" },
-    { name: "Dining & Rooftop", short: "Dining", href: "#dining" },
-    { name: "Celebrations", short: "Events", href: "#celebrations" },
-    { name: "Attractions", short: "Attractions", href: "#attractions" },
-    { name: "Gallery", short: "Gallery", href: "#gallery" },
+    { name: "Overview", href: "#overview" },
+    { name: "Safaris", href: "#adventures" },
+    { name: "Rooms", href: "#rooms" },
+    { name: "Dining", href: "#dining" },
+    { name: "Celebrations", href: "#celebrations" },
+    { name: "Attractions", href: "#attractions" },
+    { name: "Gallery", href: "#gallery" },
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         {/* Logo & Monogram */}
         <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
           <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-[#C5A059] via-[#D4AF37] to-[#8C6310] p-0.5 shadow-md group-hover:scale-105 transition-transform shrink-0">
@@ -88,31 +88,23 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-7">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-7 2xl:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-xs xl:text-[13px] 2xl:text-sm font-semibold tracking-wide text-[#3B332B] hover:text-[#C5A059] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#C5A059] hover:after:w-full after:transition-all after:duration-300 whitespace-nowrap"
+              className="text-xs sm:text-sm font-semibold tracking-wide text-[#3B332B] hover:text-[#C5A059] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#C5A059] hover:after:w-full after:transition-all after:duration-300 whitespace-nowrap"
             >
-              <span className="hidden xl:inline">{link.name}</span>
-              <span className="xl:hidden">{link.short}</span>
+              {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Action CTA & Phone */}
-        <div className="hidden sm:flex items-center gap-3 shrink-0">
-          <a
-            href="tel:+919876543210"
-            className="hidden xl:flex items-center gap-1.5 px-3 py-2 rounded-full bg-[#F8F3EA] text-[#8C6310] border border-[#C5A059]/40 hover:bg-[#F0E8D9] transition-colors text-xs font-semibold"
-          >
-            <Phone className="w-3.5 h-3.5 text-[#C5A059]" />
-            <span>Call Us</span>
-          </a>
+        {/* Action CTA */}
+        <div className="hidden sm:flex items-center shrink-0">
           <button
             onClick={() => onOpenBooking()}
-            className="flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 rounded-full bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white font-bold text-xs sm:text-xs xl:text-sm tracking-wider uppercase shadow-md hover:shadow-[#C5A059]/40 hover:scale-105 transition-all shrink-0 whitespace-nowrap"
+            className="flex items-center gap-2 px-4 xl:px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white font-bold text-xs sm:text-xs xl:text-sm tracking-wider uppercase shadow-md hover:shadow-[#C5A059]/40 hover:scale-105 transition-all shrink-0 whitespace-nowrap"
           >
             <Calendar className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-white" />
             Reserve Your Stay
