@@ -127,17 +127,17 @@ export default function Gallery() {
       : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-24 relative bg-[#F8F3EA] text-[#1C1815] border-t border-b border-[#E5DCCB]">
+    <section id="gallery" className="py-24 relative bg-[#F8F3EA] text-[#011A51] border-t border-b border-[#E5DCCB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#8C6310] font-bold block mb-3">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#A95A01] font-bold block mb-3">
             Visual Portfolio
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
             The TASEY <span className="text-gold-gradient">Gallery</span>
           </h2>
-          <p className="mt-3 text-[#5C5046] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-[#605A50] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
             Authentic architectural captures of our suites, rooftop infinity pool, Haldi restaurant, and royal lobby lounges.
           </p>
         </div>
@@ -150,8 +150,8 @@ export default function Gallery() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider transition-all border ${
                 activeCategory === cat
-                  ? "bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white border-transparent shadow-md scale-105"
-                  : "bg-[#FFFDF9] text-[#3B332B] border-[#E5DCCB] hover:border-[#C5A059] hover:text-[#1C1815]"
+                  ? "bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white border-transparent shadow-md scale-105"
+                  : "bg-[#FFFDF9] text-[#011A51] border-[#E5DCCB] hover:border-[#A95A01] hover:text-[#011A51]"
               }`}
             >
               {cat}
@@ -165,7 +165,7 @@ export default function Gallery() {
             <div
               key={item.id}
               onClick={() => setSelectedImage({ url: item.image, title: item.title })}
-              className="bg-[#FFFDF9] relative h-72 rounded-2xl overflow-hidden border border-[#C5A059]/30 shadow-md group cursor-pointer"
+              className="bg-[#FFFDF9] relative h-72 rounded-2xl overflow-hidden border border-[#A95A01]/30 shadow-md group cursor-pointer"
             >
               <Image
                 src={item.image}
@@ -173,18 +173,18 @@ export default function Gallery() {
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1815]/90 via-[#1C1815]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#011A51]/90 via-[#011A51]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
 
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#E5C365] block mb-0.5">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#FFC76B] block mb-0.5">
                     {item.category}
                   </span>
-                  <h3 className="font-serif-luxury text-base sm:text-lg font-bold text-white group-hover:text-[#E5C365] transition-colors">
+                  <h3 className="font-serif-luxury text-base sm:text-lg font-bold text-white group-hover:text-[#FFC76B] transition-colors">
                     {item.title}
                   </h3>
                 </div>
-                <div className="w-9 h-9 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/40 flex items-center justify-center text-[#8C6310] group-hover:bg-[#C5A059] group-hover:text-white transition-colors shrink-0 shadow-md">
+                <div className="w-9 h-9 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#A95A01]/40 flex items-center justify-center text-[#A95A01] group-hover:bg-[#A95A01] group-hover:text-white transition-colors shrink-0 shadow-md">
                   <Maximize2 className="w-4 h-4" />
                 </div>
               </div>
@@ -201,12 +201,12 @@ export default function Gallery() {
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 text-white hover:bg-[#D4AF37] hover:text-black transition-colors z-10"
+            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 text-white hover:bg-[#A95A01] hover:text-black transition-colors z-10"
           >
             <X className="w-6 h-6" />
           </button>
           
-          <div className="relative w-full max-w-5xl h-[80vh] rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl flex flex-col justify-end">
+          <div className="relative w-full max-w-5xl h-[80vh] rounded-3xl overflow-hidden border border-[#A95A01]/40 shadow-2xl flex flex-col justify-end">
             <Image
               src={selectedImage.url}
               alt={selectedImage.title}
@@ -214,7 +214,7 @@ export default function Gallery() {
               className="object-contain"
             />
             <div className="relative z-10 p-6 bg-gradient-to-t from-black via-black/80 to-transparent text-center">
-              <h4 className="font-serif-luxury text-xl font-bold text-[#E5C365]">
+              <h4 className="font-serif-luxury text-xl font-bold text-[#FFC76B]">
                 {selectedImage.title}
               </h4>
             </div>

@@ -27,14 +27,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1C1815] text-[#FDFBF7] pt-16 pb-12 text-xs relative overflow-hidden border-t border-[#C5A059]/40">
+    <footer className="bg-[#011A51] text-[#FDFBF7] pt-16 pb-12 text-xs relative overflow-hidden border-t border-[#A95A01]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#C5A059]/20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#A95A01]/20">
           {/* Brand Info */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-[#C5A059] via-[#D4AF37] to-[#8C6310] p-0.5 shadow-md">
-                <div className="w-full h-full bg-[#1C1815] rounded-full flex items-center justify-center p-1">
+              <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-[#A95A01] via-[#A95A01] to-[#A95A01] p-0.5 shadow-md">
+                <div className="w-full h-full bg-[#011A51] rounded-full flex items-center justify-center p-1">
                   <Image src="/logo.png" alt="The TASEY Hotel" width={40} height={40} className="object-contain" />
                 </div>
               </div>
@@ -42,27 +42,27 @@ export default function Footer() {
                 <span className="font-serif-luxury text-2xl font-bold tracking-wider text-[#FDFBF7]">
                   THE TASEY
                 </span>
-                <span className="text-[9px] tracking-[0.2em] text-[#E5C365] uppercase font-bold">
+                <span className="text-[9px] tracking-[0.2em] text-[#FFC76B] uppercase font-bold">
                   Hotel & Excursions • Amer
                 </span>
               </div>
             </Link>
 
             <p className="text-[#D5C9B8] font-normal leading-relaxed">
-              Nestled amidst the Aravalli Hills in Amer, Jaipur. Offering royal luxury stay, authentic dining at <em>Haldi</em>, rooftop poolside views at <em>Jhumka</em>, and curated <span className="text-[#E5C365] font-semibold">Elephant & Wildlife Safaris</span>.
+              Nestled amidst the Aravalli Hills in Amer, Jaipur. Offering royal luxury stay, authentic dining at <em>Haldi</em>, rooftop poolside views at <em>Jhumka</em>, and curated <span className="text-[#FFC76B] font-semibold">Elephant & Wildlife Safaris</span>.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
               <button
                 type="button"
                 onClick={handleShare}
-                className="w-8 h-8 rounded-full bg-[#2A241F] border border-[#C5A059]/30 flex items-center justify-center hover:text-[#C5A059] hover:border-[#C5A059] transition-colors"
+                className="w-8 h-8 rounded-full bg-[#0B2A6B] border border-[#A95A01]/30 flex items-center justify-center hover:text-[#A95A01] hover:border-[#A95A01] transition-colors"
                 title={linkCopied ? "Link copied" : "Share this page"}
               >
                 {linkCopied ? (
-                  <Check className="w-4 h-4 text-[#E5C365]" />
+                  <Check className="w-4 h-4 text-[#FFC76B]" />
                 ) : (
-                  <Share2 className="w-4 h-4 text-[#E5C365]" />
+                  <Share2 className="w-4 h-4 text-[#FFC76B]" />
                 )}
               </button>
             </div>
@@ -70,55 +70,55 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#E5C365]">
+            <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#FFC76B]">
               Navigation & Experiences
             </h4>
             <ul className="space-y-2 font-normal text-[#D5C9B8]">
               <li>
-                <a href="#overview" className="hover:text-[#E5C365] transition-colors">Hotel Overview & Location</a>
+                <a href="#overview" className="hover:text-[#FFC76B] transition-colors">Hotel Overview & Location</a>
               </li>
               <li>
-                <a href="#adventures" className="hover:text-[#E5C365] transition-colors text-[#E5C365] font-semibold flex items-center gap-1">
-                  <Compass className="w-3 h-3 text-[#C5A059]" /> Elephant & Wildlife Safaris
+                <a href="#adventures" className="hover:text-[#FFC76B] transition-colors text-[#FFC76B] font-semibold flex items-center gap-1">
+                  <Compass className="w-3 h-3 text-[#A95A01]" /> Elephant & Wildlife Safaris
                 </a>
               </li>
               <li>
-                <a href="#rooms" className="hover:text-[#E5C365] transition-colors">Rooms & Suite Categories</a>
+                <a href="#rooms" className="hover:text-[#FFC76B] transition-colors">Rooms & Suite Categories</a>
               </li>
               <li>
-                <a href="#dining" className="hover:text-[#E5C365] transition-colors">Haldi Fine Dining Restaurant</a>
+                <a href="#dining" className="hover:text-[#FFC76B] transition-colors">Haldi Fine Dining Restaurant</a>
               </li>
               <li>
-                <a href="#dining" className="hover:text-[#E5C365] transition-colors">Jhumka Rooftop Poolside Dining</a>
+                <a href="#dining" className="hover:text-[#FFC76B] transition-colors">Jhumka Rooftop Poolside Dining</a>
               </li>
               <li>
-                <a href="#celebrations" className="hover:text-[#E5C365] transition-colors">Banquet Halls & Celebrations</a>
+                <a href="#celebrations" className="hover:text-[#FFC76B] transition-colors">Banquet Halls & Celebrations</a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-[#E5C365] transition-colors">Photo Gallery (19 Photos)</a>
+                <a href="#gallery" className="hover:text-[#FFC76B] transition-colors">Photo Gallery (19 Photos)</a>
               </li>
             </ul>
           </div>
 
           {/* Safaris & Excursions Info */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#E5C365]">
+            <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#FFC76B]">
               Local Excursions
             </h4>
             <div className="space-y-3 font-normal text-[#D5C9B8]">
               <div>
                 <div className="text-[#FDFBF7] font-semibold text-xs">🐘 Elephant Village Experience</div>
-                <div className="text-[#E5C365] text-[11px]">Amer, Jaipur</div>
+                <div className="text-[#FFC76B] text-[11px]">Amer, Jaipur</div>
                 <div className="text-[10px] text-[#A89C8C]">Meeting, Feeding & Walking Interactions</div>
               </div>
               <div>
                 <div className="text-[#FDFBF7] font-semibold text-xs">🐆 Jhalana Leopard Safari</div>
-                <div className="text-[#E5C365] text-[11px]">Guided Wildlife Reserve</div>
+                <div className="text-[#FFC76B] text-[11px]">Guided Wildlife Reserve</div>
                 <div className="text-[10px] text-[#A89C8C]">Leopards, Deer & Bird Watching</div>
               </div>
               <div>
                 <div className="text-[#FDFBF7] font-semibold text-xs">🐅 Nahargarh Lion Safari</div>
-                <div className="text-[#E5C365] text-[11px]">720 Hectares Reserve</div>
+                <div className="text-[#FFC76B] text-[11px]">720 Hectares Reserve</div>
                 <div className="text-[10px] text-[#A89C8C]">50m from hotel entrance</div>
               </div>
             </div>
@@ -126,23 +126,23 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#E5C365]">
+            <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#FFC76B]">
               Location & Concierge
             </h4>
             <ul className="space-y-2.5 font-normal text-[#D5C9B8]">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#A95A01] shrink-0 mt-0.5" />
                 <span>
                   The TASEY Hotel, Amer, 50m from Nahargarh Zoological Park, Near Amber Fort, Jaipur, Rajasthan 302028
                 </span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#C5A059] shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-[#E5C365] transition-colors">+91 98765 43210</a>
+                <Phone className="w-4 h-4 text-[#A95A01] shrink-0" />
+                <a href="tel:+919876543210" className="hover:text-[#FFC76B] transition-colors">+91 98765 43210</a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#C5A059] shrink-0" />
-                <a href="mailto:reservations@thetasey.com" className="hover:text-[#E5C365] transition-colors">reservations@thetasey.com</a>
+                <Mail className="w-4 h-4 text-[#A95A01] shrink-0" />
+                <a href="mailto:reservations@thetasey.com" className="hover:text-[#FFC76B] transition-colors">reservations@thetasey.com</a>
               </li>
             </ul>
           </div>
@@ -153,7 +153,7 @@ export default function Footer() {
           <div>
             © {new Date().getFullYear()} <strong>The TASEY Hotel & Excursions, Amer, Jaipur</strong>. All Rights Reserved.
           </div>
-          <div className="text-[#E5C365] font-semibold">
+          <div className="text-[#FFC76B] font-semibold">
             Your Adventure. Our Assistance. Stay at The TASEY. Explore Amer, Jaipur.
           </div>
         </div>

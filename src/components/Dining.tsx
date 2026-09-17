@@ -50,17 +50,17 @@ export default function Dining({ onOpenBooking }: DiningProps) {
   const current = restaurants[activeDiningTab];
 
   return (
-    <section id="dining" className="py-24 relative bg-[#FDFBF7] text-[#1C1815]">
+    <section id="dining" className="py-24 relative bg-[#FDFBF7] text-[#011A51]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#8C6310] font-bold block mb-3">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#A95A01] font-bold block mb-3">
             Culinary Arts & Rooftop Lounge
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#1C1815] tracking-tight">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
             Two Signature <span className="text-gold-gradient">Dining Destinations</span>
           </h2>
-          <p className="mt-3 text-[#5C5046] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-[#605A50] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
             From royal Rajasthani recipes at indoor fine-dining restaurant Haldi, to sunset cocktails by the infinity pool at Jhumka Rooftop.
           </p>
         </div>
@@ -71,12 +71,12 @@ export default function Dining({ onOpenBooking }: DiningProps) {
             onClick={() => setActiveDiningTab("haldi")}
             className={`p-5 rounded-2xl border text-left transition-all duration-300 flex items-center gap-4 ${
               activeDiningTab === "haldi"
-                ? "bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white border-transparent shadow-md scale-102"
-                : "bg-[#FFFDF9] text-[#3B332B] border-[#E5DCCB] hover:border-[#C5A059]"
+                ? "bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white border-transparent shadow-md scale-102"
+                : "bg-[#FFFDF9] text-[#011A51] border-[#E5DCCB] hover:border-[#A95A01]"
             }`}
           >
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
-              activeDiningTab === "haldi" ? "bg-white/20 text-white" : "bg-[#F8F3EA] text-[#C5A059]"
+              activeDiningTab === "haldi" ? "bg-white/20 text-white" : "bg-[#F8F3EA] text-[#A95A01]"
             }`}>
               <Utensils className="w-6 h-6" />
             </div>
@@ -84,12 +84,12 @@ export default function Dining({ onOpenBooking }: DiningProps) {
               <div className="font-serif-luxury text-xl font-bold flex items-center gap-2">
                 <span>Haldi</span>
                 <span className={`text-[10px] font-sans uppercase font-bold tracking-widest px-2 py-0.5 rounded ${
-                  activeDiningTab === "haldi" ? "bg-white/20 text-white" : "bg-[#C5A059]/20 text-[#8C6310]"
+                  activeDiningTab === "haldi" ? "bg-white/20 text-white" : "bg-[#A95A01]/20 text-[#A95A01]"
                 }`}>
                   Indoor Fine Dining
                 </span>
               </div>
-              <div className={`text-xs font-medium mt-0.5 ${activeDiningTab === "haldi" ? "text-white/90" : "text-[#5C5248]"}`}>
+              <div className={`text-xs font-medium mt-0.5 ${activeDiningTab === "haldi" ? "text-white/90" : "text-[#605A50]"}`}>
                 Rajasthani & Indian Gourmet Cuisine
               </div>
             </div>
@@ -99,12 +99,12 @@ export default function Dining({ onOpenBooking }: DiningProps) {
             onClick={() => setActiveDiningTab("jhumka")}
             className={`p-5 rounded-2xl border text-left transition-all duration-300 flex items-center gap-4 ${
               activeDiningTab === "jhumka"
-                ? "bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white border-transparent shadow-md scale-102"
-                : "bg-[#FFFDF9] text-[#3B332B] border-[#E5DCCB] hover:border-[#C5A059]"
+                ? "bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white border-transparent shadow-md scale-102"
+                : "bg-[#FFFDF9] text-[#011A51] border-[#E5DCCB] hover:border-[#A95A01]"
             }`}
           >
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
-              activeDiningTab === "jhumka" ? "bg-white/20 text-white" : "bg-[#F8F3EA] text-[#C5A059]"
+              activeDiningTab === "jhumka" ? "bg-white/20 text-white" : "bg-[#F8F3EA] text-[#A95A01]"
             }`}>
               <Waves className="w-6 h-6" />
             </div>
@@ -112,12 +112,12 @@ export default function Dining({ onOpenBooking }: DiningProps) {
               <div className="font-serif-luxury text-xl font-bold flex items-center gap-2">
                 <span>Jhumka</span>
                 <span className={`text-[10px] font-sans uppercase font-bold tracking-widest px-2 py-0.5 rounded ${
-                  activeDiningTab === "jhumka" ? "bg-white/20 text-white" : "bg-[#C5A059]/20 text-[#8C6310]"
+                  activeDiningTab === "jhumka" ? "bg-white/20 text-white" : "bg-[#A95A01]/20 text-[#A95A01]"
                 }`}>
                   Rooftop & Pool
                 </span>
               </div>
-              <div className={`text-xs font-medium mt-0.5 ${activeDiningTab === "jhumka" ? "text-white/90" : "text-[#5C5248]"}`}>
+              <div className={`text-xs font-medium mt-0.5 ${activeDiningTab === "jhumka" ? "text-white/90" : "text-[#605A50]"}`}>
                 3-Side Aravalli View & Poolside Lounge
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
         </div>
 
         {/* Selected Restaurant Showcase Card */}
-        <div className="bg-[#FFFDF9] rounded-3xl overflow-hidden border border-[#C5A059]/40 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-0">
+        <div className="bg-[#FFFDF9] rounded-3xl overflow-hidden border border-[#A95A01]/40 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-0">
           {/* Restaurant Image */}
           <div className="lg:col-span-7 relative min-h-[360px] sm:min-h-[480px] group overflow-hidden">
             <Image
@@ -135,14 +135,14 @@ export default function Dining({ onOpenBooking }: DiningProps) {
               className="object-cover group-hover:scale-105 transition-transform duration-700"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1C1815]/80 via-[#1C1815]/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011A51]/80 via-[#011A51]/20 to-transparent" />
 
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#FFFDF9]/95 backdrop-blur-md border border-[#E5DCCB] flex items-center justify-between text-xs text-[#1C1815] font-semibold shadow-md">
+            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#FFFDF9]/95 backdrop-blur-md border border-[#E5DCCB] flex items-center justify-between text-xs text-[#011A51] font-semibold shadow-md">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#C5A059]" />
+                <Clock className="w-4 h-4 text-[#A95A01]" />
                 <span>{current.timings}</span>
               </div>
-              <div className="flex items-center gap-1.5 text-[#8C6310]">
+              <div className="flex items-center gap-1.5 text-[#A95A01]">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{current.specialty}</span>
               </div>
@@ -152,32 +152,32 @@ export default function Dining({ onOpenBooking }: DiningProps) {
           {/* Restaurant Details */}
           <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between space-y-6">
             <div>
-              <div className="inline-block text-xs uppercase tracking-widest text-[#8C6310] font-bold mb-1">
+              <div className="inline-block text-xs uppercase tracking-widest text-[#A95A01] font-bold mb-1">
                 {current.subtitle}
               </div>
-              <h3 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#1C1815] mb-2">
+              <h3 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#011A51] mb-2">
                 {current.name}
               </h3>
-              <p className="text-xs text-[#5C5248] font-normal mb-6">
+              <p className="text-xs text-[#605A50] font-normal mb-6">
                 {current.tagline}
               </p>
 
               <div className="p-4 rounded-xl bg-[#F8F3EA] border border-[#E5DCCB] mb-6">
-                <div className="text-[11px] uppercase tracking-wider text-[#8C6310] font-bold mb-1">
+                <div className="text-[11px] uppercase tracking-wider text-[#A95A01] font-bold mb-1">
                   Ambience & Setting
                 </div>
-                <div className="text-xs text-[#3B332B] font-medium">
+                <div className="text-xs text-[#011A51] font-medium">
                   {current.ambience}
                 </div>
               </div>
 
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#1C1815] mb-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#011A51] mb-3">
                 Culinary & Experience Highlights
               </h4>
               <ul className="space-y-3">
                 {current.highlights.map((hl, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs text-[#3B332B] font-medium">
-                    <Check className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-[#011A51] font-medium">
+                    <Check className="w-4 h-4 text-[#A95A01] shrink-0 mt-0.5" />
                     <span>{hl}</span>
                   </li>
                 ))}
@@ -187,7 +187,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
             <div className="pt-6 border-t border-[#E5DCCB]">
               <button
                 onClick={() => onOpenBooking(current.name)}
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#C5A059] to-[#8C6310] text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-[#C5A059]/40 hover:scale-102 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-[#A95A01]/40 hover:scale-102 transition-all flex items-center justify-center gap-2"
               >
                 <Calendar className="w-4 h-4 text-white" />
                 <span>{current.ctaText}</span>

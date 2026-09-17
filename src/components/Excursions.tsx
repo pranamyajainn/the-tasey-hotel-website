@@ -52,18 +52,18 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
   ];
 
   return (
-    <section id="adventures" className="py-24 relative bg-[#FDFBF7] text-[#1C1815]">
+    <section id="adventures" className="py-24 relative bg-[#FDFBF7] text-[#011A51]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Editorial Section Header */}
         <div className="max-w-3xl mb-14">
-          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#8C6310] block mb-3">
+          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#A95A01] block mb-3">
             The Concierge Collection
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold tracking-tight text-[#1C1815] leading-tight">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold tracking-tight text-[#011A51] leading-tight">
             Curated Jaipur Excursions
           </h2>
-          <p className="mt-4 text-[#5C5046] text-sm sm:text-base font-normal leading-relaxed">
+          <p className="mt-4 text-[#605A50] text-sm sm:text-base font-normal leading-relaxed">
             With The TASEY Hotel as your private retreat in Amer, our concierge team handles all safari permits, private transfers, and local heritage guides.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
           {experiences.map((exp, idx) => (
             <div
               key={exp.id}
-              className={`bg-[#FFFDF9] rounded-2xl overflow-hidden border border-[#C5A059]/30 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group ${
+              className={`bg-[#FFFDF9] rounded-2xl overflow-hidden border border-[#A95A01]/30 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group ${
                 idx === 0 ? "md:col-span-2 lg:col-span-2" : ""
               }`}
             >
@@ -89,8 +89,8 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                 
                 {/* Distance Badge */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md text-[#8C6310] text-[11px] font-bold tracking-wide shadow-sm border border-[#C5A059]/30">
-                    <MapPin className="w-3 h-3 text-[#C5A059]" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md text-[#A95A01] text-[11px] font-bold tracking-wide shadow-sm border border-[#A95A01]/30">
+                    <MapPin className="w-3 h-3 text-[#A95A01]" />
                     {exp.location}
                   </span>
                 </div>
@@ -108,10 +108,10 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
               {/* Card Body */}
               <div className="p-6 flex flex-col flex-1 justify-between">
                 <div>
-                  <h3 className={`font-serif-luxury text-xl sm:text-2xl font-bold text-[#1C1815] mb-2 ${idx === 0 ? "sm:hidden" : ""}`}>
+                  <h3 className={`font-serif-luxury text-xl sm:text-2xl font-bold text-[#011A51] mb-2 ${idx === 0 ? "sm:hidden" : ""}`}>
                     {exp.title}
                   </h3>
-                  <p className="text-[#5C5046] text-xs sm:text-sm leading-relaxed mb-4">
+                  <p className="text-[#605A50] text-xs sm:text-sm leading-relaxed mb-4">
                     {exp.desc}
                   </p>
                   
@@ -120,7 +120,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                     {exp.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded-md bg-[#F8F3EA] text-[#8C6310] text-[11px] font-semibold tracking-wide border border-[#C5A059]/20"
+                        className="px-2.5 py-1 rounded-md bg-[#F8F3EA] text-[#A95A01] text-[11px] font-semibold tracking-wide border border-[#A95A01]/20"
                       >
                         {tag}
                       </span>
@@ -132,10 +132,10 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                 <button
                   type="button"
                   onClick={() => onOpenBooking(exp.title)}
-                  className="w-full py-2.5 px-4 rounded-xl bg-[#F8F3EA] hover:bg-[#1C1815] text-[#1C1815] hover:text-white text-xs font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-between border border-[#C5A059]/30 group/btn"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#F8F3EA] hover:bg-[#011A51] text-[#011A51] hover:text-white text-xs font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-between border border-[#A95A01]/30 group/btn"
                 >
                   <span>Inquire with Concierge</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#8C6310] group-hover/btn:text-[#C5A059] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-4 h-4 text-[#A95A01] group-hover/btn:text-[#A95A01] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </button>
               </div>
             </div>

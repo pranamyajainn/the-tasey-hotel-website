@@ -182,24 +182,23 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             priority={idx === 0}
             className="object-cover object-center"
           />
-          {/* Soft elegant warm light luxury scrims */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FDFBF7] via-black/40 to-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFFDF9]/80 via-transparent to-[#FDFBF7]" />
+          {/* Navy scrim for text legibility — darkest where headline & booking bar sit */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#011A51]/15 via-[#011A51]/55 to-[#011A51]/85" />
         </div>
       ))}
 
       {/* Main Hero Banner Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto text-center flex flex-col items-center">
         {/* Location Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#C5A059]/40 text-[#1C1815] text-xs font-bold uppercase tracking-widest mb-6 shadow-md">
-          <Sparkles className="w-4 h-4 text-[#B88E36]" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#A95A01]/40 text-[#011A51] text-xs font-bold uppercase tracking-widest mb-6 shadow-md">
+          <Sparkles className="w-4 h-4 text-[#A95A01]" />
           <span>The TASEY Hotel, Amer</span>
-          <span className="text-[#C5A059]">•</span>
-          <span className="text-[#9E7B32]">5 KM from Amber Fort</span>
+          <span className="text-[#A95A01]">•</span>
+          <span className="text-[#A95A01]">5 KM from Amber Fort</span>
         </div>
 
         {/* Hero Dynamic Subtitle & Title */}
-        <p className="text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold text-amber-200 mb-3 drop-shadow-md">
+        <p className="text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold text-[#FFC76B] mb-3 drop-shadow-md">
           {heroSlides[currentSlide].subtitle}
         </p>
 
@@ -212,17 +211,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </p>
 
         {/* Location Credentials */}
-        <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:gap-4 text-xs text-[#1C1815]">
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-sm font-medium">
-            <MapPin className="w-3.5 h-3.5 text-[#8C6310]" />
+        <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:gap-4 text-xs text-[#011A51]">
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#A95A01]/35 shadow-sm font-medium">
+            <MapPin className="w-3.5 h-3.5 text-[#A95A01]" />
             <span>5 KM from Amber Fort</span>
           </div>
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-sm font-medium">
-            <Compass className="w-3.5 h-3.5 text-[#8C6310]" />
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#A95A01]/35 shadow-sm font-medium">
+            <Compass className="w-3.5 h-3.5 text-[#A95A01]" />
             <span>Facing Nahargarh Park</span>
           </div>
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#C5A059]/35 shadow-sm font-medium">
-            <Sparkles className="w-3.5 h-3.5 text-[#8C6310]" />
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#A95A01]/35 shadow-sm font-medium">
+            <Sparkles className="w-3.5 h-3.5 text-[#A95A01]" />
             <span>Rooftop Pool & Panoramas</span>
           </div>
         </div>
@@ -234,7 +233,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               key={i}
               onClick={() => setCurrentSlide(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === currentSlide ? "w-8 bg-[#C5A059]" : "w-2 bg-white/40 hover:bg-white/80"
+                i === currentSlide ? "w-8 bg-[#A95A01]" : "w-2 bg-white/40 hover:bg-white/80"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -261,11 +260,11 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 onClick={() => setExperience(tab.id)}
                 className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-t-xl text-xs font-bold tracking-wider uppercase transition-all duration-200 whitespace-nowrap ${
                   active
-                    ? "bg-[#FFFDF9] text-[#8C6310] border-t-2 border-x border-[#C5A059] shadow-sm -mb-px z-10"
-                    : "bg-[#F8F3EA]/90 text-[#7A6E63] hover:text-[#1C1815] border-t border-x border-[#C5A059]/30"
+                    ? "bg-[#FFFDF9] text-[#A95A01] border-t-2 border-x border-[#A95A01] shadow-sm -mb-px z-10"
+                    : "bg-[#F8F3EA]/90 text-[#605A50] hover:text-[#011A51] border-t border-x border-[#A95A01]/30"
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${active ? "text-[#C5A059]" : "text-[#7A6E63]"}`} />
+                <Icon className={`w-3.5 h-3.5 ${active ? "text-[#A95A01]" : "text-[#605A50]"}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -275,7 +274,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         {/* Main Floating Booking Card */}
         <form
           onSubmit={handleSearchSubmit}
-          className="bg-[#FFFDF9] backdrop-blur-xl p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-xl border border-[#C5A059]/40 relative"
+          className="bg-[#FFFDF9] backdrop-blur-xl p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-xl border border-[#A95A01]/40 relative"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch">
             
@@ -288,23 +287,23 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   setCalendarOpen(!calendarOpen);
                   setGuestsOpen(false);
                 }}
-                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#C5A059]/30 bg-[#F8F3EA]/60 transition-all ${
+                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#A95A01]/30 bg-[#F8F3EA]/60 transition-all ${
                   calendarOpen && selectingTarget === "in"
-                    ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm"
+                    ? "bg-[#FFFDF9] ring-2 ring-[#A95A01] shadow-sm"
                     : "hover:bg-[#FFFDF9]"
                 }`}
               >
-                <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold mb-1">
-                  <CalendarIcon className="w-3.5 h-3.5 text-[#C5A059]" />
+                <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A95A01] font-bold mb-1">
+                  <CalendarIcon className="w-3.5 h-3.5 text-[#A95A01]" />
                   <span>Check-In</span>
                 </div>
                 <div className="mt-auto flex items-baseline gap-2">
-                  <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#1C1815]">
+                  <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#011A51]">
                     {inDateObj.getDate()}
                   </span>
-                  <div className="flex flex-col text-xs leading-tight text-[#5C5046]">
+                  <div className="flex flex-col text-xs leading-tight text-[#605A50]">
                     <span className="font-semibold">{monthNames[inDateObj.getMonth()].slice(0, 3)} {inDateObj.getFullYear()}</span>
-                    <span className="text-[11px] text-[#8C6310] font-medium">
+                    <span className="text-[11px] text-[#A95A01] font-medium">
                       {inDateObj.toLocaleDateString("en-US", { weekday: "short" })}
                     </span>
                   </div>
@@ -321,29 +320,29 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   setCalendarOpen(!calendarOpen);
                   setGuestsOpen(false);
                 }}
-                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#C5A059]/30 bg-[#F8F3EA]/60 transition-all ${
+                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#A95A01]/30 bg-[#F8F3EA]/60 transition-all ${
                   calendarOpen && selectingTarget === "out"
-                    ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm"
+                    ? "bg-[#FFFDF9] ring-2 ring-[#A95A01] shadow-sm"
                     : "hover:bg-[#FFFDF9]"
                 }`}
               >
-                <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold mb-1">
+                <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A95A01] font-bold mb-1">
                   <div className="flex items-center gap-1.5">
-                    <CalendarIcon className="w-3.5 h-3.5 text-[#C5A059]" />
+                    <CalendarIcon className="w-3.5 h-3.5 text-[#A95A01]" />
                     <span>Check-Out</span>
                   </div>
-                  <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#FFFDF9] border border-[#C5A059]/40 text-[10px] font-bold text-[#8C6310] shadow-xs">
-                    <Moon className="w-2.5 h-2.5 text-[#C5A059]" />
+                  <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#FFFDF9] border border-[#A95A01]/40 text-[10px] font-bold text-[#A95A01] shadow-xs">
+                    <Moon className="w-2.5 h-2.5 text-[#A95A01]" />
                     <span>{nightsCount} {nightsCount === 1 ? "Night" : "Nights"}</span>
                   </span>
                 </div>
                 <div className="mt-auto flex items-baseline gap-2">
-                  <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#1C1815]">
+                  <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#011A51]">
                     {outDateObj.getDate()}
                   </span>
-                  <div className="flex flex-col text-xs leading-tight text-[#5C5046]">
+                  <div className="flex flex-col text-xs leading-tight text-[#605A50]">
                     <span className="font-semibold">{monthNames[outDateObj.getMonth()].slice(0, 3)} {outDateObj.getFullYear()}</span>
-                    <span className="text-[11px] text-[#8C6310] font-medium">
+                    <span className="text-[11px] text-[#A95A01] font-medium">
                       {outDateObj.toLocaleDateString("en-US", { weekday: "short" })}
                     </span>
                   </div>
@@ -359,21 +358,21 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   setGuestsOpen(!guestsOpen);
                   setCalendarOpen(false);
                 }}
-                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#C5A059]/30 bg-[#F8F3EA]/60 transition-all ${
-                  guestsOpen ? "bg-[#FFFDF9] ring-2 ring-[#C5A059] shadow-sm" : "hover:bg-[#FFFDF9]"
+                className={`w-full h-full flex flex-col text-left p-3.5 rounded-xl border border-[#A95A01]/30 bg-[#F8F3EA]/60 transition-all ${
+                  guestsOpen ? "bg-[#FFFDF9] ring-2 ring-[#A95A01] shadow-sm" : "hover:bg-[#FFFDF9]"
                 }`}
               >
-                <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C6310] font-bold mb-1">
+                <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A95A01] font-bold mb-1">
                   <div className="flex items-center gap-1.5">
-                    <Users className="w-3.5 h-3.5 text-[#C5A059]" />
+                    <Users className="w-3.5 h-3.5 text-[#A95A01]" />
                     <span>Guests & Rooms</span>
                   </div>
                 </div>
                 <div className="mt-auto">
-                  <div className="font-serif-luxury text-lg sm:text-xl font-bold text-[#1C1815] truncate">
+                  <div className="font-serif-luxury text-lg sm:text-xl font-bold text-[#011A51] truncate">
                     {adults} {adults === 1 ? "Adult" : "Adults"}{children > 0 ? `, ${children} Ch` : ""}
                   </div>
-                  <div className="text-xs text-[#5C5046] font-medium mt-0.5">
+                  <div className="text-xs text-[#605A50] font-medium mt-0.5">
                     {rooms} {rooms === 1 ? "Room" : "Rooms"} • Standard / Suite
                   </div>
                 </div>
@@ -384,10 +383,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             <div className="lg:col-span-3 flex">
               <button
                 type="submit"
-                className="w-full min-h-[64px] sm:min-h-[72px] flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-[#1C1815] to-[#2C2621] hover:from-[#8C6310] hover:to-[#C5A059] text-[#FFFDF9] font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md transition-all group border border-[#C5A059]/40 active:scale-[0.98]"
+                className="w-full min-h-[64px] sm:min-h-[72px] flex flex-col items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-[#011A51] to-[#0B2A6B] hover:from-[#A95A01] hover:to-[#A95A01] text-[#FFFDF9] font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md transition-all group border border-[#A95A01]/40 active:scale-[0.98]"
               >
                 <div className="flex items-center gap-2">
-                  <Search className="w-4 h-4 text-[#C5A059] group-hover:text-white transition-colors" />
+                  <Search className="w-4 h-4 text-[#A95A01] group-hover:text-white transition-colors" />
                   <span className="tracking-wider">Check Rates</span>
                 </div>
               </button>
@@ -395,26 +394,26 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
 
           {/* Booking Info */}
-          <div className="mt-3.5 pt-3 border-t border-[#C5A059]/20 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#7A6E63]">
+          <div className="mt-3.5 pt-3 border-t border-[#A95A01]/20 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#605A50]">
             <div className="flex items-center gap-4">
               <span className="hidden md:flex items-center gap-1.5">
-                <Compass className="w-3.5 h-3.5 text-[#C5A059]" />
+                <Compass className="w-3.5 h-3.5 text-[#A95A01]" />
                 Concierge Safari Permits
               </span>
             </div>
-            <span className="font-semibold text-[#8C6310]">Amer, Jaipur</span>
+            <span className="font-semibold text-[#A95A01]">Amer, Jaipur</span>
           </div>
 
           {/* Bespoke Interactive Calendar Popover */}
           {calendarOpen && (
-            <div className="absolute top-[102%] left-4 right-4 sm:left-6 sm:right-auto sm:w-[380px] bg-[#FFFDF9] rounded-2xl border border-[#C5A059]/50 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
+            <div className="absolute top-[102%] left-4 right-4 sm:left-6 sm:right-auto sm:w-[380px] bg-[#FFFDF9] rounded-2xl border border-[#A95A01]/50 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
               {/* Header */}
               <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E5DCCB]">
                 <div className="flex flex-col text-left">
-                  <span className="text-[10px] uppercase font-bold text-[#8C6310] tracking-wider">
+                  <span className="text-[10px] uppercase font-bold text-[#A95A01] tracking-wider">
                     Select {selectingTarget === "in" ? "Check-In" : "Check-Out"} Date
                   </span>
-                  <span className="font-serif-luxury text-base font-bold text-[#1C1815]">
+                  <span className="font-serif-luxury text-base font-bold text-[#011A51]">
                     {monthNames[calMonth]} {calYear}
                   </span>
                 </div>
@@ -429,7 +428,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                         setCalMonth(calMonth - 1);
                       }
                     }}
-                    className="p-1.5 rounded-lg hover:bg-[#F8F3EA] text-[#1C1815]"
+                    className="p-1.5 rounded-lg hover:bg-[#F8F3EA] text-[#011A51]"
                     aria-label="Previous Month"
                   >
                     <ChevronLeft className="w-4 h-4" />
@@ -444,7 +443,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                         setCalMonth(calMonth + 1);
                       }
                     }}
-                    className="p-1.5 rounded-lg hover:bg-[#F8F3EA] text-[#1C1815]"
+                    className="p-1.5 rounded-lg hover:bg-[#F8F3EA] text-[#011A51]"
                     aria-label="Next Month"
                   >
                     <ChevronRight className="w-4 h-4" />
@@ -464,7 +463,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                     key={sc.label}
                     type="button"
                     onClick={() => handleQuickDuration(sc.nights)}
-                    className="px-2.5 py-1 rounded-full bg-[#F8F3EA] hover:bg-[#EBDDC5] text-[#8C6310] text-[11px] font-bold transition-colors whitespace-nowrap"
+                    className="px-2.5 py-1 rounded-full bg-[#F8F3EA] hover:bg-[#EBDDC5] text-[#A95A01] text-[11px] font-bold transition-colors whitespace-nowrap"
                   >
                     {sc.label}
                   </button>
@@ -472,7 +471,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               </div>
 
               {/* Calendar Days of Week */}
-              <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-[#7A6E63] uppercase mb-1">
+              <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-[#605A50] uppercase mb-1">
                 <span>Su</span>
                 <span>Mo</span>
                 <span>Tu</span>
@@ -504,10 +503,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                       onClick={() => handleDateClick(dayNum)}
                       className={`h-8 rounded-lg flex items-center justify-center font-semibold transition-all ${
                         isCheckIn || isCheckOut
-                          ? "bg-[#C5A059] text-white shadow-md font-bold scale-105"
+                          ? "bg-[#A95A01] text-white shadow-md font-bold scale-105"
                           : isInRange
-                          ? "bg-[#C5A059]/15 text-[#8C6310] rounded-none"
-                          : "text-[#1C1815] hover:bg-[#F8F3EA]"
+                          ? "bg-[#A95A01]/15 text-[#A95A01] rounded-none"
+                          : "text-[#011A51] hover:bg-[#F8F3EA]"
                       }`}
                     >
                       {dayNum}
@@ -518,13 +517,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
               {/* Footer */}
               <div className="mt-3 pt-2 border-t border-[#E5DCCB] flex justify-between items-center text-xs">
-                <span className="text-[#8C6310] font-semibold">
+                <span className="text-[#A95A01] font-semibold">
                   {nightsCount} {nightsCount === 1 ? "Night Stay" : "Nights Stay"}
                 </span>
                 <button
                   type="button"
                   onClick={() => setCalendarOpen(false)}
-                  className="px-3 py-1 rounded-lg bg-[#1C1815] text-white text-[11px] font-bold hover:bg-[#8C6310] transition-colors"
+                  className="px-3 py-1 rounded-lg bg-[#011A51] text-white text-[11px] font-bold hover:bg-[#A95A01] transition-colors"
                 >
                   Done
                 </button>
@@ -534,35 +533,35 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
           {/* Bespoke Guests & Rooms Popover */}
           {guestsOpen && (
-            <div className="absolute top-[102%] left-4 right-4 sm:left-auto sm:right-6 sm:w-[320px] bg-[#FFFDF9] rounded-2xl border border-[#C5A059]/50 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
+            <div className="absolute top-[102%] left-4 right-4 sm:left-auto sm:right-6 sm:w-[320px] bg-[#FFFDF9] rounded-2xl border border-[#A95A01]/50 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
               <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E5DCCB]">
-                <span className="font-serif-luxury text-base font-bold text-[#1C1815]">
+                <span className="font-serif-luxury text-base font-bold text-[#011A51]">
                   Guests & Rooms
                 </span>
-                <span className="text-[11px] font-bold text-[#8C6310]">Max 6 Guests</span>
+                <span className="text-[11px] font-bold text-[#A95A01]">Max 6 Guests</span>
               </div>
 
               {/* Adults Counter */}
               <div className="flex items-center justify-between py-2 border-b border-[#F8F3EA]">
                 <div>
-                  <div className="text-xs font-bold text-[#1C1815]">Adults</div>
-                  <div className="text-[11px] text-[#7A6E63]">Age 12+ years</div>
+                  <div className="text-xs font-bold text-[#011A51]">Adults</div>
+                  <div className="text-[11px] text-[#605A50]">Age 12+ years</div>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <button
                     type="button"
                     disabled={adults <= 1}
                     onClick={() => setAdults(Math.max(1, adults - 1))}
-                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] disabled:opacity-30 hover:bg-[#EBDDC5]"
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 flex items-center justify-center text-[#011A51] disabled:opacity-30 hover:bg-[#EBDDC5]"
                   >
                     <Minus className="w-3.5 h-3.5" />
                   </button>
-                  <span className="font-bold text-sm text-[#1C1815] w-4 text-center">{adults}</span>
+                  <span className="font-bold text-sm text-[#011A51] w-4 text-center">{adults}</span>
                   <button
                     type="button"
                     disabled={adults >= 8}
                     onClick={() => setAdults(adults + 1)}
-                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] hover:bg-[#EBDDC5]"
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 flex items-center justify-center text-[#011A51] hover:bg-[#EBDDC5]"
                   >
                     <Plus className="w-3.5 h-3.5" />
                   </button>
@@ -572,24 +571,24 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {/* Children Counter */}
               <div className="flex items-center justify-between py-2 border-b border-[#F8F3EA]">
                 <div>
-                  <div className="text-xs font-bold text-[#1C1815]">Children</div>
-                  <div className="text-[11px] text-[#7A6E63]">Age 0-11 years</div>
+                  <div className="text-xs font-bold text-[#011A51]">Children</div>
+                  <div className="text-[11px] text-[#605A50]">Age 0-11 years</div>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <button
                     type="button"
                     disabled={children <= 0}
                     onClick={() => setChildren(Math.max(0, children - 1))}
-                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] disabled:opacity-30 hover:bg-[#EBDDC5]"
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 flex items-center justify-center text-[#011A51] disabled:opacity-30 hover:bg-[#EBDDC5]"
                   >
                     <Minus className="w-3.5 h-3.5" />
                   </button>
-                  <span className="font-bold text-sm text-[#1C1815] w-4 text-center">{children}</span>
+                  <span className="font-bold text-sm text-[#011A51] w-4 text-center">{children}</span>
                   <button
                     type="button"
                     disabled={children >= 4}
                     onClick={() => setChildren(children + 1)}
-                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] hover:bg-[#EBDDC5]"
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 flex items-center justify-center text-[#011A51] hover:bg-[#EBDDC5]"
                   >
                     <Plus className="w-3.5 h-3.5" />
                   </button>
@@ -599,24 +598,24 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {/* Rooms Counter */}
               <div className="flex items-center justify-between py-2 border-b border-[#F8F3EA]">
                 <div>
-                  <div className="text-xs font-bold text-[#1C1815]">Rooms</div>
-                  <div className="text-[11px] text-[#7A6E63]">Standard / Suite</div>
+                  <div className="text-xs font-bold text-[#011A51]">Rooms</div>
+                  <div className="text-[11px] text-[#605A50]">Standard / Suite</div>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <button
                     type="button"
                     disabled={rooms <= 1}
                     onClick={() => setRooms(Math.max(1, rooms - 1))}
-                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] disabled:opacity-30 hover:bg-[#EBDDC5]"
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 flex items-center justify-center text-[#011A51] disabled:opacity-30 hover:bg-[#EBDDC5]"
                   >
                     <Minus className="w-3.5 h-3.5" />
                   </button>
-                  <span className="font-bold text-sm text-[#1C1815] w-4 text-center">{rooms}</span>
+                  <span className="font-bold text-sm text-[#011A51] w-4 text-center">{rooms}</span>
                   <button
                     type="button"
                     disabled={rooms >= 4}
                     onClick={() => setRooms(rooms + 1)}
-                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#C5A059]/40 flex items-center justify-center text-[#1C1815] hover:bg-[#EBDDC5]"
+                    className="w-7 h-7 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 flex items-center justify-center text-[#011A51] hover:bg-[#EBDDC5]"
                   >
                     <Plus className="w-3.5 h-3.5" />
                   </button>
@@ -627,7 +626,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 <button
                   type="button"
                   onClick={() => setGuestsOpen(false)}
-                  className="px-4 py-1.5 rounded-lg bg-[#1C1815] text-white text-xs font-bold hover:bg-[#8C6310] transition-colors"
+                  className="px-4 py-1.5 rounded-lg bg-[#011A51] text-white text-xs font-bold hover:bg-[#A95A01] transition-colors"
                 >
                   Apply
                 </button>

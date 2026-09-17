@@ -11,7 +11,6 @@ import Celebrations from "@/components/Celebrations";
 import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -34,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FDFBF7] text-[#1C1815] flex flex-col selection:bg-[#C5A059] selection:text-white">
+    <main className="min-h-screen bg-[#FDFBF7] text-[#011A51] flex flex-col selection:bg-[#A95A01] selection:text-white">
       {/* Navbar */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
@@ -68,9 +67,6 @@ export default function Home() {
         onClose={() => setIsBookingOpen(false)}
         initialData={bookingData}
       />
-
-      {/* Floating Call & WhatsApp Buttons */}
-      <FloatingWhatsApp />
     </main>
   );
 }

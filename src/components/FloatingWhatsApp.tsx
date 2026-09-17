@@ -8,7 +8,7 @@ export default function FloatingWhatsApp() {
       {/* Phone Call Pill */}
       <a
         href="tel:+919876543210"
-        className="w-12 h-12 rounded-full bg-[#0b132b] text-[#d4af37] border border-[#d4af37]/40 shadow-2xl flex items-center justify-center hover:scale-110 transition-transform group"
+        className="w-12 h-12 rounded-full bg-[#011A51] text-[#A95A01] border border-[#A95A01]/40 shadow-2xl flex items-center justify-center hover:scale-110 transition-transform group"
         title="Call The Tasey Reception"
       >
         <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
