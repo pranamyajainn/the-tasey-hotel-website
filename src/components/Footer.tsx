@@ -43,13 +43,13 @@ export default function Footer() {
                   THE TASEY
                 </span>
                 <span className="text-[9px] tracking-[0.2em] text-[#FFC76B] uppercase font-bold">
-                  Hotel & Excursions • Amer
+                  Hotel and excursions, Amer
                 </span>
               </div>
             </Link>
 
             <p className="text-[#D5C9B8] font-normal leading-relaxed">
-              Nestled amidst the Aravalli Hills in Amer, Jaipur. Offering royal luxury stay, authentic dining at <em>Haldi</em>, rooftop poolside views at <em>Jhumka</em>, and curated <span className="text-[#FFC76B] font-semibold">Elephant & Wildlife Safaris</span>.
+              The Tasey Hotel is in Amer, Jaipur, with rooms, Haldi restaurant, Jhumka rooftop pool, event spaces, and nearby safaris.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -79,23 +79,23 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#adventures" className="hover:text-[#FFC76B] transition-colors text-[#FFC76B] font-semibold flex items-center gap-1">
-                  <Compass className="w-3 h-3 text-[#A95A01]" /> Elephant & Wildlife Safaris
+                  <Compass className="w-3 h-3 text-[#A95A01]" /> Nearby excursions
                 </a>
               </li>
               <li>
-                <a href="#rooms" className="hover:text-[#FFC76B] transition-colors">Rooms & Suite Categories</a>
+                <a href="#rooms" className="hover:text-[#FFC76B] transition-colors">Rooms and suites</a>
               </li>
               <li>
-                <a href="#dining" className="hover:text-[#FFC76B] transition-colors">Haldi Fine Dining Restaurant</a>
+                <a href="#dining" className="hover:text-[#FFC76B] transition-colors">Haldi restaurant</a>
               </li>
               <li>
-                <a href="#dining" className="hover:text-[#FFC76B] transition-colors">Jhumka Rooftop Poolside Dining</a>
+                <a href="#dining" className="hover:text-[#FFC76B] transition-colors">Jhumka rooftop pool</a>
               </li>
               <li>
-                <a href="#celebrations" className="hover:text-[#FFC76B] transition-colors">Banquet Halls & Celebrations</a>
+                <a href="#celebrations" className="hover:text-[#FFC76B] transition-colors">Banquet halls and celebrations</a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-[#FFC76B] transition-colors">Photo Gallery (19 Photos)</a>
+                <a href="#gallery" className="hover:text-[#FFC76B] transition-colors">Photo gallery</a>
               </li>
             </ul>
           </div>
@@ -107,19 +107,19 @@ export default function Footer() {
             </h4>
             <div className="space-y-3 font-normal text-[#D5C9B8]">
               <div>
-                <div className="text-[#FDFBF7] font-semibold text-xs">🐘 Elephant Village Experience</div>
+                <div className="text-[#FDFBF7] font-semibold text-xs">Elephant Village Amer</div>
                 <div className="text-[#FFC76B] text-[11px]">Amer, Jaipur</div>
-                <div className="text-[10px] text-[#A89C8C]">Meeting, Feeding & Walking Interactions</div>
+                <div className="text-[10px] text-[#A89C8C]">Painted elephant rides</div>
               </div>
               <div>
-                <div className="text-[#FDFBF7] font-semibold text-xs">🐆 Jhalana Leopard Safari</div>
+                <div className="text-[#FDFBF7] font-semibold text-xs">Jhalana Leopard Safari</div>
                 <div className="text-[#FFC76B] text-[11px]">Guided Wildlife Reserve</div>
                 <div className="text-[10px] text-[#A89C8C]">Leopards, Deer & Bird Watching</div>
               </div>
               <div>
-                <div className="text-[#FDFBF7] font-semibold text-xs">🐅 Nahargarh Lion Safari</div>
+                <div className="text-[#FDFBF7] font-semibold text-xs">Nahargarh Lion Safari</div>
                 <div className="text-[#FFC76B] text-[11px]">720 Hectares Reserve</div>
-                <div className="text-[10px] text-[#A89C8C]">50m from hotel entrance</div>
+                <div className="text-[10px] text-[#A89C8C]">50 m from hotel entrance</div>
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#A95A01] shrink-0 mt-0.5" />
                 <span>
-                  The TASEY Hotel, Amer, 50m from Nahargarh Zoological Park, Near Amber Fort, Jaipur, Rajasthan 302028
+                  The Tasey Hotel, Amer, 50 m from Nahargarh Biological Park, near Amber Fort, Jaipur
                 </span>
               </li>
               <li className="flex items-center gap-2">
@@ -154,7 +154,7 @@ export default function Footer() {
             © {new Date().getFullYear()} <strong>The TASEY Hotel & Excursions, Amer, Jaipur</strong>. All Rights Reserved.
           </div>
           <div className="text-[#FFC76B] font-semibold">
-            Your Adventure. Our Assistance. Stay at The TASEY. Explore Amer, Jaipur.
+            Stay at The Tasey. Explore Amer, Jaipur.
           </div>
         </div>
       </div>

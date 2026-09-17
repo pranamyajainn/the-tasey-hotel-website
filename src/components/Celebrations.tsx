@@ -12,14 +12,14 @@ export default function Celebrations({ onOpenBooking }: CelebrationsProps) {
     {
       title: "Grand Amber Banquet Hall",
       capacity: "Up to 250 Guests",
-      idealFor: "Weddings, Gala Receptions & Royal Celebrations",
-      desc: "Opulent high-ceiling hall decorated with crystal chandeliers, acoustic soundproofing, custom royal drapes, and flexible stage configurations.",
+      idealFor: "Weddings and private events",
+      desc: "A hall set up with balloons, ceiling lights, tables, and chairs.",
     },
     {
-      title: "Aravalli Executive Hall",
+      title: "Executive Hall",
       capacity: "Up to 100 Guests",
-      idealFor: "Corporate Conferences, Product Launches & Cocktail Parties",
-      desc: "Sophisticated executive venue equipped with seamless presentation technology, climate control, and direct balcony access to Aravalli mountain breezes.",
+      idealFor: "Meetings and group events",
+      desc: "A second event space for seated gatherings and celebrations.",
     },
   ];
 
@@ -29,13 +29,13 @@ export default function Celebrations({ onOpenBooking }: CelebrationsProps) {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-[#A95A01] font-bold block mb-3">
-            Bespoke Gatherings & Receptions
+            Events and receptions
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
-            Two Grand <span className="text-gold-gradient">Banquet Halls</span>
+            Two <span className="text-gold-gradient">banquet halls</span>
           </h2>
           <p className="mt-3 text-[#605A50] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
-            Distinguished venues for intimate weddings, corporate symposiums, and private celebrations against the Aravalli hills.
+            Two rooms for weddings, meetings, and private events.
           </p>
         </div>
 
@@ -51,9 +51,9 @@ export default function Celebrations({ onOpenBooking }: CelebrationsProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-[#011A51]/80 via-[#011A51]/20 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#FFFDF9]/95 backdrop-blur-md border border-[#E5DCCB] text-xs text-[#011A51] shadow-md">
               <span className="font-serif-luxury text-sm font-bold text-[#A95A01] block">
-                Two Spacious Elegant Banquet Halls Available
+                Two banquet halls are available
               </span>
-              <span className="text-[#605A50] font-medium">Complete event planning, bespoke floral decor, and royal catering support.</span>
+              <span className="text-[#605A50] font-medium">The photographed hall has balloons, ceiling lights, tables, and chairs.</span>
             </div>
           </div>
 
@@ -61,13 +61,13 @@ export default function Celebrations({ onOpenBooking }: CelebrationsProps) {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 text-[#A95A01] text-xs font-bold uppercase tracking-wider mb-4">
                 <Sparkles className="w-3.5 h-3.5 text-[#A95A01]" />
-                Bespoke Royal Event Planning
+                Event planning
               </div>
               <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#011A51] mb-3">
-                Unforgettable Events Near Amber Fort
+                Events near Amber Fort
               </h3>
               <p className="text-[#605A50] text-xs sm:text-sm font-normal leading-relaxed mb-6">
-                Our experienced hospitality team handles every detail — from exquisite decor, sound, and lighting to signature live food counters prepared by our heritage chefs.
+                Ask the events team about room layouts, food, lighting, and sound for your date.
               </p>
 
               <div className="space-y-4">
@@ -97,7 +97,7 @@ export default function Celebrations({ onOpenBooking }: CelebrationsProps) {
               className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-[#A95A01]/40 hover:scale-102 transition-all flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4 text-white" />
-              <span>Enquire For Events & Banquets</span>
+              <span>Enquire for events and banquets</span>
             </button>
           </div>
         </div>

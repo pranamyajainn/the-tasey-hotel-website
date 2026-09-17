@@ -29,7 +29,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
   const [rooms, setRooms] = useState(1);
-  const [experience, setExperience] = useState("Luxury Stay");
+  const [experience, setExperience] = useState("Standard Room");
 
   // Popover controls
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -57,8 +57,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   const heroSlides = [
     {
       image: "/images/tasey-08.jpeg",
-      subtitle: "Boutique Sanctuary in Amer, Jaipur",
-      title: "Where Royal Heritage Meets Aravalli Serenity",
+      subtitle: "The Tasey Hotel in Amer, Jaipur",
+      title: "A hotel near Amber Fort",
     },
     {
       image: "/images/tasey-09.jpeg",
@@ -67,8 +67,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     },
     {
       image: "/images/tasey-17.jpeg",
-      subtitle: "Luxurious Rooms & Suites",
-      title: "Experience Rajasthan in Pure Luxury",
+      subtitle: "Rooms and suites",
+      title: "Rooms with hill-facing windows",
     },
     {
       image: "/images/tasey-03.jpeg",
@@ -182,7 +182,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             priority={idx === 0}
             className="object-cover object-center"
           />
-          {/* Navy scrim for text legibility — darkest where headline & booking bar sit */}
+          {/* Navy scrim keeps the headline and booking bar legible. */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#011A51]/15 via-[#011A51]/55 to-[#011A51]/85" />
         </div>
       ))}
@@ -192,7 +192,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         {/* Location Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#A95A01]/40 text-[#011A51] text-xs font-bold uppercase tracking-widest mb-6 shadow-md">
           <Sparkles className="w-4 h-4 text-[#A95A01]" />
-          <span>The TASEY Hotel, Amer</span>
+          <span>The Tasey Hotel, Amer</span>
           <span className="text-[#A95A01]">•</span>
           <span className="text-[#A95A01]">5 KM from Amber Fort</span>
         </div>
@@ -207,7 +207,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </h1>
 
         <p className="mt-5 text-sm sm:text-base md:text-lg text-gray-100 max-w-2xl font-normal leading-relaxed drop-shadow-md">
-          A boutique sanctuary nestled at the foot of the Aravalli hills in Amer, Jaipur. Featuring luxury suites, authentic dining at Haldi, and sunset pool views at Jhumka Rooftop.
+          Rooms, an indoor restaurant, a rooftop pool, and event halls, 5 km from Amber Fort.
         </p>
 
         {/* Location Credentials */}
@@ -222,7 +222,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
           <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#A95A01]/35 shadow-sm font-medium">
             <Sparkles className="w-3.5 h-3.5 text-[#A95A01]" />
-            <span>Rooftop Pool & Panoramas</span>
+            <span>Rooftop pool and views</span>
           </div>
         </div>
 
@@ -241,12 +241,12 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </div>
       </div>
 
-      {/* Bespoke Luxury Booking & Availability Engine */}
+      {/* Booking and availability */}
       <div ref={bookingBarRef} className="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 w-full mt-8">
         {/* Experience Selector Tabs */}
         <div className="flex justify-center sm:justify-start gap-1.5 mb-2 px-2 overflow-x-auto pb-1">
           {[
-            { id: "Luxury Stay", label: "Rooms & Suites", icon: Crown },
+            { id: "Standard Room", label: "Rooms and suites", icon: Crown },
             { id: "Nahargarh Lion Safari", label: "Wildlife Safaris", icon: Compass },
             { id: "Elephant Village Excursion", label: "Elephant Village", icon: Sparkles },
             { id: "Haldi Restaurant", label: "Dining & Rooftop", icon: Sparkles },
@@ -295,7 +295,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               >
                 <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A95A01] font-bold mb-1">
                   <CalendarIcon className="w-3.5 h-3.5 text-[#A95A01]" />
-                  <span>Check-In</span>
+                  <span>Check-in</span>
                 </div>
                 <div className="mt-auto flex items-baseline gap-2">
                   <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#011A51]">
@@ -329,7 +329,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 <div className="flex items-center justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A95A01] font-bold mb-1">
                   <div className="flex items-center gap-1.5">
                     <CalendarIcon className="w-3.5 h-3.5 text-[#A95A01]" />
-                    <span>Check-Out</span>
+                    <span>Check-out</span>
                   </div>
                   <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#FFFDF9] border border-[#A95A01]/40 text-[10px] font-bold text-[#A95A01] shadow-xs">
                     <Moon className="w-2.5 h-2.5 text-[#A95A01]" />
@@ -404,7 +404,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             <span className="font-semibold text-[#A95A01]">Amer, Jaipur</span>
           </div>
 
-          {/* Bespoke Interactive Calendar Popover */}
+              {/* Calendar popover */}
           {calendarOpen && (
             <div className="absolute top-[102%] left-4 right-4 sm:left-6 sm:right-auto sm:w-[380px] bg-[#FFFDF9] rounded-2xl border border-[#A95A01]/50 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
               {/* Header */}
@@ -531,7 +531,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
           )}
 
-          {/* Bespoke Guests & Rooms Popover */}
+              {/* Guests and rooms popover */}
           {guestsOpen && (
             <div className="absolute top-[102%] left-4 right-4 sm:left-auto sm:right-6 sm:w-[320px] bg-[#FFFDF9] rounded-2xl border border-[#A95A01]/50 shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
               <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E5DCCB]">

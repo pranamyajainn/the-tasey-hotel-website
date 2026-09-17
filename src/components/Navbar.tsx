@@ -43,12 +43,12 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         <div className="flex items-center space-x-5">
           <span className="flex items-center gap-1.5 font-medium">
             <MapPin className="w-3.5 h-3.5 text-[#A95A01]" />
-            Amer, Jaipur, Rajasthan 302028 (5 KM from Amber Fort)
+            Amer, Jaipur (5 km from Amber Fort)
           </span>
           <span className="text-[#A95A01]/40">•</span>
           <span className="flex items-center gap-1.5 font-medium">
             <Compass className="w-3.5 h-3.5 text-[#A95A01]" />
-            Opposite Nahargarh Biological Park
+            50 m from Nahargarh Biological Park
           </span>
         </div>
         <div className="flex items-center space-x-4">

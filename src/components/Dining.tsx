@@ -15,34 +15,34 @@ export default function Dining({ onOpenBooking }: DiningProps) {
     haldi: {
       name: "Haldi",
       subtitle: "The Indoor Restaurant",
-      tagline: "Authentic Rajasthani & Indian Culinary Heritage",
+      tagline: "Rajasthani and Indian dishes",
       image: "/images/tasey-11.jpeg",
-      ambience: "Traditional Rajasthani Royal Decor & Warm Brass Lighting",
-      timings: "7:00 AM – 11:00 PM (Daily)",
+      ambience: "Indoor dining room with ceiling fans and opening-day balloons",
+      timings: "7:00 AM to 11:00 PM daily",
       highlights: [
-        "Royal Rajasthani Thali served in Traditional Brassware",
-        "Authentic Laal Maas, Ker Sangri & Dal Baati Churma",
-        "Rich North Indian Curries, Hand-Carved Tandoori Breads",
-        "Fine Dining Air-Conditioned Royal Hall Setting",
+        "Rajasthani thali served in brassware",
+        "Laal Maas, Ker Sangri and Dal Baati Churma",
+        "North Indian curries and tandoori breads",
+        "Indoor seating with ceiling fans",
       ],
-      specialty: "Chef's Signature Laal Maas & Saffron Phirni",
+      specialty: "Laal Maas and saffron phirni",
       ctaText: "Reserve Table at Haldi",
     },
     jhumka: {
       name: "Jhumka",
       subtitle: "The Rooftop Restaurant & Pool",
-      tagline: "Rooftop Dining with Swimming Pool & 3-Side Aravalli Hill Views",
+      tagline: "Rooftop dining beside the pool",
       image: "/images/tasey-05.jpeg",
-      ambience: "Open-Air Rooftop, Poolside Candlelight & Starry Night Sky",
-      timings: "5:00 PM – 12:00 Midnight (Daily)",
+      ambience: "Open rooftop with a pool and steel railing",
+      timings: "5:00 PM to midnight daily",
       highlights: [
-        "Breathtaking 3-Side Uninterrupted View of Aravalli Hills",
-        "Open-Air Rooftop Infinity Swimming Pool Setting",
-        "Romantic Candlelight Dinners Under the Stars",
-        "Signature Sunset Cocktails, Mocktails & Tandoori Grills",
-        "Multi-cuisine Global Menu & Live Acoustic Music Nights",
+        "Rooftop pool with a steel railing",
+        "Open-air seating beside the pool",
+        "Views of nearby buildings and a transmission tower",
+        "Cocktails, mocktails and tandoori grills",
+        "Multi-cuisine menu",
       ],
-      specialty: "Poolside Romantic Sunset Candlelight Dinner",
+      specialty: "Poolside dining",
       ctaText: "Reserve Table at Jhumka",
     },
   };
@@ -55,13 +55,13 @@ export default function Dining({ onOpenBooking }: DiningProps) {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-[#A95A01] font-bold block mb-3">
-            Culinary Arts & Rooftop Lounge
+            Dining and rooftop pool
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
-            Two Signature <span className="text-gold-gradient">Dining Destinations</span>
+            Two <span className="text-gold-gradient">dining spaces</span>
           </h2>
           <p className="mt-3 text-[#605A50] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
-            From royal Rajasthani recipes at indoor fine-dining restaurant Haldi, to sunset cocktails by the infinity pool at Jhumka Rooftop.
+            Haldi is an indoor restaurant. Jhumka is a rooftop restaurant beside the pool.
           </p>
         </div>
 
@@ -86,11 +86,11 @@ export default function Dining({ onOpenBooking }: DiningProps) {
                 <span className={`text-[10px] font-sans uppercase font-bold tracking-widest px-2 py-0.5 rounded ${
                   activeDiningTab === "haldi" ? "bg-white/20 text-white" : "bg-[#A95A01]/20 text-[#A95A01]"
                 }`}>
-                  Indoor Fine Dining
+                  Indoor restaurant
                 </span>
               </div>
               <div className={`text-xs font-medium mt-0.5 ${activeDiningTab === "haldi" ? "text-white/90" : "text-[#605A50]"}`}>
-                Rajasthani & Indian Gourmet Cuisine
+                  Rajasthani and Indian dishes
               </div>
             </div>
           </button>
@@ -114,11 +114,11 @@ export default function Dining({ onOpenBooking }: DiningProps) {
                 <span className={`text-[10px] font-sans uppercase font-bold tracking-widest px-2 py-0.5 rounded ${
                   activeDiningTab === "jhumka" ? "bg-white/20 text-white" : "bg-[#A95A01]/20 text-[#A95A01]"
                 }`}>
-                  Rooftop & Pool
+                  Rooftop and pool
                 </span>
               </div>
               <div className={`text-xs font-medium mt-0.5 ${activeDiningTab === "jhumka" ? "text-white/90" : "text-[#605A50]"}`}>
-                3-Side Aravalli View & Poolside Lounge
+                Rooftop pool and open-air seating
               </div>
             </div>
           </button>

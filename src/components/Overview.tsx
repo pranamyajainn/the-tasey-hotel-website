@@ -8,46 +8,46 @@ export default function Overview() {
     {
       num: "01",
       icon: Castle,
-      title: "5 KM from Historic Amber Fort",
-      distance: "10 Min Scenic Drive",
-      desc: "Minutes away from Jaipur's UNESCO World Heritage fortress, Sheesh Mahal, and spectacular hilltop night shows.",
-      tag: "Historic Landmark",
+      title: "5 km from Amber Fort",
+      distance: "10-minute drive",
+      desc: "Amber Fort is a 5 km drive from the hotel. Sheesh Mahal and the fort complex are inside.",
+      tag: "Nearby landmark",
       href: "#adventures",
     },
     {
       num: "02",
       icon: Hotel,
-      title: "100m from Taj Amber & Indiana Place",
-      distance: "1 Min Walk",
-      desc: "Located in Jaipur's finest luxury hospitality zone with safe, tranquil, and private mountain surroundings.",
-      tag: "Elite Enclave",
+      title: "Amer, Jaipur",
+      distance: "Hotel location",
+      desc: "The hotel is in Amer, near Amber Fort and Nahargarh Biological Park.",
+      tag: "Location",
       href: undefined,
     },
     {
       num: "03",
       icon: TreePine,
-      title: "50m from Nahargarh Zoological Park",
-      distance: "Directly Opposite",
-      desc: "Pristine nature reserve offering Lion Safaris, birdwatching trails, and lush green forest views.",
-      tag: "Nature & Wildlife",
+      title: "50 m from Nahargarh Biological Park",
+      distance: "Across the road",
+      desc: "The park entrance is about 50 m from the hotel and offers the Nahargarh Lion Safari.",
+      tag: "Wildlife",
       href: "#adventures",
     },
     {
       num: "04",
       icon: Compass,
-      title: "3-Side Aravali Hill Panoramas",
-      distance: "Uninterrupted Vista",
-      desc: "Breathtaking mountain horizons visible from rooms, dining courts, and our rooftop swimming pool.",
-      tag: "Panoramic Sanctuary",
+      title: "Views toward the Aravalli hills",
+      distance: "From selected areas",
+      desc: "The rooftop pool photo shows nearby buildings, a transmission tower, and hills beyond.",
+      tag: "Rooftop view",
       href: "#dining",
     },
   ];
 
   const stats = [
-    { value: "3", label: "Luxury Room Styles" },
-    { value: "2", label: "Gourmet Outlets" },
+    { value: "3", label: "Room types" },
+    { value: "2", label: "Dining spaces" },
     { value: "720 Ha", label: "Safari Reserve" },
-    { value: "360°", label: "Aravalli Views" },
+    { value: "5 km", label: "To Amber Fort" },
   ];
 
   return (
@@ -60,14 +60,14 @@ export default function Overview() {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 text-[#A95A01] text-xs font-bold uppercase tracking-widest mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#A95A01]" />
-            <span>Architectural Sanctuary</span>
+            <span>Hotel overview</span>
           </div>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight leading-tight">
-            Hillside Sanctuary in <span className="text-gold-gradient">Amer, Jaipur</span>
+            The Tasey Hotel in <span className="text-gold-gradient">Amer, Jaipur</span>
           </h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#A95A01] to-transparent mx-auto my-5" />
           <p className="text-[#605A50] text-sm sm:text-base leading-relaxed font-normal max-w-2xl mx-auto">
-            Perched at the base of the Aravalli ranges, <strong>The TASEY Hotel</strong> offers an intimate retreat combining Rajput elegance, panoramic mountain vistas, and immediate access to Jaipur&apos;s historic landmarks.
+            The Tasey Hotel is in Amer, Jaipur, 5 km from Amber Fort and about 50 m from Nahargarh Biological Park.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function Overview() {
             <div className="relative h-[480px] sm:h-[580px] rounded-3xl overflow-hidden border border-[#A95A01]/40 shadow-xl group">
               <Image
                 src="/images/tasey-09.jpeg"
-                alt="The Tasey Aravali Fort View"
+                alt="The Tasey view toward Amber Fort"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-1000"
                 priority
@@ -89,7 +89,7 @@ export default function Overview() {
               <div className="absolute top-6 left-6 right-6 flex justify-between items-center">
                 <span className="px-4 py-1.5 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#A95A01]/50 text-[#A95A01] text-xs font-bold uppercase tracking-wider shadow-md flex items-center gap-1.5">
                   <Award className="w-3.5 h-3.5 text-[#A95A01]" />
-                  Boutique Heritage Resort
+                  The Tasey Hotel
                 </span>
                 <span className="px-3 py-1 rounded-full bg-[#011A51]/80 backdrop-blur-md text-[#FFFDF9] text-xs font-mono border border-[#A95A01]/40">
                   Amer, Jaipur
@@ -99,7 +99,7 @@ export default function Overview() {
               {/* Bottom Quote & Stats Overlay */}
               <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#FFFDF9]/95 backdrop-blur-md border border-[#A95A01]/40 shadow-xl space-y-4">
                 <p className="font-serif-luxury text-sm sm:text-base text-[#011A51] italic font-semibold leading-snug">
-                  "Enjoy the tranquil peace of Aravalli nature reserves with historic monuments just a heartbeat away."
+                  Rooms, dining, a rooftop pool, and event spaces near Amber Fort.
                 </p>
 
                 <div className="grid grid-cols-4 gap-2 pt-3 border-t border-[#E5DCCB]">

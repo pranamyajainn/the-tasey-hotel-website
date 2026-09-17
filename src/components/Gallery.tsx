@@ -11,115 +11,115 @@ export default function Gallery() {
   const galleryItems = [
     {
       id: 1,
-      title: "The TASEY Hotel — Night Grand Facade",
-      category: "Heritage & Views",
+      title: "The Tasey Hotel at night",
+      category: "Hotel and views",
       image: "/images/tasey-08.jpeg",
     },
     {
       id: 2,
-      title: "Hotel Exterior — Daytime Street View",
-      category: "Heritage & Views",
+      title: "Hotel exterior in daylight",
+      category: "Hotel and views",
       image: "/images/tasey-03.jpeg",
     },
     {
       id: 3,
-      title: "Hotel Reception — Check-In Desk",
-      category: "Heritage & Views",
+      title: "Hotel reception desk",
+      category: "Hotel and views",
       image: "/images/tasey-14.jpeg",
     },
     {
       id: 4,
-      title: "Hotel Lobby — Chesterfield Lounge",
-      category: "Heritage & Views",
+      title: "Hotel lobby seating",
+      category: "Hotel and views",
       image: "/images/tasey-13.jpeg",
     },
     {
       id: 5,
-      title: "Lobby Waiting Area — Marble & Leather",
-      category: "Heritage & Views",
+      title: "Lobby waiting area",
+      category: "Hotel and views",
       image: "/images/tasey-15.jpeg",
     },
     {
       id: 6,
-      title: "Luxury Bedroom — Gold Headboard Suite",
+      title: "Bedroom with brown headboard",
       category: "Rooms & Suites",
       image: "/images/tasey-17.jpeg",
     },
     {
       id: 7,
-      title: "Suite Sitting Room — Warm Wood Interior",
+      title: "Suite sitting room",
       category: "Rooms & Suites",
       image: "/images/tasey-16.jpeg",
     },
     {
       id: 8,
-      title: "Room Interior — Cane Chairs & Natural Light",
+      title: "Room with cane chairs",
       category: "Rooms & Suites",
       image: "/images/tasey-04.jpeg",
     },
     {
       id: 9,
-      title: "Hotel Corridor — Marble Floors & Art Gallery",
+      title: "Hotel corridor",
       category: "Rooms & Suites",
       image: "/images/tasey-18.jpeg",
     },
     {
       id: 10,
-      title: "Room Furnishing — Teak Wardrobe & TV Unit",
+      title: "Room wardrobe and TV unit",
       category: "Rooms & Suites",
       image: "/images/tasey-19.jpeg",
     },
     {
       id: 11,
-      title: "Bedroom — Classic Curtains & Warm Tones",
+      title: "Bedroom with curtains",
       category: "Rooms & Suites",
       image: "/images/tasey-07.jpeg",
     },
     {
       id: 12,
-      title: "Rooftop Pool — Aravalli Hills & Open Sky",
+      title: "Rooftop pool and open sky",
       category: "Rooftop & Pool",
       image: "/images/tasey-09.jpeg",
     },
     {
       id: 13,
-      title: "Rooftop Terrace — Green Wall & Pool View",
+      title: "Rooftop terrace and pool",
       category: "Rooftop & Pool",
       image: "/images/tasey-06.jpeg",
     },
     {
       id: 14,
-      title: "Infinity Pool — Palm Trees & Panorama",
+      title: "Rooftop pool with steel railing",
       category: "Rooftop & Pool",
       image: "/images/tasey-05.jpeg",
     },
     {
       id: 15,
-      title: "Haldi Restaurant — Warm Pendant Lights",
+      title: "Haldi restaurant with pendant lights",
       category: "Dining & Banquets",
       image: "/images/tasey-11.jpeg",
     },
     {
       id: 16,
-      title: "Haldi Restaurant — Daytime Interior",
+      title: "Haldi restaurant in daylight",
       category: "Dining & Banquets",
       image: "/images/tasey-02.jpeg",
     },
     {
       id: 17,
-      title: "Private Dining Room — AV & Intimate Seating",
+      title: "Private dining room",
       category: "Dining & Banquets",
       image: "/images/tasey-12.jpeg",
     },
     {
       id: 18,
-      title: "Banquet Hall — Grand Opening Event",
+      title: "Banquet hall with balloons",
       category: "Dining & Banquets",
       image: "/images/tasey-10.jpeg",
     },
   ];
 
-  const categories = ["All", "Heritage & Views", "Rooms & Suites", "Rooftop & Pool", "Dining & Banquets"];
+  const categories = ["All", "Hotel and views", "Rooms & Suites", "Rooftop & Pool", "Dining & Banquets"];
 
   const filteredItems =
     activeCategory === "All"
@@ -135,10 +135,10 @@ export default function Gallery() {
             Visual Portfolio
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
-            The TASEY <span className="text-gold-gradient">Gallery</span>
+            The Tasey <span className="text-gold-gradient">gallery</span>
           </h2>
           <p className="mt-3 text-[#605A50] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
-            Authentic architectural captures of our suites, rooftop infinity pool, Haldi restaurant, and royal lobby lounges.
+            Photos of the hotel, rooms, rooftop pool, Haldi restaurant, and event spaces.
           </p>
         </div>
 

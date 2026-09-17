@@ -6,29 +6,29 @@ import { MapPin, Navigation, Compass, ExternalLink } from "lucide-react";
 export default function Attractions() {
   const attractions = [
     {
-      name: "Historic Amber Fort",
-      distance: "5 KM (10 Min)",
-      category: "UNESCO Heritage Fort",
-      desc: "Jaipur's iconic 16th-century fortress featuring Sheesh Mahal (Mirror Palace) and hilltop light-and-sound shows.",
-      badge: "Must Visit",
+      name: "Amber Fort",
+      distance: "5 km (10 min)",
+      category: "Fort complex",
+      desc: "See Sheesh Mahal, the courtyards, and evening light and sound shows.",
+      badge: "Nearby",
       image: "/images/attractions/amber-fort.jpg",
       span: "lg:col-span-2 h-96",
     },
     {
       name: "Elephant Village Amer",
-      distance: "3 KM (5 Min Drive)",
-      category: "Sanctuary Interaction",
-      desc: "Experience meeting, feeding, and walking alongside elephants in their natural village sanctuary.",
-      badge: "Signature Experience",
+      distance: "3 km (5 min drive)",
+      category: "Elephant Village Amer",
+      desc: "The photo shows tourists riding painted elephants.",
+      badge: "Amer",
       image: "/images/attractions/elephant-village.jpg",
       span: "lg:col-span-1 h-96",
     },
     {
       name: "Nahargarh Biological Park",
-      distance: "50 Meters (Step Outside)",
-      category: "Nature & Wildlife Reserve",
-      desc: "Pristine wildlife sanctuary offering lion safaris, birdwatching, and forest trails right across our entrance.",
-      badge: "Across the Road",
+      distance: "50 m (across the road)",
+      category: "Wildlife park",
+      desc: "The park entrance and Nahargarh Lion Safari are across the road.",
+      badge: "50 m away",
       image: "/images/attractions/nahargarh-fort.jpg",
       span: "lg:col-span-1 h-84",
     },
@@ -36,8 +36,8 @@ export default function Attractions() {
       name: "Jal Mahal (Water Palace)",
       distance: "6.5 KM (12 Min)",
       category: "Palace on Lake",
-      desc: "Stunning Rajput style palace floating gracefully in the middle of Man Sagar Lake.",
-      badge: "Scenic Spot",
+      desc: "Jal Mahal stands in the centre of Man Sagar Lake.",
+      badge: "6.5 km away",
       image: "/images/attractions/jal-mahal.jpg",
       span: "lg:col-span-2 h-84",
     },
@@ -50,14 +50,14 @@ export default function Attractions() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 text-[#A95A01] text-xs font-bold uppercase tracking-widest mb-4">
             <Compass className="w-3.5 h-3.5 text-[#A95A01]" />
-            <span>Prime Hillside Location</span>
+            <span>Nearby places</span>
           </div>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
-            Explore Nearby <span className="text-gold-gradient">Jaipur Attractions</span>
+            Nearby <span className="text-gold-gradient">Jaipur attractions</span>
           </h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#A95A01] to-transparent mx-auto my-5" />
           <p className="text-[#605A50] text-sm sm:text-base font-normal">
-            Enjoy peace of the hills with Jaipur&apos;s most famous monuments and wildlife sanctuaries right at your doorstep.
+            Amber Fort, Nahargarh Biological Park, and Jal Mahal are within driving distance.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export default function Attractions() {
                 The TASEY Hotel & Excursions
               </div>
               <div className="text-xs text-[#605A50] font-normal">
-                Aravalli Hills, 50m from Nahargarh Zoological Park, Near Amber Fort, Jaipur, Rajasthan 302028
+                Amer, Jaipur, 50 m from Nahargarh Biological Park, near Amber Fort
               </div>
             </div>
           </div>

@@ -40,22 +40,22 @@ export default function Home() {
       {/* Hero Section with Quick Availability Bar */}
       <Hero onOpenBooking={handleOpenBooking} />
 
-      {/* Overview & Architectural Sanctuary */}
+      {/* Overview */}
       <Overview />
 
-      {/* Hotel Portfolio Core: Rooms & Suites Showcase */}
+      {/* Rooms and suites */}
       <Rooms onOpenBooking={handleOpenBooking} />
 
-      {/* Gastronomy: Haldi Fine Dining & Jhumka Rooftop Pool */}
+      {/* Dining */}
       <Dining onOpenBooking={handleOpenBooking} />
 
-      {/* Celebrations & Royal Banquet Halls */}
+      {/* Events */}
       <Celebrations onOpenBooking={handleOpenBooking} />
 
-      {/* Concierge Portfolio: Safaris & Heritage Excursions */}
+      {/* Excursions */}
       <Excursions onOpenBooking={handleOpenBooking} />
 
-      {/* Authentic Photo Gallery (19 Real Hotel Photos) */}
+      {/* Photo gallery */}
       <Gallery />
 
       {/* Footer */}

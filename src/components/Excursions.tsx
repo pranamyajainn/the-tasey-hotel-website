@@ -12,42 +12,42 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
     {
       id: "nahargarh-lion-safari",
       title: "Nahargarh Lion Safari",
-      location: "Directly Opposite Hotel • 50m",
+      location: "Across the road • 50 m",
       image: "/images/attractions/lion-safari.jpg",
-      desc: "Protected 720-hectare Aravalli biological park home to Asiatic lions, panthers, and indigenous deer, located right across our gates.",
+      desc: "Nahargarh Biological Park is across the road. The safari includes lions and other park animals.",
       tags: ["Asiatic Lions", "Open-Top 4x4 Safari", "Forest Trails"],
     },
     {
       id: "amer-fort",
-      title: "Amber Fort & Royal Citadel",
-      location: "5 KM from Hotel • 10 Min Drive",
+      title: "Amber Fort",
+      location: "5 km from hotel • 10-minute drive",
       image: "/images/attractions/amber-fort.jpg",
-      desc: "Jaipur's iconic 16th-century hilltop fortress, featuring the world-famous Sheesh Mahal, royal courtyards, and evening illumination shows.",
-      tags: ["UNESCO Heritage", "Private Guided Tours", "Sheesh Mahal"],
+      desc: "The 16th-century fort includes Sheesh Mahal, courtyards, and evening light and sound shows.",
+      tags: ["Fort complex", "Sheesh Mahal", "Light and sound show"],
     },
     {
       id: "elephant-village",
-      title: "Elephant Sanctuary Amer",
-      location: "3 KM from Hotel • 5 Min Drive",
+      title: "Elephant Village Amer",
+      location: "3 km from hotel • 5-minute drive",
       image: "/images/attractions/elephant-village.jpg",
-      desc: "Ethical sanctuary in Amer offering intimate morning walks, feeding sessions, and caring interactions alongside gentle elephants.",
-      tags: ["Sanctuary Walk", "Feeding Session", "Family Friendly"],
+      desc: "The photo shows visitors riding painted elephants at Elephant Village Amer.",
+      tags: ["Elephant rides", "Painted elephants", "Amer"],
     },
     {
       id: "jal-mahal",
       title: "Jal Mahal (Water Palace)",
       location: "6.5 KM from Hotel • 12 Min Drive",
       image: "/images/attractions/jal-mahal.jpg",
-      desc: "A floating Rajput architectural marvel resting serenely in the centre of Man Sagar Lake against the backdrop of the Aravalli hills.",
-      tags: ["Scenic Lake Vista", "Sunset Photography", "Historic Palace"],
+      desc: "Jal Mahal stands in the centre of Man Sagar Lake, 6.5 km from the hotel.",
+      tags: ["Man Sagar Lake", "Water palace", "6.5 km"],
     },
     {
       id: "leopard-safari",
       title: "Jhalana Leopard Expedition",
       location: "Concierge Transfer • 25 Min Drive",
       image: "/images/attractions/leopard-safari.jpg",
-      desc: "Jaipur's premier leopard sanctuary boasting one of the world's highest densities of wild leopards, tracked in open 4x4 safari jeeps.",
-      tags: ["Wild Leopards", "Trackers & Guides", "Private 4x4 Jeep"],
+      desc: "Jhalana is a 25-minute drive for guided leopard safaris in open 4x4 jeeps.",
+      tags: ["Leopard safari", "Guided drive", "Open 4x4 jeep"],
     },
   ];
 
@@ -58,13 +58,13 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
         {/* Editorial Section Header */}
         <div className="max-w-3xl mb-14">
           <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#A95A01] block mb-3">
-            The Concierge Collection
+            Local excursions
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold tracking-tight text-[#011A51] leading-tight">
-            Curated Jaipur Excursions
+            Jaipur excursions
           </h2>
           <p className="mt-4 text-[#605A50] text-sm sm:text-base font-normal leading-relaxed">
-            With The TASEY Hotel as your private retreat in Amer, our concierge team handles all safari permits, private transfers, and local heritage guides.
+            Ask the concierge about transport and bookings for nearby forts, parks, and safaris.
           </p>
         </div>
 

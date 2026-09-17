@@ -15,7 +15,7 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose, initialData }: BookingModalProps) {
-  const [category, setCategory] = useState("Luxury Room");
+  const [category, setCategory] = useState("Standard Room");
   const [checkIn, setCheckIn] = useState("2026-09-20");
   const [checkOut, setCheckOut] = useState("2026-09-22");
   const [guestsCount, setGuestsCount] = useState("2 Guests");
@@ -96,15 +96,15 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full bg-[#F8F3EA] border border-[#E5DCCB] rounded-xl px-4 py-3 text-sm text-[#011A51] font-semibold focus:outline-none focus:border-[#A95A01] cursor-pointer"
               >
-                <option value="Luxury Room">Luxury Room (₹5,499/night)</option>
+                <option value="Standard Room">Standard Room (₹5,499/night)</option>
                 <option value="Executive Room">Executive Room (₹7,999/night)</option>
                 <option value="Suite Room">Suite Room (₹12,999/night)</option>
                 <option value="Elephant Village Excursion">Elephant Village Interaction</option>
                 <option value="Jhalana Leopard Safari">Jhalana Leopard Safari</option>
                 <option value="Nahargarh Lion Safari">Nahargarh Lion Safari</option>
-                <option value="Haldi Restaurant">Haldi Indoor Fine Dining</option>
-                <option value="Jhumka Rooftop Pool">Jhumka Rooftop Poolside Dining</option>
-                <option value="Banquet Event">Banquet Hall & Event Host</option>
+                <option value="Haldi Restaurant">Haldi indoor restaurant</option>
+                <option value="Jhumka Rooftop Pool">Jhumka rooftop pool dining</option>
+                <option value="Banquet Event">Banquet hall and event</option>
                 <option value="Custom Excursion Request">Custom Day Tour & Transport</option>
               </select>
             </div>
@@ -242,13 +242,13 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
 
             <div>
               <span className="text-xs uppercase tracking-widest text-[#A95A01] font-bold">
-                Reservation Request Received
+                Reservation request received
               </span>
               <h3 className="font-serif-luxury text-3xl font-bold text-[#011A51] mt-1">
-                We Look Forward to Welcoming You!
+                We look forward to your stay
               </h3>
               <p className="text-xs text-[#605A50] font-normal mt-2 max-w-md mx-auto">
-                Thank you, <strong className="text-[#011A51]">{fullName}</strong>. Your reservation request for <strong className="text-[#A95A01]">{category}</strong> has been received. This is not a confirmed booking yet — our concierge desk will call or email you at the details you provided to confirm availability, usually within 24 hours.
+                Thank you, <strong className="text-[#011A51]">{fullName}</strong>. Your reservation request for <strong className="text-[#A95A01]">{category}</strong> has been received. This is not a confirmed booking yet. Our reservations desk will call or email you at the details you provided to confirm availability, usually within 24 hours.
               </p>
             </div>
 
@@ -275,11 +275,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                   <span className="text-[#011A51] font-bold">{guestsCount}</span>
                 </div>
                 <div>
-                  <span className="text-[#605A50] block text-[10px]">Check-In / Date</span>
+                  <span className="text-[#605A50] block text-[10px]">Check-in / date</span>
                   <span className="text-[#011A51] font-bold">{checkIn}</span>
                 </div>
                 <div>
-                  <span className="text-[#605A50] block text-[10px]">Check-Out</span>
+                  <span className="text-[#605A50] block text-[10px]">Check-out</span>
                   <span className="text-[#011A51] font-bold">{checkOut}</span>
                 </div>
               </div>

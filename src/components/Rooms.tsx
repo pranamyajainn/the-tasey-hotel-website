@@ -13,66 +13,66 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
 
   const rooms = [
     {
-      id: "luxury-room",
-      name: "Luxury Room",
-      tagline: "Serene Hillside Calm with Hand-Carved Teak Accents",
+      id: "standard-room",
+      name: "Standard Room",
+      tagline: "350 sq ft with a king bed",
       image: "/images/tasey-17.jpeg",
       price: "₹5,499",
       per: "per night + taxes",
-      badge: "Premier Choice",
+      badge: "350 sq ft",
       size: "350 sq.ft",
-      view: "Aravalli Mountain View",
+      view: "Hill-facing window",
       occupancy: "2 Guests",
-      desc: "Warm Rajasthani heritage aesthetics meet modern luxury. Features plush king bedding, polished marble flooring, bespoke teak furniture, and sweeping mountain panoramas.",
+      desc: "The photo shows an upholstered headboard, split AC, curtains, a TV unit, and a marble floor.",
       specs: [
-        { label: "Plush King Bed", icon: Bed },
-        { label: "Mountain Panorama", icon: Eye },
-        { label: "En-suite Marble Bath", icon: Bath },
-        { label: "Climate Control", icon: Wind },
-        { label: "High-Speed Wi-Fi", icon: Wifi },
-        { label: "24/7 In-Room Dining", icon: Coffee },
+        { label: "King bed", icon: Bed },
+        { label: "Hill-facing window", icon: Eye },
+        { label: "Marble bathroom", icon: Bath },
+        { label: "Split AC", icon: Wind },
+        { label: "Wi-Fi", icon: Wifi },
+        { label: "Tea and coffee", icon: Coffee },
       ],
     },
     {
       id: "executive-room",
-      name: "Executive Balcony Room",
-      tagline: "Private Sit-Out Balcony Overlooking the Aravalli Slopes",
+      name: "Executive Room",
+      tagline: "450 sq ft with a private balcony",
       image: "/images/tasey-16.jpeg",
       price: "₹7,999",
       per: "per night + taxes",
       badge: "Private Balcony",
       size: "450 sq.ft",
-      view: "Private Balcony & Hill View",
+      view: "Balcony and hill view",
       occupancy: "Up to 3 Guests",
-      desc: "Designed for peaceful retreats, featuring a private sit-out balcony facing the hillside, an executive reading lounge, and spacious bathroom with deep rain shower.",
+      desc: "A larger room with a private balcony, seating area, curtains, and a tiled bathroom.",
       specs: [
-        { label: "Private Balcony", icon: Eye },
-        { label: "Plush King Bed", icon: Bed },
-        { label: "Rain Shower & Tub", icon: Bath },
-        { label: "Espresso Maker", icon: Coffee },
-        { label: "Reading Lounge", icon: Maximize2 },
-        { label: "High-Speed Wi-Fi", icon: Wifi },
+        { label: "Private balcony", icon: Eye },
+        { label: "King bed", icon: Bed },
+        { label: "Bathroom", icon: Bath },
+        { label: "Tea and coffee", icon: Coffee },
+        { label: "Seating area", icon: Maximize2 },
+        { label: "Wi-Fi", icon: Wifi },
       ],
     },
     {
       id: "suite-room",
-      name: "Royal Penthouse Suite",
-      tagline: "Grand Penthouse Sanctuary with Separate Royal Living Salon",
+      name: "Suite Room",
+      tagline: "700 sq ft with a separate living room",
       image: "/images/tasey-04.jpeg",
       price: "₹12,999",
       per: "per night + taxes",
-      badge: "Signature Suite",
+      badge: "700 sq ft",
       size: "700 sq.ft",
-      view: "360° Aravalli Vista",
+      view: "Hill-facing windows",
       occupancy: "Up to 4 Guests",
-      desc: "The pinnacle of boutique luxury at The TASEY. Includes an expansive royal salon with cane armchairs, panoramic floor-to-ceiling windows, and dedicated concierge service.",
+      desc: "The photo shows a separate living room with cane chairs, a bedroom, curtains, and large windows.",
       specs: [
-        { label: "Private Living Salon", icon: Maximize2 },
-        { label: "360° Aravalli Views", icon: Eye },
-        { label: "King Master Bedroom", icon: Bed },
-        { label: "Luxury Soaking Bath", icon: Bath },
-        { label: "Concierge Butler", icon: Sparkles },
-        { label: "High-Speed Wi-Fi", icon: Wifi },
+        { label: "Separate living room", icon: Maximize2 },
+        { label: "Large windows", icon: Eye },
+        { label: "King bed", icon: Bed },
+        { label: "Bathroom", icon: Bath },
+        { label: "Room service", icon: Sparkles },
+        { label: "Wi-Fi", icon: Wifi },
       ],
     },
   ];
@@ -89,10 +89,10 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
             Accommodations
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
-            Rooms & Suites
+            Rooms and suites
           </h2>
           <p className="mt-3 text-[#605A50] text-sm sm:text-base font-normal leading-relaxed">
-            Thoughtfully curated with warm Rajput architectural elements, marble finishes, and unhurried Aravalli hillside views.
+            Room sizes, bed types, and visible furnishings are listed with each room.
           </p>
         </div>
 

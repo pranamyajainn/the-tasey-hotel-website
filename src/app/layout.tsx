@@ -22,16 +22,16 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "The TASEY Hotel & Excursions | Luxury Boutique Hotel Near Amber Fort, Jaipur",
-  description: "Discover Jaipur beyond the ordinary at The TASEY Hotel, Amer. Luxury rooms, Haldi restaurant, Jhumka Rooftop Pool, Elephant Village interactions, Jhalana Leopard Safari & Nahargarh Lion Safari.",
+  title: "The Tasey Hotel | Amer, Jaipur",
+  description: "The Tasey Hotel in Amer, Jaipur, with rooms, Haldi restaurant, Jhumka rooftop pool, event spaces, and nearby safaris.",
   keywords: [
     "The Tasey", "The Tasey Hotel Amer", "Hotel Near Amber Fort Jaipur", 
     "Elephant Village Jaipur", "Jhalana Leopard Safari", "Nahargarh Lion Safari", 
     "Rooftop Pool Jaipur", "Haldi Restaurant Jaipur", "Jhumka Rooftop Restaurant"
   ],
   openGraph: {
-    title: "The TASEY Hotel & Excursions — Amer, Jaipur",
-    description: "Royal luxury hospitality & curated wildlife & heritage excursions amidst the Aravalli Hills.",
+    title: "The Tasey Hotel, Amer, Jaipur",
+    description: "Rooms, dining, a rooftop pool, event spaces, and nearby excursions.",
     images: [{ url: "/images/tasey-01.jpeg" }],
   },
 };
