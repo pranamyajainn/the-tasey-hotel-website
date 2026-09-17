@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Phone, Calendar, Menu, X, Sparkles, MapPin, Compass } from "lucide-react";
+import Link from "next/link";
+import { Phone, Calendar, Menu, X, MapPin, Compass } from "lucide-react";
 
 interface NavbarProps {
   onOpenBooking: (category?: string) => void;
@@ -63,7 +64,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 sm:gap-6">
         {/* Logo & Brand */}
-        <a href="#" className="flex items-center gap-3 group shrink-0">
+        <Link href="/" className="flex items-center gap-3 group shrink-0">
           <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#C5A059] to-[#8C6310] p-0.5 shadow-sm group-hover:scale-105 transition-transform shrink-0">
             <div className="w-full h-full bg-[#FFFDF9] rounded-full overflow-hidden flex items-center justify-center p-0.5">
               <Image
@@ -84,7 +85,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               Amer • Jaipur
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-5 xl:gap-8 2xl:gap-9">

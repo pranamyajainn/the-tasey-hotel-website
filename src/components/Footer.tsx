@@ -1,16 +1,38 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Globe, Share2, Compass } from "lucide-react";
+import Link from "next/link";
+import { MapPin, Phone, Mail, Share2, Check, Compass } from "lucide-react";
 
 export default function Footer() {
+  const [linkCopied, setLinkCopied] = useState(false);
+
+  const handleShare = async () => {
+    const shareData = {
+      title: "The TASEY Hotel & Excursions, Amer",
+      url: window.location.href,
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch {
+        // user cancelled the share sheet
+      }
+      return;
+    }
+    await navigator.clipboard.writeText(shareData.url);
+    setLinkCopied(true);
+    setTimeout(() => setLinkCopied(false), 2000);
+  };
+
   return (
     <footer className="bg-[#1C1815] text-[#FDFBF7] pt-16 pb-12 text-xs relative overflow-hidden border-t border-[#C5A059]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#C5A059]/20">
           {/* Brand Info */}
           <div className="space-y-4">
-            <a href="#" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-[#C5A059] via-[#D4AF37] to-[#8C6310] p-0.5 shadow-md">
                 <div className="w-full h-full bg-[#1C1815] rounded-full flex items-center justify-center p-1">
                   <Image src="/logo.png" alt="The TASEY Hotel" width={40} height={40} className="object-contain" />
@@ -24,19 +46,25 @@ export default function Footer() {
                   Hotel & Excursions • Amer
                 </span>
               </div>
-            </a>
+            </Link>
 
             <p className="text-[#D5C9B8] font-normal leading-relaxed">
               Nestled amidst the Aravalli Hills in Amer, Jaipur. Offering royal luxury stay, authentic dining at <em>Haldi</em>, rooftop poolside views at <em>Jhumka</em>, and curated <span className="text-[#E5C365] font-semibold">Elephant & Wildlife Safaris</span>.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
-              <a href="#" className="w-8 h-8 rounded-full bg-[#2A241F] border border-[#C5A059]/30 flex items-center justify-center hover:text-[#C5A059] hover:border-[#C5A059] transition-colors" title="Website">
-                <Globe className="w-4 h-4 text-[#E5C365]" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-[#2A241F] border border-[#C5A059]/30 flex items-center justify-center hover:text-[#C5A059] hover:border-[#C5A059] transition-colors" title="Share">
-                <Share2 className="w-4 h-4 text-[#E5C365]" />
-              </a>
+              <button
+                type="button"
+                onClick={handleShare}
+                className="w-8 h-8 rounded-full bg-[#2A241F] border border-[#C5A059]/30 flex items-center justify-center hover:text-[#C5A059] hover:border-[#C5A059] transition-colors"
+                title={linkCopied ? "Link copied" : "Share this page"}
+              >
+                {linkCopied ? (
+                  <Check className="w-4 h-4 text-[#E5C365]" />
+                ) : (
+                  <Share2 className="w-4 h-4 text-[#E5C365]" />
+                )}
+              </button>
             </div>
           </div>
 

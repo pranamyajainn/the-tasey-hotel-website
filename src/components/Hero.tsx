@@ -15,7 +15,6 @@ import {
   Plus,
   Minus,
   Check,
-  ShieldCheck,
   Crown
 } from "lucide-react";
 
@@ -391,32 +390,19 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   <Search className="w-4 h-4 text-[#C5A059] group-hover:text-white transition-colors" />
                   <span className="tracking-wider">Check Rates</span>
                 </div>
-                <span className="text-[10px] font-normal tracking-wide text-amber-200/90 lowercase group-hover:text-white/90">
-                  direct best price guarantee
-                </span>
               </button>
             </div>
           </div>
 
-          {/* Direct Booking Trust Guarantees */}
+          {/* Booking Info */}
           <div className="mt-3.5 pt-3 border-t border-[#C5A059]/20 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#7A6E63]">
             <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1.5 font-medium text-[#1C1815]">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#C5A059]" />
-                Best Direct Rate Guarantee
-              </span>
-              <span className="hidden sm:inline text-[#C5A059]/40">•</span>
-              <span className="hidden sm:flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
-                Welcome High Tea
-              </span>
-              <span className="hidden md:inline text-[#C5A059]/40">•</span>
               <span className="hidden md:flex items-center gap-1.5">
                 <Compass className="w-3.5 h-3.5 text-[#C5A059]" />
                 Concierge Safari Permits
               </span>
             </div>
-            <span className="font-semibold text-[#8C6310]">Amer, Jaipur • Free Cancellation Options</span>
+            <span className="font-semibold text-[#8C6310]">Amer, Jaipur</span>
           </div>
 
           {/* Bespoke Interactive Calendar Popover */}

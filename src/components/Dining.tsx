@@ -24,7 +24,6 @@ export default function Dining({ onOpenBooking }: DiningProps) {
         "Authentic Laal Maas, Ker Sangri & Dal Baati Churma",
         "Rich North Indian Curries, Hand-Carved Tandoori Breads",
         "Fine Dining Air-Conditioned Royal Hall Setting",
-        "Chefs trained in Heritage Royal Kitchen Techniques",
       ],
       specialty: "Chef's Signature Laal Maas & Saffron Phirni",
       ctaText: "Reserve Table at Haldi",

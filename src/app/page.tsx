@@ -9,7 +9,6 @@ import Rooms from "@/components/Rooms";
 import Dining from "@/components/Dining";
 import Celebrations from "@/components/Celebrations";
 import Gallery from "@/components/Gallery";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -59,9 +58,6 @@ export default function Home() {
 
       {/* Authentic Photo Gallery (19 Real Hotel Photos) */}
       <Gallery />
-
-      {/* Guest Reviews & Testimonials */}
-      <Testimonials />
 
       {/* Footer */}
       <Footer />

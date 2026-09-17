@@ -12,6 +12,7 @@ export default function Overview() {
       distance: "10 Min Scenic Drive",
       desc: "Minutes away from Jaipur's UNESCO World Heritage fortress, Sheesh Mahal, and spectacular hilltop night shows.",
       tag: "Historic Landmark",
+      href: "#adventures",
     },
     {
       num: "02",
@@ -20,6 +21,7 @@ export default function Overview() {
       distance: "1 Min Walk",
       desc: "Located in Jaipur's finest luxury hospitality zone with safe, tranquil, and private mountain surroundings.",
       tag: "Elite Enclave",
+      href: undefined,
     },
     {
       num: "03",
@@ -28,6 +30,7 @@ export default function Overview() {
       distance: "Directly Opposite",
       desc: "Pristine nature reserve offering Lion Safaris, birdwatching trails, and lush green forest views.",
       tag: "Nature & Wildlife",
+      href: "#adventures",
     },
     {
       num: "04",
@@ -36,6 +39,7 @@ export default function Overview() {
       distance: "Uninterrupted Vista",
       desc: "Breathtaking mountain horizons visible from rooms, dining courts, and our rooftop swimming pool.",
       tag: "Panoramic Sanctuary",
+      href: "#dining",
     },
   ];
 
@@ -117,10 +121,14 @@ export default function Overview() {
           {/* Right Column: Staggered Location Milestones */}
           <div className="lg:col-span-6 space-y-4">
             {locationList.map((item, idx) => {
+              const Wrapper = item.href ? "a" : "div";
               return (
-                <div
+                <Wrapper
                   key={idx}
-                  className="bg-[#FFFDF9] p-6 rounded-2xl border border-[#E5DCCB] hover:border-[#C5A059] shadow-sm hover:shadow-md transition-all duration-300 flex items-start gap-5 group cursor-pointer"
+                  {...(item.href ? { href: item.href } : {})}
+                  className={`bg-[#FFFDF9] p-6 rounded-2xl border border-[#E5DCCB] hover:border-[#C5A059] shadow-sm hover:shadow-md transition-all duration-300 flex items-start gap-5 group ${
+                    item.href ? "cursor-pointer" : ""
+                  }`}
                 >
                   {/* Number Badge */}
                   <div className="font-serif-luxury text-2xl font-bold text-[#C5A059] group-hover:text-[#8C6310] transition-colors shrink-0 mt-1">
@@ -143,12 +151,14 @@ export default function Overview() {
 
                     <div className="flex items-center justify-between text-[11px] text-[#8C6310] font-semibold pt-1">
                       <span>{item.tag}</span>
-                      <span className="text-[#C5A059] flex items-center gap-1 group-hover:translate-x-1 transition-transform font-bold">
-                        Discover <ArrowRight className="w-3 h-3" />
-                      </span>
+                      {item.href && (
+                        <span className="text-[#C5A059] flex items-center gap-1 group-hover:translate-x-1 transition-transform font-bold">
+                          Discover <ArrowRight className="w-3 h-3" />
+                        </span>
+                      )}
                     </div>
                   </div>
-                </div>
+                </Wrapper>
               );
             })}
           </div>

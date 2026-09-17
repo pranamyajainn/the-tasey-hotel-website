@@ -242,13 +242,13 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
 
             <div>
               <span className="text-xs uppercase tracking-widest text-[#8C6310] font-bold">
-                Reservation Request Confirmed
+                Reservation Request Received
               </span>
               <h3 className="font-serif-luxury text-3xl font-bold text-[#1C1815] mt-1">
                 We Look Forward to Welcoming You!
               </h3>
               <p className="text-xs text-[#5C5248] font-normal mt-2 max-w-md mx-auto">
-                Thank you, <strong className="text-[#1C1815]">{fullName}</strong>. Your reservation request for <strong className="text-[#8C6310]">{category}</strong> has been received by our concierge desk.
+                Thank you, <strong className="text-[#1C1815]">{fullName}</strong>. Your reservation request for <strong className="text-[#8C6310]">{category}</strong> has been received. This is not a confirmed booking yet — our concierge desk will call or email you at the details you provided to confirm availability, usually within 24 hours.
               </p>
             </div>
 
