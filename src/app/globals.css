@@ -5,14 +5,14 @@
     --bg-cream: #FDFBF7;
     --bg-sand: #F8F3EA;
     --bg-card: #FFFDF9;
-    --primary-gold: #C5A059;
-    --primary-gold-dark: #9E7B32;
-    --accent-amber: #B88E36;
-    --espresso-dark: #1C1815;
-    --espresso-body: #2C2621;
-    --espresso-muted: #5C5046;
-    --border-gold: rgba(197, 160, 89, 0.3);
-    --border-gold-hover: rgba(197, 160, 89, 0.6);
+    --primary-gold: #A95A01;
+    --primary-gold-dark: #8C4A00;
+    --accent-amber: #A95A01;
+    --espresso-dark: #011A51;
+    --espresso-body: #0B2A6B;
+    --espresso-muted: #605A50;
+    --border-gold: rgba(169, 90, 1, 0.3);
+    --border-gold-hover: rgba(169, 90, 1, 0.6);
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
   }
@@ -40,37 +40,35 @@
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #A67C1E 0%, #C5A059 50%, #8C6310 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #A95A01;
 }
 
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #C5A059 0%, #B88E36 50%, #9E7B32 100%);
+  background: #A95A01;
 }
 
 .bg-gold-gradient-hover {
-  background: linear-gradient(135deg, #D8B36C 0%, #C5A059 50%, #AB883F 100%);
+  background: #8C4A00;
 }
 
 .glass-panel-light {
   background: rgba(253, 251, 247, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(197, 160, 89, 0.3);
+  border: 1px solid rgba(169, 90, 1, 0.3);
 }
 
 .glass-card-light {
   background: rgba(255, 253, 249, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(197, 160, 89, 0.25);
-  box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(169, 90, 1, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(169, 90, 1, 0.12);
 }
 
 .glass-card-light:hover {
-  border-color: rgba(197, 160, 89, 0.6);
-  box-shadow: 0 20px 40px -10px rgba(197, 160, 89, 0.22);
+  border-color: rgba(169, 90, 1, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(169, 90, 1, 0.22);
 }
 
 /* Custom Warm Light Scrollbar */
@@ -81,12 +79,12 @@
   background: #F8F3EA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D8C29D;
+  background: #D3A468;
   border-radius: 4px;
-  border: 1px solid rgba(197, 160, 89, 0.4);
+  border: 1px solid rgba(169, 90, 1, 0.4);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A059;
+  background: #A95A01;
 }
 
 
