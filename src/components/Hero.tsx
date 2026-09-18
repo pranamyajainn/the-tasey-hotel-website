@@ -252,8 +252,11 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch">
 
+            {/* Check-in and check-out share one anchor so the calendar popover always lines up under them */}
+            <div className="sm:col-span-2 lg:col-span-6 relative grid grid-cols-1 sm:grid-cols-2 gap-3">
+
             {/* 1. Check-In Dedicated Tile */}
-            <div className="lg:col-span-3">
+            <div>
               <button
                 type="button"
                 onClick={() => {
@@ -284,7 +287,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
 
             {/* 2. Check-Out Dedicated Tile */}
-            <div className="lg:col-span-3">
+            <div>
               <button
                 type="button"
                 onClick={() => {
@@ -318,9 +321,136 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 </div>
               </button>
             </div>
+            {/* Calendar popover lines up under the check-in/check-out pair */}
+            {calendarOpen && (
+              <div className="absolute top-full mt-2 left-0 right-0 sm:right-auto sm:w-[380px] bg-[#FFFDF9] rounded border border-[#E5DCCB] p-4 z-50">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E5DCCB]">
+                  <div className="flex flex-col text-left">
+                    <span className="text-[14px] text-[#605A50]">
+                      Select {selectingTarget === "in" ? "check-in" : "check-out"} date
+                    </span>
+                    <span className="font-serif-luxury text-[20px] text-[#011A51]">
+                      {monthNames[calMonth]} {calYear}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (calMonth === 0) {
+                          setCalMonth(11);
+                          setCalYear(calYear - 1);
+                        } else {
+                          setCalMonth(calMonth - 1);
+                        }
+                      }}
+                      className="p-1.5 rounded hover:bg-[#F8F3EA] text-[#011A51]"
+                      aria-label="Previous Month"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (calMonth === 11) {
+                          setCalMonth(0);
+                          setCalYear(calYear + 1);
+                        } else {
+                          setCalMonth(calMonth + 1);
+                        }
+                      }}
+                      className="p-1.5 rounded hover:bg-[#F8F3EA] text-[#011A51]"
+                      aria-label="Next Month"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Quick Duration Shortcuts */}
+                <div className="flex items-center gap-1.5 mb-3 overflow-x-auto pb-1">
+                  {[
+                    { label: "1 night", nights: 1 },
+                    { label: "2 nights", nights: 2 },
+                    { label: "3 nights", nights: 3 },
+                    { label: "Weekend", nights: 2 },
+                  ].map((sc) => (
+                    <button
+                      key={sc.label}
+                      type="button"
+                      onClick={() => handleQuickDuration(sc.nights)}
+                      className="px-2.5 py-1 rounded bg-[#F8F3EA] hover:bg-[#EBDDC5] text-[#A95A01] text-[14px] transition-colors whitespace-nowrap"
+                    >
+                      {sc.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Calendar Days of Week */}
+                <div className="grid grid-cols-7 gap-1 text-center text-[14px] text-[#605A50] mb-1">
+                  <span>Su</span>
+                  <span>Mo</span>
+                  <span>Tu</span>
+                  <span>We</span>
+                  <span>Th</span>
+                  <span>Fr</span>
+                  <span>Sa</span>
+                </div>
+
+                {/* Days Grid */}
+                <div className="grid grid-cols-7 gap-1 text-[14px]">
+                  {/* Empty leading padding */}
+                  {Array.from({ length: firstDayOfMonth(calYear, calMonth) }).map((_, idx) => (
+                    <div key={`empty-${idx}`} className="h-8" />
+                  ))}
+
+                  {/* Month Days */}
+                  {Array.from({ length: daysInMonth(calYear, calMonth) }).map((_, idx) => {
+                    const dayNum = idx + 1;
+                    const dayDateStr = formatDateStr(calYear, calMonth, dayNum);
+                    const isCheckIn = dayDateStr === checkIn;
+                    const isCheckOut = dayDateStr === checkOut;
+                    const isInRange = dayDateStr > checkIn && dayDateStr < checkOut;
+
+                    return (
+                      <button
+                        key={dayNum}
+                        type="button"
+                        onClick={() => handleDateClick(dayNum)}
+                        className={`h-8 rounded flex items-center justify-center transition-all ${
+                          isCheckIn || isCheckOut
+                            ? "bg-[#A95A01] text-white"
+                            : isInRange
+                            ? "bg-[#A95A01]/15 text-[#A95A01]"
+                            : "text-[#011A51] hover:bg-[#F8F3EA]"
+                        }`}
+                      >
+                        {dayNum}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Footer */}
+                <div className="mt-3 pt-2 border-t border-[#E5DCCB] flex justify-between items-center text-[14px]">
+                  <span className="text-[#011A51]">
+                    {nightsCount} {nightsCount === 1 ? "night stay" : "nights stay"}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setCalendarOpen(false)}
+                    className="px-3 py-1 rounded bg-[#011A51] text-white hover:bg-[#A95A01] transition-colors"
+                  >
+                    Done
+                  </button>
+                </div>
+              </div>
+            )}
+            </div>
 
             {/* 3. Guests & Rooms Dedicated Tile */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 relative">
               <button
                 type="button"
                 onClick={() => {
@@ -344,156 +474,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   </div>
                 </div>
               </button>
-            </div>
-
-            {/* 4. Search Availability Button */}
-            <div className="lg:col-span-3 flex">
-              <button
-                type="submit"
-                className="w-full min-h-[64px] sm:min-h-[72px] flex items-center justify-center gap-2 rounded bg-[#011A51] hover:bg-[#A95A01] text-[#FFFDF9] text-[16px] font-medium transition-colors"
-              >
-                <Search className="w-4 h-4" />
-                <span>Check rates</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Booking Info */}
-          <div className="mt-3.5 pt-3 border-t border-[#E5DCCB] flex flex-wrap items-center justify-between gap-3 text-[14px] text-[#605A50]">
-            <span>Concierge safari permits included</span>
-            <span className="text-[#011A51]">Amer, Jaipur</span>
-          </div>
-
-          {/* Calendar popover */}
-          {calendarOpen && (
-            <div className="absolute top-[102%] left-4 right-4 sm:left-6 sm:right-auto sm:w-[380px] bg-[#FFFDF9] rounded border border-[#E5DCCB] p-4 z-50">
-              {/* Header */}
-              <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E5DCCB]">
-                <div className="flex flex-col text-left">
-                  <span className="text-[14px] text-[#605A50]">
-                    Select {selectingTarget === "in" ? "check-in" : "check-out"} date
-                  </span>
-                  <span className="font-serif-luxury text-[20px] text-[#011A51]">
-                    {monthNames[calMonth]} {calYear}
-                  </span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (calMonth === 0) {
-                        setCalMonth(11);
-                        setCalYear(calYear - 1);
-                      } else {
-                        setCalMonth(calMonth - 1);
-                      }
-                    }}
-                    className="p-1.5 rounded hover:bg-[#F8F3EA] text-[#011A51]"
-                    aria-label="Previous Month"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (calMonth === 11) {
-                        setCalMonth(0);
-                        setCalYear(calYear + 1);
-                      } else {
-                        setCalMonth(calMonth + 1);
-                      }
-                    }}
-                    className="p-1.5 rounded hover:bg-[#F8F3EA] text-[#011A51]"
-                    aria-label="Next Month"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Quick Duration Shortcuts */}
-              <div className="flex items-center gap-1.5 mb-3 overflow-x-auto pb-1">
-                {[
-                  { label: "1 night", nights: 1 },
-                  { label: "2 nights", nights: 2 },
-                  { label: "3 nights", nights: 3 },
-                  { label: "Weekend", nights: 2 },
-                ].map((sc) => (
-                  <button
-                    key={sc.label}
-                    type="button"
-                    onClick={() => handleQuickDuration(sc.nights)}
-                    className="px-2.5 py-1 rounded bg-[#F8F3EA] hover:bg-[#EBDDC5] text-[#A95A01] text-[14px] transition-colors whitespace-nowrap"
-                  >
-                    {sc.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Calendar Days of Week */}
-              <div className="grid grid-cols-7 gap-1 text-center text-[14px] text-[#605A50] mb-1">
-                <span>Su</span>
-                <span>Mo</span>
-                <span>Tu</span>
-                <span>We</span>
-                <span>Th</span>
-                <span>Fr</span>
-                <span>Sa</span>
-              </div>
-
-              {/* Days Grid */}
-              <div className="grid grid-cols-7 gap-1 text-[14px]">
-                {/* Empty leading padding */}
-                {Array.from({ length: firstDayOfMonth(calYear, calMonth) }).map((_, idx) => (
-                  <div key={`empty-${idx}`} className="h-8" />
-                ))}
-
-                {/* Month Days */}
-                {Array.from({ length: daysInMonth(calYear, calMonth) }).map((_, idx) => {
-                  const dayNum = idx + 1;
-                  const dayDateStr = formatDateStr(calYear, calMonth, dayNum);
-                  const isCheckIn = dayDateStr === checkIn;
-                  const isCheckOut = dayDateStr === checkOut;
-                  const isInRange = dayDateStr > checkIn && dayDateStr < checkOut;
-
-                  return (
-                    <button
-                      key={dayNum}
-                      type="button"
-                      onClick={() => handleDateClick(dayNum)}
-                      className={`h-8 rounded flex items-center justify-center transition-all ${
-                        isCheckIn || isCheckOut
-                          ? "bg-[#A95A01] text-white"
-                          : isInRange
-                          ? "bg-[#A95A01]/15 text-[#A95A01]"
-                          : "text-[#011A51] hover:bg-[#F8F3EA]"
-                      }`}
-                    >
-                      {dayNum}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Footer */}
-              <div className="mt-3 pt-2 border-t border-[#E5DCCB] flex justify-between items-center text-[14px]">
-                <span className="text-[#011A51]">
-                  {nightsCount} {nightsCount === 1 ? "night stay" : "nights stay"}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setCalendarOpen(false)}
-                  className="px-3 py-1 rounded bg-[#011A51] text-white hover:bg-[#A95A01] transition-colors"
-                >
-                  Done
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Guests and rooms popover */}
+          {/* Guests and rooms popover lines up under its own tile */}
           {guestsOpen && (
-            <div className="absolute top-[102%] left-4 right-4 sm:left-auto sm:right-6 sm:w-[320px] bg-[#FFFDF9] rounded border border-[#E5DCCB] p-4 z-50">
+            <div className="absolute top-full mt-2 right-0 left-0 sm:left-auto sm:w-[320px] bg-[#FFFDF9] rounded border border-[#E5DCCB] p-4 z-50">
               <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#E5DCCB]">
                 <span className="font-serif-luxury text-[20px] text-[#011A51]">
                   Guests and rooms
@@ -593,6 +576,26 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               </div>
             </div>
           )}
+            </div>
+
+            {/* 4. Search Availability Button */}
+            <div className="lg:col-span-3 flex">
+              <button
+                type="submit"
+                className="w-full min-h-[64px] sm:min-h-[72px] flex items-center justify-center gap-2 rounded bg-[#011A51] hover:bg-[#A95A01] text-[#FFFDF9] text-[16px] font-medium transition-colors"
+              >
+                <Search className="w-4 h-4" />
+                <span>Check rates</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Booking Info */}
+          <div className="mt-3.5 pt-3 border-t border-[#E5DCCB] flex flex-wrap items-center justify-between gap-3 text-[14px] text-[#605A50]">
+            <span>Concierge safari permits included</span>
+            <span className="text-[#011A51]">Amer, Jaipur</span>
+          </div>
+
         </form>
       </div>
     </section>
