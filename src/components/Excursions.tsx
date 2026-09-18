@@ -26,8 +26,8 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       id: "elephant-village",
       title: "Elephant Village Amer",
       location: "3 km from hotel, 5-minute drive",
-      image: "/images/attractions/elephant-village.jpg",
-      desc: "The photo shows visitors riding painted elephants at Elephant Village Amer.",
+      image: "/images/attractions/elephant-wash.webp",
+      desc: "The photo shows an elephant bathing in the lake at Elephant Village Amer.",
     },
     {
       id: "jal-mahal",

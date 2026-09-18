@@ -89,7 +89,7 @@ export default function Footer() {
               Local excursions
             </h4>
             <div className="space-y-3 text-[#D5C9B8]">
-              <p>Elephant Village Amer, Amer, Jaipur. Painted elephant rides.</p>
+              <p>Elephant Village Amer, Amer, Jaipur. Elephant bathing experience.</p>
               <p>Jhalana Leopard Safari. Guided wildlife reserve.</p>
               <p>Nahargarh Lion Safari, 720 hectare reserve, 50 m from hotel entrance.</p>
             </div>

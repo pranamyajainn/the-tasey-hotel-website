@@ -14,8 +14,8 @@ export default function Attractions() {
     {
       name: "Elephant Village Amer",
       distance: "3 km, 5-minute drive",
-      desc: "The photo shows tourists riding painted elephants.",
-      image: "/images/attractions/elephant-village.jpg",
+      desc: "The photo shows an elephant bathing in the lake.",
+      image: "/images/attractions/elephant-wash.webp",
     },
     {
       name: "Nahargarh Biological Park",
