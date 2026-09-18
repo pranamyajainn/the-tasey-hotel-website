@@ -132,6 +132,11 @@ export default function Footer() {
             Stay at The Tasey. Explore Amer, Jaipur.
           </div>
         </div>
+
+        {/* Photography Mention */}
+        <div className="mt-6 pt-4 border-t border-[#0B2A6B] text-center sm:text-left text-[12px] text-[#8E867A] leading-relaxed">
+          Landmark and wildlife photos courtesy of Wikimedia Commons contributors under Creative Commons licenses (CC BY-SA): Amber Fort by Aparna Mandal, Jal Mahal by Felixfelicis, Nahargarh by Tuhina1234, Asiatic Lion by Bernard Gagnon, and Indian Leopard by Genie.prinks.
+        </div>
       </div>
     </footer>
   );
