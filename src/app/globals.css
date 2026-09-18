@@ -13,8 +13,8 @@
     --espresso-muted: #605A50;
     --border-gold: rgba(169, 90, 1, 0.3);
     --border-gold-hover: rgba(169, 90, 1, 0.6);
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-heading: 'Newsreader', Georgia, serif;
+    --font-body: 'Instrument Sans', sans-serif;
   }
 
   html {
@@ -26,49 +26,19 @@
     background-color: var(--bg-cream);
     color: var(--espresso-body);
     font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
     overflow-x: hidden;
   }
 }
 
-/* Custom Warm Light Luxury Design System */
 .font-serif-luxury {
-  font-family: 'Playfair Display', Georgia, serif;
-}
-
-.font-serif-editorial {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 400;
 }
 
 .text-gold-gradient {
   color: inherit;
-}
-
-.bg-gold-gradient {
-  background: #A95A01;
-}
-
-.bg-gold-gradient-hover {
-  background: #8C4A00;
-}
-
-.glass-panel-light {
-  background: rgba(253, 251, 247, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(169, 90, 1, 0.3);
-}
-
-.glass-card-light {
-  background: rgba(255, 253, 249, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(169, 90, 1, 0.25);
-  box-shadow: 0 10px 30px -10px rgba(169, 90, 1, 0.12);
-}
-
-.glass-card-light:hover {
-  border-color: rgba(169, 90, 1, 0.6);
-  box-shadow: 0 20px 40px -10px rgba(169, 90, 1, 0.22);
 }
 
 /* Custom Warm Light Scrollbar */
@@ -86,5 +56,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #A95A01;
 }
-
-

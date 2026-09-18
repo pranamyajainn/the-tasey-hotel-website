@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { X, Calendar, Users, CheckCircle2, Phone, Sparkles, Copy, Check } from "lucide-react";
 
 interface BookingModalProps {
@@ -62,8 +63,8 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
         <div className="p-6 bg-[#F8F3EA] border-b border-[#E5DCCB] flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-[#011A51] p-0.5">
-              <div className="w-full h-full bg-[#FFFDF9] rounded-full flex items-center justify-center text-[#011A51] font-serif font-bold text-lg">
-                T
+              <div className="w-full h-full bg-[#FFFDF9] rounded-full overflow-hidden flex items-center justify-center p-0.5">
+                <Image src="/logo.png" alt="The Tasey logo" width={36} height={36} className="object-contain" />
               </div>
             </div>
             <div>
