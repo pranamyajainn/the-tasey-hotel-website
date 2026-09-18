@@ -85,7 +85,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
         
         {/* Header */}
         <div className="max-w-3xl mb-12">
-          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#A95A01] block mb-3">
+          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#011A51] block mb-3">
             Accommodations
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
@@ -105,17 +105,17 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 flex items-center gap-2 border ${
                 activeRoomIndex === idx
                   ? "bg-[#011A51] text-[#FFFDF9] border-[#011A51] shadow-md"
-                  : "bg-[#FFFDF9] text-[#605A50] border-[#A95A01]/30 hover:border-[#A95A01] hover:text-[#011A51]"
+                  : "bg-[#FFFDF9] text-[#605A50] border-[#E5DCCB] hover:border-[#A95A01] hover:text-[#011A51]"
               }`}
             >
-              <Bed className={`w-3.5 h-3.5 ${activeRoomIndex === idx ? "text-[#A95A01]" : "text-[#A95A01]"}`} />
+              <Bed className={`w-3.5 h-3.5 ${activeRoomIndex === idx ? "text-[#A95A01]" : "text-[#605A50]"}`} />
               <span>{room.name}</span>
             </button>
           ))}
         </div>
 
         {/* Active Room Portfolio Card */}
-        <div className="bg-[#FFFDF9] rounded-3xl overflow-hidden border border-[#A95A01]/30 shadow-lg grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-[#FFFDF9] rounded-3xl overflow-hidden border border-[#E5DCCB] shadow-lg grid grid-cols-1 lg:grid-cols-12">
           
           {/* Room Photo Showcase */}
           <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[460px] overflow-hidden group">
@@ -130,7 +130,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
 
             {/* Room Badge */}
             <div className="absolute top-5 left-5">
-              <span className="px-3.5 py-1 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#A95A01]/40 text-[#A95A01] text-[11px] font-bold uppercase tracking-wider shadow-sm">
+              <span className="px-3.5 py-1 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#E5DCCB] text-[#011A51] text-[11px] font-bold uppercase tracking-wider shadow-sm">
                 {activeRoom.badge}
               </span>
             </div>
@@ -138,9 +138,9 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
             {/* Bottom Floating Dimensions */}
             <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-xs text-white bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
               <span className="font-semibold">{activeRoom.size}</span>
-              <span className="text-[#A95A01]">•</span>
+              <span className="text-white/40">•</span>
               <span className="font-semibold">{activeRoom.view}</span>
-              <span className="text-[#A95A01]">•</span>
+              <span className="text-white/40">•</span>
               <span className="font-semibold">{activeRoom.occupancy}</span>
             </div>
           </div>
@@ -155,13 +155,13 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
               </div>
 
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#A95A01]">
+                <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#011A51]">
                   {activeRoom.price}
                 </span>
                 <span className="text-xs text-[#605A50]">{activeRoom.per}</span>
               </div>
 
-              <p className="text-xs uppercase tracking-widest text-[#A95A01] font-semibold mb-3">
+              <p className="text-xs uppercase tracking-widest text-[#011A51] font-semibold mb-3">
                 {activeRoom.tagline}
               </p>
 
@@ -176,9 +176,9 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
                   return (
                     <div
                       key={i}
-                      className="flex items-center gap-2 p-2 rounded-lg bg-[#F8F3EA] text-xs text-[#011A51] font-medium border border-[#A95A01]/20"
+                      className="flex items-center gap-2 p-2 rounded-lg bg-[#F8F3EA] text-xs text-[#011A51] font-medium border border-[#E5DCCB]"
                     >
-                      <Icon className="w-3.5 h-3.5 text-[#A95A01] shrink-0" />
+                      <Icon className="w-3.5 h-3.5 text-[#011A51] shrink-0" />
                       <span className="truncate">{spec.label}</span>
                     </div>
                   );

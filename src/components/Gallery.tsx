@@ -131,8 +131,8 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#A95A01] font-bold block mb-3">
-            Visual Portfolio
+          <span className="text-xs uppercase tracking-[0.25em] text-[#011A51] font-bold block mb-3">
+            Visual portfolio
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
             The Tasey <span className="text-gold-gradient">gallery</span>
@@ -150,7 +150,7 @@ export default function Gallery() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider transition-all border ${
                 activeCategory === cat
-                  ? "bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white border-transparent shadow-md scale-105"
+                  ? "bg-[#A95A01] text-white border-transparent shadow-md scale-105"
                   : "bg-[#FFFDF9] text-[#011A51] border-[#E5DCCB] hover:border-[#A95A01] hover:text-[#011A51]"
               }`}
             >
@@ -165,7 +165,7 @@ export default function Gallery() {
             <div
               key={item.id}
               onClick={() => setSelectedImage({ url: item.image, title: item.title })}
-              className="bg-[#FFFDF9] relative h-72 rounded-2xl overflow-hidden border border-[#A95A01]/30 shadow-md group cursor-pointer"
+              className="bg-[#FFFDF9] relative h-72 rounded-2xl overflow-hidden border border-[#E5DCCB] shadow-md group cursor-pointer"
             >
               <Image
                 src={item.image}
@@ -177,7 +177,7 @@ export default function Gallery() {
 
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#FFC76B] block mb-0.5">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-white/70 block mb-0.5">
                     {item.category}
                   </span>
                   <h3 className="font-serif-luxury text-base sm:text-lg font-bold text-white group-hover:text-[#FFC76B] transition-colors">
@@ -206,7 +206,7 @@ export default function Gallery() {
             <X className="w-6 h-6" />
           </button>
           
-          <div className="relative w-full max-w-5xl h-[80vh] rounded-3xl overflow-hidden border border-[#A95A01]/40 shadow-2xl flex flex-col justify-end">
+          <div className="relative w-full max-w-5xl h-[80vh] rounded-3xl overflow-hidden border border-white/20 shadow-2xl flex flex-col justify-end">
             <Image
               src={selectedImage.url}
               alt={selectedImage.title}
@@ -214,7 +214,7 @@ export default function Gallery() {
               className="object-contain"
             />
             <div className="relative z-10 p-6 bg-gradient-to-t from-black via-black/80 to-transparent text-center">
-              <h4 className="font-serif-luxury text-xl font-bold text-[#FFC76B]">
+              <h4 className="font-serif-luxury text-xl font-bold text-white">
                 {selectedImage.title}
               </h4>
             </div>

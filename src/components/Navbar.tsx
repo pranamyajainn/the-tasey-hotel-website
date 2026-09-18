@@ -34,29 +34,29 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#A95A01]/25 shadow-sm py-2.5"
+          ? "bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#E5DCCB] shadow-sm py-2.5"
           : "bg-gradient-to-b from-[#FDFBF7]/95 via-[#FDFBF7]/80 to-transparent py-3 sm:py-4"
       }`}
     >
       {/* Top Announcement Bar */}
-      <div className="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-6 mb-2 text-xs text-[#605A50] border-b border-[#A95A01]/15 pb-2">
+      <div className="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-6 mb-2 text-xs text-[#605A50] border-b border-[#E5DCCB] pb-2">
         <div className="flex items-center space-x-5">
           <span className="flex items-center gap-1.5 font-medium">
-            <MapPin className="w-3.5 h-3.5 text-[#A95A01]" />
+            <MapPin className="w-3.5 h-3.5 text-[#011A51]" />
             Amer, Jaipur (5 km from Amber Fort)
           </span>
-          <span className="text-[#A95A01]/40">•</span>
+          <span className="text-[#605A50]/50">•</span>
           <span className="flex items-center gap-1.5 font-medium">
-            <Compass className="w-3.5 h-3.5 text-[#A95A01]" />
+            <Compass className="w-3.5 h-3.5 text-[#011A51]" />
             50 m from Nahargarh Biological Park
           </span>
         </div>
         <div className="flex items-center space-x-3">
-          <Phone className="w-3.5 h-3.5 text-[#A95A01]" />
+          <Phone className="w-3.5 h-3.5 text-[#011A51]" />
           <a href="tel:+917073873670" className="font-semibold text-[#A95A01] hover:underline transition-colors">
             +91 70738 73670
           </a>
-          <span className="text-[#A95A01]/40">/</span>
+          <span className="text-[#605A50]/50">/</span>
           <a href="tel:+919145824248" className="font-semibold text-[#A95A01] hover:underline transition-colors">
             +91 91458 24248
           </a>
@@ -66,7 +66,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 sm:gap-6">
         {/* Logo & Brand */}
         <Link href="/" className="flex items-center gap-3 group shrink-0">
-          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#A95A01] to-[#A95A01] p-0.5 shadow-sm group-hover:scale-105 transition-transform shrink-0">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#A95A01] p-0.5 shadow-sm group-hover:scale-105 transition-transform shrink-0">
             <div className="w-full h-full bg-[#FFFDF9] rounded-full overflow-hidden flex items-center justify-center p-0.5">
               <Image
                 src="/logo.png"
@@ -82,7 +82,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             <span className="font-serif-luxury text-base sm:text-lg xl:text-xl font-bold tracking-widest text-[#011A51] group-hover:text-[#A95A01] transition-colors whitespace-nowrap">
               THE TASEY
             </span>
-            <span className="text-[8px] sm:text-[9px] tracking-[0.25em] text-[#A95A01] uppercase font-bold whitespace-nowrap">
+            <span className="text-[8px] sm:text-[9px] tracking-[0.25em] text-[#011A51] uppercase font-bold whitespace-nowrap">
               Amer • Jaipur
             </span>
           </div>
@@ -113,7 +113,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
           <button
             onClick={() => onOpenBooking()}
-            className="flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white font-bold text-xs sm:text-xs xl:text-sm tracking-wider uppercase shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all shrink-0 whitespace-nowrap"
+            className="flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#A95A01] text-white font-bold text-xs sm:text-xs xl:text-sm tracking-wider uppercase shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all shrink-0 whitespace-nowrap"
           >
             <Calendar className="w-3.5 h-3.5 text-white" />
             <span>Reserve Stay</span>
@@ -132,7 +132,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#FFFDF9] border-b border-[#A95A01]/30 px-6 py-6 space-y-4 shadow-xl">
+        <div className="lg:hidden bg-[#FFFDF9] border-b border-[#E5DCCB] px-6 py-6 space-y-4 shadow-xl">
           <nav className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
@@ -142,7 +142,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 className="text-base text-[#011A51] hover:text-[#A95A01] font-medium py-2.5 border-b border-[#E5DCCB]/60 flex items-center justify-between"
               >
                 <span>{link.name}</span>
-                <span className="text-[#A95A01] text-xs uppercase font-bold tracking-wider">Explore</span>
+                <span className="text-[#011A51] text-xs uppercase font-bold tracking-wider">Explore</span>
               </a>
             ))}
           </nav>
@@ -167,7 +167,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white font-bold text-sm uppercase tracking-wider shadow-md"
+              className="w-full py-3 rounded-xl bg-[#A95A01] text-white font-bold text-sm uppercase tracking-wider shadow-md"
             >
               Reserve Stay
             </button>

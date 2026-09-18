@@ -57,12 +57,12 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto animate-in fade-in duration-300">
-      <div className="relative w-full max-w-2xl bg-[#FFFDF9] rounded-3xl border border-[#A95A01]/40 shadow-2xl overflow-hidden my-auto text-[#011A51]">
+      <div className="relative w-full max-w-2xl bg-[#FFFDF9] rounded-3xl border border-[#E5DCCB] shadow-2xl overflow-hidden my-auto text-[#011A51]">
         {/* Modal Header */}
         <div className="p-6 bg-[#F8F3EA] border-b border-[#E5DCCB] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#A95A01] to-[#A95A01] p-0.5">
-              <div className="w-full h-full bg-[#FFFDF9] rounded-full flex items-center justify-center text-[#A95A01] font-serif font-bold text-lg">
+            <div className="w-10 h-10 rounded-full bg-[#011A51] p-0.5">
+              <div className="w-full h-full bg-[#FFFDF9] rounded-full flex items-center justify-center text-[#011A51] font-serif font-bold text-lg">
                 T
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               <h3 className="font-serif-luxury text-xl font-bold text-[#011A51]">
                 The Tasey Hotel booking desk
               </h3>
-              <p className="text-[11px] text-[#A95A01] font-bold">
+              <p className="text-[11px] text-[#011A51] font-bold">
                 Amer, Jaipur • Stay & Excursions Reservation
               </p>
             </div>
@@ -88,7 +88,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6">
             {/* Category Choice */}
             <div>
-              <label className="text-xs uppercase font-bold tracking-wider text-[#A95A01] block mb-2">
+              <label className="text-xs uppercase font-bold tracking-wider text-[#011A51] block mb-2">
                 Select Experience / Category
               </label>
               <select
@@ -113,7 +113,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <label className="text-xs uppercase font-semibold tracking-wider text-[#605A50] block mb-1.5 flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-[#A95A01]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#011A51]" />
                   Check-In / Date
                 </label>
                 <input
@@ -127,7 +127,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
 
               <div>
                 <label className="text-xs uppercase font-semibold tracking-wider text-[#605A50] block mb-1.5 flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-[#A95A01]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#011A51]" />
                   Check-Out Date
                 </label>
                 <input
@@ -141,7 +141,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
 
               <div>
                 <label className="text-xs uppercase font-semibold tracking-wider text-[#605A50] block mb-1.5 flex items-center gap-1">
-                  <Users className="w-3.5 h-3.5 text-[#A95A01]" />
+                  <Users className="w-3.5 h-3.5 text-[#011A51]" />
                   Guest Count
                 </label>
                 <select
@@ -224,7 +224,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </button>
               <button
                 type="submit"
-                className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-[#A95A01] to-[#A95A01] text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-[#A95A01]/40 hover:scale-102 transition-all flex items-center justify-center gap-2"
+                className="flex-1 py-3.5 rounded-xl bg-[#A95A01] text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-[#A95A01]/40 hover:scale-102 transition-all flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4 text-white" />
                 Confirm Reservation Request
@@ -234,26 +234,26 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
         ) : (
           /* Confirmation Receipt View */
           <div className="p-8 text-center space-y-6 animate-in zoom-in-95 duration-300">
-            <div className="w-16 h-16 rounded-full bg-[#F8F3EA] border border-[#A95A01]/40 p-1 mx-auto shadow-md">
-              <div className="w-full h-full bg-[#A95A01] rounded-full flex items-center justify-center text-white">
+            <div className="w-16 h-16 rounded-full bg-[#F8F3EA] border border-[#E5DCCB] p-1 mx-auto shadow-md">
+              <div className="w-full h-full bg-[#011A51] rounded-full flex items-center justify-center text-white">
                 <CheckCircle2 className="w-9 h-9" />
               </div>
             </div>
 
             <div>
-              <span className="text-xs uppercase tracking-widest text-[#A95A01] font-bold">
+              <span className="text-xs uppercase tracking-widest text-[#011A51] font-bold">
                 Reservation request received
               </span>
               <h3 className="font-serif-luxury text-3xl font-bold text-[#011A51] mt-1">
                 We look forward to your stay
               </h3>
               <p className="text-xs text-[#605A50] font-normal mt-2 max-w-md mx-auto">
-                Thank you, <strong className="text-[#011A51]">{fullName}</strong>. Your reservation request for <strong className="text-[#A95A01]">{category}</strong> has been received. This is not a confirmed booking yet. Our reservations desk will call or email you at the details you provided to confirm availability, usually within 24 hours.
+                Thank you, <strong className="text-[#011A51]">{fullName}</strong>. Your reservation request for <strong className="text-[#011A51]">{category}</strong> has been received. This is not a confirmed booking yet. Our reservations desk will call or email you at the details you provided to confirm availability, usually within 24 hours.
               </p>
             </div>
 
             {/* Booking Reference Card */}
-            <div className="bg-[#F8F3EA] p-6 rounded-2xl border border-[#A95A01]/40 max-w-md mx-auto text-left space-y-3 shadow-inner">
+            <div className="bg-[#F8F3EA] p-6 rounded-2xl border border-[#E5DCCB] max-w-md mx-auto text-left space-y-3 shadow-inner">
               <div className="flex justify-between items-center pb-3 border-b border-[#E5DCCB]">
                 <span className="text-xs text-[#605A50] uppercase tracking-wider font-semibold">Reference ID</span>
                 <button

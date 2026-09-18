@@ -57,7 +57,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
         
         {/* Editorial Section Header */}
         <div className="max-w-3xl mb-14">
-          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#A95A01] block mb-3">
+          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#011A51] block mb-3">
             Local excursions
           </span>
           <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold tracking-tight text-[#011A51] leading-tight">
@@ -73,7 +73,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
           {experiences.map((exp, idx) => (
             <div
               key={exp.id}
-              className={`bg-[#FFFDF9] rounded-2xl overflow-hidden border border-[#A95A01]/30 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group ${
+              className={`bg-[#FFFDF9] rounded-2xl overflow-hidden border border-[#E5DCCB] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group ${
                 idx === 0 ? "md:col-span-2 lg:col-span-2" : ""
               }`}
             >
@@ -89,8 +89,8 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                 
                 {/* Distance Badge */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md text-[#A95A01] text-[11px] font-bold tracking-wide shadow-sm border border-[#A95A01]/30">
-                    <MapPin className="w-3 h-3 text-[#A95A01]" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md text-[#011A51] text-[11px] font-bold tracking-wide shadow-sm border border-[#E5DCCB]">
+                    <MapPin className="w-3 h-3 text-[#011A51]" />
                     {exp.location}
                   </span>
                 </div>
@@ -120,7 +120,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
                     {exp.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded-md bg-[#F8F3EA] text-[#A95A01] text-[11px] font-semibold tracking-wide border border-[#A95A01]/20"
+                        className="px-2.5 py-1 rounded-md bg-[#F8F3EA] text-[#011A51] text-[11px] font-semibold tracking-wide border border-[#E5DCCB]"
                       >
                         {tag}
                       </span>
