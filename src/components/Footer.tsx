@@ -133,8 +133,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-3 text-[10px] text-[#3B5278] text-center sm:text-left leading-normal">
-          Landmark &amp; wildlife imagery via Wikimedia Commons contributors (CC BY-SA): Amber Fort (Aparna Mandal), Jal Mahal (Felixfelicis), Nahargarh (Tuhina1234), Asiatic Lion (Bernard Gagnon), Leopard (Genie.prinks).
+        <p className="mt-3 text-[14px] text-[#3B5278] text-center sm:text-left leading-normal">
+          Landmark &amp; wildlife imagery via Wikimedia Commons contributors (CC BY-SA): Amber Fort (Aparna Mandal), Jal Mahal (Felixfelicis), Nahargarh (Tuhina1234), Asiatic Lion (Bernard Gagnon), Leopard (Genie.prinks). Elephant bathing photo courtesy Elefantastic, Jaipur.
         </p>
       </div>
     </footer>
