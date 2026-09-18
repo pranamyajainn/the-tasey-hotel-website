@@ -68,7 +68,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
             </div>
             <div>
               <h3 className="font-serif-luxury text-xl font-bold text-[#011A51]">
-                The TASEY Hotel & Concierge Desk
+                The Tasey Hotel booking desk
               </h3>
               <p className="text-[11px] text-[#A95A01] font-bold">
                 Amer, Jaipur • Stay & Excursions Reservation
@@ -105,7 +105,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                 <option value="Haldi Restaurant">Haldi indoor restaurant</option>
                 <option value="Jhumka Rooftop Pool">Jhumka rooftop pool dining</option>
                 <option value="Banquet Event">Banquet hall and event</option>
-                <option value="Custom Excursion Request">Custom Day Tour & Transport</option>
+                <option value="Custom Excursion Request">Custom day tour and transport</option>
               </select>
             </div>
 
@@ -161,7 +161,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
             {/* Guest Personal Contact Info */}
             <div className="space-y-4 pt-2 border-t border-[#E5DCCB]">
               <h4 className="text-xs uppercase font-bold tracking-wider text-[#011A51]">
-                Primary Guest Information
+                Primary guest information
               </h4>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

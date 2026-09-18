@@ -17,7 +17,7 @@ export default function Attractions() {
     {
       name: "Elephant Village Amer",
       distance: "3 km (5 min drive)",
-      category: "Elephant Village Amer",
+      category: "Painted elephant rides",
       desc: "The photo shows tourists riding painted elephants.",
       badge: "Amer",
       image: "/images/attractions/elephant-village.jpg",
@@ -34,7 +34,7 @@ export default function Attractions() {
     },
     {
       name: "Jal Mahal (Water Palace)",
-      distance: "6.5 KM (12 Min)",
+      distance: "6.5 km (12 min)",
       category: "Palace on Lake",
       desc: "Jal Mahal stands in the centre of Man Sagar Lake.",
       badge: "6.5 km away",

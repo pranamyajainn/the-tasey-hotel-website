@@ -62,8 +62,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     },
     {
       image: "/images/tasey-09.jpeg",
-      subtitle: "Rooftop Pool & Gastronomy",
-      title: "Romantic Sunset Dining at Jhumka Rooftop",
+      subtitle: "Jhumka rooftop pool",
+      title: "Rooftop pool at Jhumka",
     },
     {
       image: "/images/tasey-17.jpeg",
@@ -72,8 +72,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     },
     {
       image: "/images/tasey-03.jpeg",
-      subtitle: "Steps Away from Amer Fort",
-      title: "Welcome to The TASEY Hotel, Amer",
+      subtitle: "Steps from Amber Fort",
+      title: "Welcome to The Tasey Hotel, Amer",
     },
   ];
 
@@ -194,7 +194,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <Sparkles className="w-4 h-4 text-[#A95A01]" />
           <span>The Tasey Hotel, Amer</span>
           <span className="text-[#A95A01]">•</span>
-          <span className="text-[#A95A01]">5 KM from Amber Fort</span>
+          <span className="text-[#A95A01]">5 km from Amber Fort</span>
         </div>
 
         {/* Hero Dynamic Subtitle & Title */}
@@ -214,7 +214,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:gap-4 text-xs text-[#011A51]">
           <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#A95A01]/35 shadow-sm font-medium">
             <MapPin className="w-3.5 h-3.5 text-[#A95A01]" />
-            <span>5 KM from Amber Fort</span>
+            <span>5 km from Amber Fort</span>
           </div>
           <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#A95A01]/35 shadow-sm font-medium">
             <Compass className="w-3.5 h-3.5 text-[#A95A01]" />
@@ -247,9 +247,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div className="flex justify-center sm:justify-start gap-1.5 mb-2 px-2 overflow-x-auto pb-1">
           {[
             { id: "Standard Room", label: "Rooms and suites", icon: Crown },
-            { id: "Nahargarh Lion Safari", label: "Wildlife Safaris", icon: Compass },
+            { id: "Nahargarh Lion Safari", label: "Wildlife safaris", icon: Compass },
             { id: "Elephant Village Excursion", label: "Elephant Village", icon: Sparkles },
-            { id: "Haldi Restaurant", label: "Dining & Rooftop", icon: Sparkles },
+            { id: "Haldi Restaurant", label: "Dining and rooftop", icon: Sparkles },
           ].map((tab) => {
             const Icon = tab.icon;
             const active = experience === tab.id;

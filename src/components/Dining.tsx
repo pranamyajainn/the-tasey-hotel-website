@@ -164,7 +164,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
 
               <div className="p-4 rounded-xl bg-[#F8F3EA] border border-[#E5DCCB] mb-6">
                 <div className="text-[11px] uppercase tracking-wider text-[#A95A01] font-bold mb-1">
-                  Ambience & Setting
+                  Ambience & setting
                 </div>
                 <div className="text-xs text-[#011A51] font-medium">
                   {current.ambience}
@@ -172,7 +172,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
               </div>
 
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#011A51] mb-3">
-                Culinary & Experience Highlights
+                Culinary & experience highlights
               </h4>
               <ul className="space-y-3">
                 {current.highlights.map((hl, i) => (

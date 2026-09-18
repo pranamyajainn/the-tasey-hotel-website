@@ -36,7 +36,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
     {
       id: "jal-mahal",
       title: "Jal Mahal (Water Palace)",
-      location: "6.5 KM from Hotel • 12 Min Drive",
+      location: "6.5 km from hotel • 12-minute drive",
       image: "/images/attractions/jal-mahal.jpg",
       desc: "Jal Mahal stands in the centre of Man Sagar Lake, 6.5 km from the hotel.",
       tags: ["Man Sagar Lake", "Water palace", "6.5 km"],
@@ -44,7 +44,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
     {
       id: "leopard-safari",
       title: "Jhalana Leopard Expedition",
-      location: "Concierge Transfer • 25 Min Drive",
+      location: "Concierge transfer • 25-minute drive",
       image: "/images/attractions/leopard-safari.jpg",
       desc: "Jhalana is a 25-minute drive for guided leopard safaris in open 4x4 jeeps.",
       tags: ["Leopard safari", "Guided drive", "Open 4x4 jeep"],

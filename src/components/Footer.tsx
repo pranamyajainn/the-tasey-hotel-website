@@ -71,7 +71,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="space-y-3">
             <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#FFC76B]">
-              Navigation & Experiences
+              Navigation & experiences
             </h4>
             <ul className="space-y-2 font-normal text-[#D5C9B8]">
               <li>
@@ -103,7 +103,7 @@ export default function Footer() {
           {/* Safaris & Excursions Info */}
           <div className="space-y-3">
             <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#FFC76B]">
-              Local Excursions
+              Local excursions
             </h4>
             <div className="space-y-3 font-normal text-[#D5C9B8]">
               <div>
@@ -127,7 +127,7 @@ export default function Footer() {
           {/* Contact Details */}
           <div className="space-y-3">
             <h4 className="font-serif-luxury text-base font-bold tracking-wide uppercase text-[#FFC76B]">
-              Location & Concierge
+              Location & concierge
             </h4>
             <ul className="space-y-2.5 font-normal text-[#D5C9B8]">
               <li className="flex items-start gap-2">
