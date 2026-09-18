@@ -89,7 +89,7 @@ export default function Footer() {
               Local excursions
             </h4>
             <div className="space-y-3 text-[#D5C9B8]">
-              <p>Elephant Village Amer, Amer, Jaipur. Elephant bathing experience.</p>
+              <p>Elephant Village Amer, Amer, Jaipur.</p>
               <p>Jhalana Leopard Safari. Guided wildlife reserve.</p>
               <p>Nahargarh Lion Safari, 720 hectare reserve, 50 m from hotel entrance.</p>
             </div>
@@ -134,7 +134,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-3 text-[14px] text-[#3B5278] text-center sm:text-left leading-normal">
-          Landmark &amp; wildlife imagery via Wikimedia Commons contributors (CC BY-SA): Amber Fort (Aparna Mandal), Jal Mahal (Felixfelicis), Nahargarh (Tuhina1234), Asiatic Lion (Bernard Gagnon), Leopard (Genie.prinks). Elephant bathing photo courtesy Elefantastic, Jaipur.
+          Landmark &amp; wildlife imagery via Wikimedia Commons contributors (CC BY-SA): Amber Fort (Aparna Mandal), Jal Mahal (Felixfelicis), Nahargarh (Tuhina1234), Asiatic Lion (Bernard Gagnon), Leopard (Genie.prinks). Elephant photo via Pexels.
         </p>
       </div>
     </footer>
