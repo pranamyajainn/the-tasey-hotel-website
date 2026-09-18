@@ -133,10 +133,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Photography Mention */}
-        <div className="mt-6 pt-4 border-t border-[#0B2A6B] text-center sm:text-left text-[12px] text-[#8E867A] leading-relaxed">
-          Landmark and wildlife photos courtesy of Wikimedia Commons contributors under Creative Commons licenses (CC BY-SA): Amber Fort by Aparna Mandal, Jal Mahal by Felixfelicis, Nahargarh by Tuhina1234, Asiatic Lion by Bernard Gagnon, and Indian Leopard by Genie.prinks.
-        </div>
+        <p className="mt-3 text-[10px] text-[#3B5278] text-center sm:text-left leading-normal">
+          Landmark &amp; wildlife imagery via Wikimedia Commons contributors (CC BY-SA): Amber Fort (Aparna Mandal), Jal Mahal (Felixfelicis), Nahargarh (Tuhina1234), Asiatic Lion (Bernard Gagnon), Leopard (Genie.prinks).
+        </p>
       </div>
     </footer>
   );
