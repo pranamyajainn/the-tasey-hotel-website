@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Camera, X, Maximize2 } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -42,84 +42,84 @@ export default function Gallery() {
     {
       id: 6,
       title: "Bedroom with brown headboard",
-      category: "Rooms & Suites",
+      category: "Rooms and suites",
       image: "/images/tasey-17.jpeg",
     },
     {
       id: 7,
       title: "Suite sitting room",
-      category: "Rooms & Suites",
+      category: "Rooms and suites",
       image: "/images/tasey-16.jpeg",
     },
     {
       id: 8,
       title: "Room with cane chairs",
-      category: "Rooms & Suites",
+      category: "Rooms and suites",
       image: "/images/tasey-04.jpeg",
     },
     {
       id: 9,
       title: "Hotel corridor",
-      category: "Rooms & Suites",
+      category: "Rooms and suites",
       image: "/images/tasey-18.jpeg",
     },
     {
       id: 10,
       title: "Room wardrobe and TV unit",
-      category: "Rooms & Suites",
+      category: "Rooms and suites",
       image: "/images/tasey-19.jpeg",
     },
     {
       id: 11,
       title: "Bedroom with curtains",
-      category: "Rooms & Suites",
+      category: "Rooms and suites",
       image: "/images/tasey-07.jpeg",
     },
     {
       id: 12,
       title: "Rooftop pool and open sky",
-      category: "Rooftop & Pool",
+      category: "Rooftop and pool",
       image: "/images/tasey-09.jpeg",
     },
     {
       id: 13,
       title: "Rooftop terrace and pool",
-      category: "Rooftop & Pool",
+      category: "Rooftop and pool",
       image: "/images/tasey-06.jpeg",
     },
     {
       id: 14,
       title: "Rooftop pool with steel railing",
-      category: "Rooftop & Pool",
+      category: "Rooftop and pool",
       image: "/images/tasey-05.jpeg",
     },
     {
       id: 15,
       title: "Haldi restaurant with pendant lights",
-      category: "Dining & Banquets",
+      category: "Dining and banquets",
       image: "/images/tasey-11.jpeg",
     },
     {
       id: 16,
       title: "Haldi restaurant in daylight",
-      category: "Dining & Banquets",
+      category: "Dining and banquets",
       image: "/images/tasey-02.jpeg",
     },
     {
       id: 17,
       title: "Private dining room",
-      category: "Dining & Banquets",
+      category: "Dining and banquets",
       image: "/images/tasey-12.jpeg",
     },
     {
       id: 18,
       title: "Banquet hall with balloons",
-      category: "Dining & Banquets",
+      category: "Dining and banquets",
       image: "/images/tasey-10.jpeg",
     },
   ];
 
-  const categories = ["All", "Hotel and views", "Rooms & Suites", "Rooftop & Pool", "Dining & Banquets"];
+  const categories = ["All", "Hotel and views", "Rooms and suites", "Rooftop and pool", "Dining and banquets"];
 
   const filteredItems =
     activeCategory === "All"
@@ -127,31 +127,25 @@ export default function Gallery() {
       : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-24 relative bg-[#F8F3EA] text-[#011A51] border-t border-b border-[#E5DCCB]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#011A51] font-bold block mb-3">
-            Visual portfolio
-          </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-[#011A51] tracking-tight">
-            The Tasey <span className="text-gold-gradient">gallery</span>
-          </h2>
-          <p className="mt-3 text-[#605A50] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
-            Photos of the hotel, rooms, rooftop pool, Haldi restaurant, and event spaces.
-          </p>
-        </div>
+    <section id="gallery" className="py-20 sm:py-28 bg-[#F8F3EA] text-[#011A51]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="font-serif-luxury text-[28px] sm:text-[40px] text-[#011A51]">
+          The Tasey gallery
+        </h2>
+        <p className="mt-3 text-[16px] leading-[1.6] text-[#605A50] max-w-md">
+          Photos of the hotel, rooms, rooftop pool, Haldi restaurant, and event spaces.
+        </p>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2.5 mb-12">
+        {/* Category Filters */}
+        <div className="flex flex-wrap gap-x-6 gap-y-2 mt-8 mb-10 border-b border-[#E5DCCB] pb-4">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider transition-all border ${
+              className={`text-[16px] transition-colors ${
                 activeCategory === cat
-                  ? "bg-[#A95A01] text-white border-transparent shadow-md scale-105"
-                  : "bg-[#FFFDF9] text-[#011A51] border-[#E5DCCB] hover:border-[#A95A01] hover:text-[#011A51]"
+                  ? "text-[#011A51]"
+                  : "text-[#605A50] hover:text-[#011A51]"
               }`}
             >
               {cat}
@@ -160,34 +154,21 @@ export default function Gallery() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
           {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedImage({ url: item.image, title: item.title })}
-              className="bg-[#FFFDF9] relative h-72 rounded-2xl overflow-hidden border border-[#E5DCCB] shadow-md group cursor-pointer"
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#011A51]/90 via-[#011A51]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
-
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-white/70 block mb-0.5">
-                    {item.category}
-                  </span>
-                  <h3 className="font-serif-luxury text-base sm:text-lg font-bold text-white group-hover:text-[#FFC76B] transition-colors">
-                    {item.title}
-                  </h3>
-                </div>
-                <div className="w-9 h-9 rounded-full bg-[#FFFDF9]/90 backdrop-blur-md border border-[#A95A01]/40 flex items-center justify-center text-[#A95A01] group-hover:bg-[#A95A01] group-hover:text-white transition-colors shrink-0 shadow-md">
-                  <Maximize2 className="w-4 h-4" />
-                </div>
-              </div>
+            <div key={item.id}>
+              <button
+                onClick={() => setSelectedImage({ url: item.image, title: item.title })}
+                className="relative h-64 w-full rounded overflow-hidden block"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
+              </button>
+              <p className="mt-2 text-[16px] text-[#011A51]">{item.title}</p>
             </div>
           ))}
         </div>
@@ -197,27 +178,25 @@ export default function Gallery() {
       {selectedImage && (
         <div
           onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-300"
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 sm:p-8"
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 text-white hover:bg-[#A95A01] hover:text-black transition-colors z-10"
+            className="absolute top-6 right-6 p-3 rounded text-white hover:bg-white/10 transition-colors z-10"
           >
             <X className="w-6 h-6" />
           </button>
-          
-          <div className="relative w-full max-w-5xl h-[80vh] rounded-3xl overflow-hidden border border-white/20 shadow-2xl flex flex-col justify-end">
+
+          <div className="relative w-full max-w-5xl h-[80vh] flex flex-col justify-end">
             <Image
               src={selectedImage.url}
               alt={selectedImage.title}
               fill
               className="object-contain"
             />
-            <div className="relative z-10 p-6 bg-gradient-to-t from-black via-black/80 to-transparent text-center">
-              <h4 className="font-serif-luxury text-xl font-bold text-white">
-                {selectedImage.title}
-              </h4>
-            </div>
+            <p className="relative z-10 pt-4 text-center text-[16px] text-white">
+              {selectedImage.title}
+            </p>
           </div>
         </div>
       )}
