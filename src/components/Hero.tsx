@@ -177,6 +177,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             src={slide.image}
             alt={slide.title}
             fill
+            sizes="100vw"
             priority={idx === 0}
             className="object-cover object-center"
           />

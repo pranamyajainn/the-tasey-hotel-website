@@ -165,6 +165,7 @@ export default function Gallery() {
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover"
                 />
               </button>
@@ -192,6 +193,7 @@ export default function Gallery() {
               src={selectedImage.url}
               alt={selectedImage.title}
               fill
+              sizes="100vw"
               className="object-contain"
             />
             <p className="relative z-10 pt-4 text-center text-[16px] text-white">

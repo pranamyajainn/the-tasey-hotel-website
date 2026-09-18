@@ -89,6 +89,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
               src={activeRoom.image}
               alt={activeRoom.name}
               fill
+              sizes="(min-width: 1024px) 58vw, 100vw"
               className="object-cover"
               priority
             />

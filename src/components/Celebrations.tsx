@@ -31,6 +31,7 @@ export default function Celebrations({ onOpenBooking }: CelebrationsProps) {
               src="/images/tasey-10.jpeg"
               alt="The Tasey banquet hall setup"
               fill
+              sizes="(min-width: 1024px) 58vw, 100vw"
               className="object-cover"
             />
           </div>

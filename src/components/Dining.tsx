@@ -78,6 +78,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
               src={current.image}
               alt={current.name}
               fill
+              sizes="(min-width: 1024px) 58vw, 100vw"
               className="object-cover"
               priority
             />
