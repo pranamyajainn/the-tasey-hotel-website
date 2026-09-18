@@ -7,7 +7,7 @@ export default function FloatingWhatsApp() {
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
       {/* Phone Call Pill */}
       <a
-        href="tel:+919876543210"
+        href="tel:+917073873670"
         className="w-12 h-12 rounded-full bg-[#011A51] text-[#A95A01] border border-[#A95A01]/40 shadow-2xl flex items-center justify-center hover:scale-110 transition-transform group"
         title="Call The Tasey Reception"
       >
@@ -16,7 +16,7 @@ export default function FloatingWhatsApp() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/919876543210?text=Hello%20The%20Tasey,%20I%20would%20like%20to%20enquire%20about%20room%20availability%20and%20dining."
+        href="https://wa.me/917073873670?text=Hello%20The%20Tasey,%20I%20would%20like%20to%20enquire%20about%20room%20availability%20and%20dining."
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 rounded-full bg-emerald-500 text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform group animate-bounce duration-[3000ms]"

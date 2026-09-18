@@ -51,13 +51,14 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             50 m from Nahargarh Biological Park
           </span>
         </div>
-        <div className="flex items-center space-x-4">
-          <a
-            href="tel:+919876543210"
-            className="flex items-center gap-1.5 text-[#A95A01] hover:text-[#A95A01] font-semibold transition-colors"
-          >
-            <Phone className="w-3.5 h-3.5 text-[#A95A01]" />
-            +91 98765 43210
+        <div className="flex items-center space-x-3">
+          <Phone className="w-3.5 h-3.5 text-[#A95A01]" />
+          <a href="tel:+917073873670" className="font-semibold text-[#A95A01] hover:underline transition-colors">
+            +91 70738 73670
+          </a>
+          <span className="text-[#A95A01]/40">/</span>
+          <a href="tel:+919145824248" className="font-semibold text-[#A95A01] hover:underline transition-colors">
+            +91 91458 24248
           </a>
         </div>
       </div>
@@ -103,7 +104,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         {/* Action CTA & Contact */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <a
-            href="tel:+919876543210"
+            href="tel:+917073873670"
             className="hidden xl:flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#A95A01]/35 text-[#A95A01] text-xs font-semibold hover:bg-[#F8F3EA] transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-[#A95A01]" />
@@ -148,11 +149,18 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
           <div className="pt-3 flex flex-col gap-3">
             <a
-              href="tel:+919876543210"
+              href="tel:+917073873670"
               className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-[#A95A01]/40 text-[#A95A01] text-sm font-semibold bg-[#F8F3EA]"
             >
               <Phone className="w-4 h-4 text-[#A95A01]" />
-              Call Concierge: +91 98765 43210
+              Call: +91 70738 73670
+            </a>
+            <a
+              href="tel:+919145824248"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-[#A95A01]/40 text-[#A95A01] text-sm font-semibold bg-[#F8F3EA]"
+            >
+              <Phone className="w-4 h-4 text-[#A95A01]" />
+              Call: +91 91458 24248
             </a>
             <button
               onClick={() => {

@@ -182,7 +182,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                   <input
                     type="tel"
                     required
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 70738 73670"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className="w-full bg-[#F8F3EA] border border-[#E5DCCB] rounded-xl px-3 py-2.5 text-xs text-[#011A51] font-medium focus:outline-none focus:border-[#A95A01]"
@@ -287,7 +287,7 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
 
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-3">
               <a
-                href={`https://wa.me/919876543210?text=Hello%20The%20TASEY,%20I%20have%20submitted%20a%20reservation%20request%20with%20ID%20${bookingId}%20for%20${encodeURIComponent(category)}.`}
+                href={`https://wa.me/917073873670?text=Hello%20The%20TASEY,%20I%20have%20submitted%20a%20reservation%20request%20with%20ID%20${bookingId}%20for%20${encodeURIComponent(category)}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2"

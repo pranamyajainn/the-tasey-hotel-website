@@ -138,11 +138,15 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#A95A01] shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-[#FFC76B] transition-colors">+91 98765 43210</a>
+                <span>
+                  <a href="tel:+917073873670" className="hover:text-[#FFC76B] transition-colors">+91 70738 73670</a>
+                  {" / "}
+                  <a href="tel:+919145824248" className="hover:text-[#FFC76B] transition-colors">+91 91458 24248</a>
+                </span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#A95A01] shrink-0" />
-                <a href="mailto:reservations@thetasey.com" className="hover:text-[#FFC76B] transition-colors">reservations@thetasey.com</a>
+                <a href="mailto:thetaseyhotel@gmail.com" className="hover:text-[#FFC76B] transition-colors">thetaseyhotel@gmail.com</a>
               </li>
             </ul>
           </div>
