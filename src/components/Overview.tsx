@@ -20,8 +20,8 @@ export default function Overview() {
       href: "#adventures",
     },
     {
-      title: "Views toward the Aravalli hills",
-      desc: "The rooftop pool photo shows nearby buildings, a transmission tower, and hills beyond.",
+      title: "The Tasey Hotel facade",
+      desc: "The hotel's facade sits back from the road with its own driveway and forecourt.",
       href: "#dining",
     },
   ];
@@ -34,8 +34,8 @@ export default function Overview() {
           <div className="lg:col-span-6">
             <div className="relative h-[340px] sm:h-[440px] rounded overflow-hidden">
               <Image
-                src="/images/tasey-09.jpeg"
-                alt="The Tasey view toward Amber Fort"
+                src="/images/tasey-exterior.jpeg"
+                alt="The Tasey Hotel exterior and entrance"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
