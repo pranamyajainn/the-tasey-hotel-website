@@ -41,14 +41,24 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       {/* Top Bar */}
       <div className="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-6 mb-2 text-[14px] text-[#605A50] border-b border-[#E5DCCB] pb-2">
         <div className="flex items-center gap-5">
-          <span className="flex items-center gap-1.5">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=The+Tasey+Hotel+Amer+Jaipur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-[#A95A01] transition-colors"
+          >
             <MapPin className="w-3.5 h-3.5 text-[#011A51]" />
             Amer, Jaipur (5 km from Amber Fort)
-          </span>
-          <span className="flex items-center gap-1.5">
+          </a>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Nahargarh+Biological+Park+Jaipur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-[#A95A01] transition-colors"
+          >
             <Compass className="w-3.5 h-3.5 text-[#011A51]" />
             50 m from Nahargarh Biological Park
-          </span>
+          </a>
         </div>
         <div className="flex items-center gap-3">
           <Phone className="w-3.5 h-3.5 text-[#011A51]" />
