@@ -164,27 +164,29 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-between pt-28 pb-16 overflow-hidden bg-[#FDFBF7]">
+    <section className="relative min-h-screen flex flex-col justify-between pt-28 pb-16 bg-[#FDFBF7]">
       {/* Background Slideshow */}
-      {heroSlides.map((slide, idx) => (
-        <div
-          key={idx}
-          className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${
-            idx === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            sizes="100vw"
-            priority={idx === 0}
-            className="object-cover object-center"
-          />
-          {/* Navy scrim keeps the headline and booking bar legible. */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#011A51]/15 via-[#011A51]/55 to-[#011A51]/85" />
-        </div>
-      ))}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {heroSlides.map((slide, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              sizes="100vw"
+              priority={idx === 0}
+              className="object-cover object-center"
+            />
+            {/* Navy scrim keeps the headline and booking bar legible. */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#011A51]/15 via-[#011A51]/55 to-[#011A51]/85" />
+          </div>
+        ))}
+      </div>
 
       {/* Main Hero Banner Content */}
       <div className="relative z-10 max-w-3xl mx-4 sm:mx-auto px-2 sm:px-6 my-auto">
