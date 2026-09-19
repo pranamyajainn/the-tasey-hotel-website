@@ -141,6 +141,18 @@ export default function Footer() {
         <p className="mt-3 text-[14px] text-[#3B5278] text-center sm:text-left leading-normal">
           Landmark &amp; wildlife imagery via Wikimedia Commons contributors (CC BY-SA): Amber Fort (Aparna Mandal), Jal Mahal (Felixfelicis), Nahargarh (Tuhina1234), Asiatic Lion (Bernard Gagnon), Leopard (Genie.prinks). Elephant photo via Pexels.
         </p>
+
+        <p className="mt-1 text-[14px] text-[#3B5278] text-center sm:text-left leading-normal">
+          Made by{" "}
+          <a
+            href="https://sahajta.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#FFC76B] transition-colors"
+          >
+            Sahajta AI
+          </a>
+        </p>
       </div>
     </footer>
   );
