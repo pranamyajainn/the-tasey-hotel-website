@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #FDFBF7;
+    --bg-sand: #F8F3EA;
+    --bg-card: #FFFDF9;
+    --primary-gold: #A95A01;
+    --primary-gold-dark: #8C4A00;
+    --accent-amber: #A95A01;
+    --espresso-dark: #011A51;
+    --espresso-body: #0B2A6B;
+    --espresso-muted: #605A50;
+    --border-gold: rgba(169, 90, 1, 0.3);
+    --border-gold-hover: rgba(169, 90, 1, 0.6);
+    --font-heading: 'Newsreader', Georgia, serif;
+    --font-body: 'Instrument Sans', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--espresso-body);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 400;
+}
+
+.text-gold-gradient {
+  color: inherit;
+}
+
+/* Custom Warm Light Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F3EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #D3A468;
+  border-radius: 4px;
+  border: 1px solid rgba(169, 90, 1, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A95A01;
+}
