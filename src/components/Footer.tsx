@@ -26,13 +26,18 @@ export default function Footer() {
     setTimeout(() => setLinkCopied(false), 2000);
   };
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-[#011A51] text-[#FDFBF7] pt-16 pb-12 text-[16px] border-t border-[#0B2A6B]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#0B2A6B]">
           {/* Brand Info */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" onClick={scrollToTop} className="flex items-center gap-3">
               <Image src="/logo.png" alt="The Tasey Hotel" width={36} height={36} className="object-contain" />
               <span className="font-serif-luxury text-[20px] tracking-wide text-[#FDFBF7]">
                 The Tasey
