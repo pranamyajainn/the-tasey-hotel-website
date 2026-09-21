@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface RoomsProps {
   onOpenBooking: (category: string) => void;
@@ -9,13 +10,14 @@ interface RoomsProps {
 
 export default function Rooms({ onOpenBooking }: RoomsProps) {
   const [activeRoomIndex, setActiveRoomIndex] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const rooms = [
     {
       id: "executive-room",
       name: "Executive Room",
       tagline: "350 sq ft with a king bed",
-      image: "/images/tasey-17.jpeg",
+      images: ["/images/tasey-17.jpeg", "/images/tasey-17b.jpeg"],
       price: "₹2,900",
       per: "per night + taxes",
       size: "350 sq ft",
@@ -28,7 +30,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
       id: "luxury-room",
       name: "Luxury Room",
       tagline: "450 sq ft with a private balcony",
-      image: "/images/tasey-16.jpeg",
+      images: ["/images/tasey-16.jpeg"],
       price: "₹3,800",
       per: "per night + taxes",
       size: "450 sq ft",
@@ -41,7 +43,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
       id: "suite-room",
       name: "Suite Room",
       tagline: "700 sq ft with a king bed",
-      image: "/images/tasey-04.jpeg",
+      images: ["/images/tasey-04.jpeg"],
       price: "₹5,400",
       per: "per night + taxes",
       size: "700 sq ft",
@@ -70,7 +72,10 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
           {rooms.map((room, idx) => (
             <button
               key={room.id}
-              onClick={() => setActiveRoomIndex(idx)}
+              onClick={() => {
+                setActiveRoomIndex(idx);
+                setActiveImageIndex(0);
+              }}
               className={`px-1 py-2.5 mr-6 text-[16px] border-b-2 transition-colors ${
                 activeRoomIndex === idx
                   ? "text-[#011A51] border-[#A95A01]"
@@ -84,15 +89,54 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
 
         {/* Active Room */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[420px] rounded overflow-hidden">
+          <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[420px] rounded overflow-hidden group">
             <Image
-              src={activeRoom.image}
+              src={activeRoom.images[activeImageIndex]}
               alt={activeRoom.name}
               fill
               sizes="(min-width: 1024px) 58vw, 100vw"
               className="object-cover"
               priority
             />
+            {activeRoom.images.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveImageIndex(
+                      (activeImageIndex - 1 + activeRoom.images.length) % activeRoom.images.length
+                    )
+                  }
+                  aria-label="Previous photo"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-9 h-9 rounded-full bg-[#011A51]/60 hover:bg-[#011A51]/80 text-white transition-colors"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveImageIndex((activeImageIndex + 1) % activeRoom.images.length)
+                  }
+                  aria-label="Next photo"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-9 h-9 rounded-full bg-[#011A51]/60 hover:bg-[#011A51]/80 text-white transition-colors"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
+                  {activeRoom.images.map((_, imgIdx) => (
+                    <button
+                      key={imgIdx}
+                      type="button"
+                      onClick={() => setActiveImageIndex(imgIdx)}
+                      aria-label={`Go to photo ${imgIdx + 1}`}
+                      className={`h-1.5 rounded transition-all duration-300 ${
+                        imgIdx === activeImageIndex ? "w-6 bg-white" : "w-1.5 bg-white/60 hover:bg-white/90"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
 
           <div className="lg:col-span-5 flex flex-col">

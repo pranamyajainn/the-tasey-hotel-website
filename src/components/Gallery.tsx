@@ -64,6 +64,12 @@ export default function Gallery() {
       image: "/images/tasey-17.jpeg",
     },
     {
+      id: 29,
+      title: "Executive Room TV unit",
+      category: "Rooms and suites",
+      image: "/images/tasey-17b.jpeg",
+    },
+    {
       id: 13,
       title: "Guest room with floral wallpaper",
       category: "Rooms and suites",
