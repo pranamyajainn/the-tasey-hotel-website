@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw photo originals (not served by the site, kept local only)
+/public/LatestImages
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
