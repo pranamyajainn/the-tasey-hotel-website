@@ -190,12 +190,6 @@ export default function Gallery() {
       image: "/images/tasey-11c.jpeg",
     },
     {
-      id: 39,
-      title: "Haldi restaurant seating",
-      category: "Dining and banquets",
-      image: "/images/tasey-11d.jpeg",
-    },
-    {
       id: 40,
       title: "Haldi restaurant seating",
       category: "Dining and banquets",
@@ -224,12 +218,6 @@ export default function Gallery() {
       title: "Haldi restaurant seating",
       category: "Dining and banquets",
       image: "/images/tasey-11i.jpeg",
-    },
-    {
-      id: 45,
-      title: "Haldi restaurant seating",
-      category: "Dining and banquets",
-      image: "/images/tasey-11j.jpeg",
     },
     {
       id: 46,
