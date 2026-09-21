@@ -220,7 +220,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       {/* Booking and availability */}
       <div ref={bookingBarRef} className="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 w-full mt-8">
         {/* Experience Selector Tabs */}
-        <div className="flex justify-center sm:justify-start gap-1.5 mb-2 px-2 overflow-x-auto pb-1">
+        <div className="flex justify-start gap-1.5 mb-2 px-2 overflow-x-auto snap-x snap-mandatory pb-1">
           {[
             { id: "Executive Room", label: "Rooms and suites", icon: Crown },
             { id: "Nahargarh Lion Safari", label: "Wildlife safaris", icon: Compass },
@@ -234,7 +234,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 key={tab.id}
                 type="button"
                 onClick={() => setExperience(tab.id)}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-t text-[14px] transition-all duration-200 whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-t text-[14px] transition-all duration-200 whitespace-nowrap snap-start shrink-0 ${
                   active
                     ? "bg-[#FFFDF9] text-[#A95A01] border-t-2 border-x border-[#A95A01] -mb-px z-10"
                     : "bg-[#F8F3EA]/90 text-[#605A50] hover:text-[#011A51] border-t border-x border-[#E5DCCB]"
