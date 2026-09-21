@@ -372,7 +372,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 </div>
 
                 {/* Quick Duration Shortcuts */}
-                <div className="flex items-center gap-1.5 mb-3 overflow-x-auto pb-1">
+                <div className="flex items-center flex-wrap gap-1.5 mb-3">
                   {[
                     { label: "1 night", nights: 1 },
                     { label: "2 nights", nights: 2 },
