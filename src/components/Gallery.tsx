@@ -65,7 +65,7 @@ export default function Gallery() {
     },
     {
       id: 13,
-      title: "Room seating nook",
+      title: "Guest room with floral wallpaper",
       category: "Rooms and suites",
       image: "/images/tasey-16.jpeg",
     },
