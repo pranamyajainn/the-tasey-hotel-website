@@ -106,6 +106,24 @@ export default function Gallery() {
       image: "/images/tasey-04.jpeg",
     },
     {
+      id: 34,
+      title: "Suite sitting area with sofa and chairs",
+      category: "Rooms and suites",
+      image: "/images/tasey-04b.jpeg",
+    },
+    {
+      id: 35,
+      title: "Suite Room layout",
+      category: "Rooms and suites",
+      image: "/images/tasey-04c.jpeg",
+    },
+    {
+      id: 36,
+      title: "Suite bedroom",
+      category: "Rooms and suites",
+      image: "/images/tasey-04d.jpeg",
+    },
+    {
       id: 15,
       title: "Bedroom with curtains",
       category: "Rooms and suites",
