@@ -57,7 +57,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 mt-10">
           {experiences.map((exp) => (
-            <div key={exp.id}>
+            <div key={exp.id} id={exp.id} className="scroll-mt-24">
               <div className="relative h-64 rounded overflow-hidden">
                 <Image
                   src={exp.image}
