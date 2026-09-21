@@ -16,18 +16,6 @@ export default function Gallery() {
       image: "/images/tasey-01.jpeg",
     },
     {
-      id: 2,
-      title: "The Tasey Hotel facade",
-      category: "Hotel and views",
-      image: "/images/tasey-exterior.jpeg",
-    },
-    {
-      id: 3,
-      title: "Hotel exterior in daylight",
-      category: "Hotel and views",
-      image: "/images/tasey-03.jpeg",
-    },
-    {
       id: 4,
       title: "Hotel reception desk",
       category: "Hotel and views",
@@ -62,12 +50,6 @@ export default function Gallery() {
       title: "Lobby lounge with TV",
       category: "Hotel and views",
       image: "/images/gallery/tasey-gallery-02.jpg",
-    },
-    {
-      id: 10,
-      title: "Hotel wall art",
-      category: "Hotel and views",
-      image: "/images/gallery/tasey-gallery-03.jpg",
     },
     {
       id: 11,
