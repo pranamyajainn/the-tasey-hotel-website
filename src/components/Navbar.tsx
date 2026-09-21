@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Phone, Menu, X, MapPin, Compass } from "lucide-react";
 
 interface NavbarProps {
@@ -74,7 +73,12 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 sm:gap-6">
         {/* Logo & Brand */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
+        <a
+          href="https://www.google.com/maps/place/Kanha+Restaurant/@26.8372066,75.7134535,12z/data=!4m10!1m2!2m1!1skanha+hotel+jaipur!3m6!1s0x396db4040eac19d3:0x2f301541cbe55cd3!8m2!3d26.9122763!4d75.8005665!15sChJrYW5oYSBob3RlbCBqYWlwdXKSARVyYWphc3RoYW5pX3Jlc3RhdXJhbnTgAQA!16s%2Fg%2F11byxh5lxc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 shrink-0"
+        >
           <Image
             src="/logo.png"
             alt="The Tasey Logo"
@@ -86,7 +90,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <span className="font-serif-luxury text-[20px] tracking-wide text-[#011A51] whitespace-nowrap">
             The Tasey
           </span>
-        </Link>
+        </a>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
