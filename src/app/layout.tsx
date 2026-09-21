@@ -18,6 +18,7 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thetaseyhotel.com"),
   title: "The Tasey Hotel | Amer, Jaipur",
   description: "The Tasey Hotel in Amer, Jaipur, with rooms, Haldi restaurant, Jhumka rooftop pool, event spaces, and nearby safaris.",
   keywords: [
