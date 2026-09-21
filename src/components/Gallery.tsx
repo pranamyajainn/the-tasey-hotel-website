@@ -261,6 +261,24 @@ export default function Gallery() {
       category: "Dining and banquets",
       image: "/images/gallery/tasey-gallery-08.jpg",
     },
+    {
+      id: 49,
+      title: "Jhumka menu and table setting",
+      category: "Dining and banquets",
+      image: "/images/tasey-05b.jpeg",
+    },
+    {
+      id: 50,
+      title: "Jhumka and kids menu",
+      category: "Dining and banquets",
+      image: "/images/tasey-05c.jpeg",
+    },
+    {
+      id: 51,
+      title: "Rooftop terrace decor",
+      category: "Dining and banquets",
+      image: "/images/tasey-05d.jpeg",
+    },
   ];
 
   const categories = ["All", "Hotel and views", "Rooms and suites", "Rooftop and pool", "Dining and banquets"];
