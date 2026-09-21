@@ -47,6 +47,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
         "/images/tasey-05c.jpeg",
         "/images/gallery/tasey-gallery-07.jpg",
         "/images/tasey-05d.jpeg",
+        "/images/tasey-05e.jpeg",
       ],
       ambience: "Open rooftop with a pool and steel railing",
       timings: "5:00 PM to midnight daily",

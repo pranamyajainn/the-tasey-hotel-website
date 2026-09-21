@@ -279,6 +279,12 @@ export default function Gallery() {
       category: "Dining and banquets",
       image: "/images/tasey-05d.jpeg",
     },
+    {
+      id: 52,
+      title: "Rooftop terrace view",
+      category: "Dining and banquets",
+      image: "/images/tasey-05e.jpeg",
+    },
   ];
 
   const categories = ["All", "Hotel and views", "Rooms and suites", "Rooftop and pool", "Dining and banquets"];
