@@ -88,6 +88,18 @@ export default function Gallery() {
       image: "/images/tasey-16.jpeg",
     },
     {
+      id: 32,
+      title: "Luxury Room seating chairs",
+      category: "Rooms and suites",
+      image: "/images/tasey-16b.jpeg",
+    },
+    {
+      id: 33,
+      title: "Luxury Room wardrobe and minibar",
+      category: "Rooms and suites",
+      image: "/images/tasey-16c.jpeg",
+    },
+    {
       id: 14,
       title: "Suite bedroom with leather headboard",
       category: "Rooms and suites",
