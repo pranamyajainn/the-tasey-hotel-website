@@ -17,7 +17,12 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
       id: "executive-room",
       name: "Executive Room",
       tagline: "350 sq ft with a king bed",
-      images: ["/images/tasey-17.jpeg", "/images/tasey-17b.jpeg"],
+      images: [
+        "/images/tasey-17.jpeg",
+        "/images/tasey-17b.jpeg",
+        "/images/tasey-17c.jpeg",
+        "/images/tasey-17d.jpeg",
+      ],
       price: "₹2,900",
       per: "per night + taxes",
       size: "350 sq ft",

@@ -70,6 +70,18 @@ export default function Gallery() {
       image: "/images/tasey-17b.jpeg",
     },
     {
+      id: 30,
+      title: "Executive Room seating chairs",
+      category: "Rooms and suites",
+      image: "/images/tasey-17c.jpeg",
+    },
+    {
+      id: 31,
+      title: "Executive Room bed",
+      category: "Rooms and suites",
+      image: "/images/tasey-17d.jpeg",
+    },
+    {
       id: 13,
       title: "Guest room with floral wallpaper",
       category: "Rooms and suites",
