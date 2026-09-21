@@ -12,11 +12,11 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
 
   const rooms = [
     {
-      id: "standard-room",
-      name: "Standard Room",
+      id: "executive-room",
+      name: "Executive Room",
       tagline: "350 sq ft with a king bed",
       image: "/images/tasey-17.jpeg",
-      price: "₹5,499",
+      price: "₹2,900",
       per: "per night + taxes",
       size: "350 sq ft",
       view: "Hill-facing window",
@@ -25,11 +25,11 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
       specs: "King bed, hill-facing window, marble bathroom, split AC, Wi-Fi, tea and coffee.",
     },
     {
-      id: "executive-room",
-      name: "Executive Room",
+      id: "luxury-room",
+      name: "Luxury Room",
       tagline: "450 sq ft with a private balcony",
       image: "/images/tasey-16.jpeg",
-      price: "₹7,999",
+      price: "₹3,800",
       per: "per night + taxes",
       size: "450 sq ft",
       view: "Balcony and hill view",
@@ -42,7 +42,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
       name: "Suite Room",
       tagline: "700 sq ft with a separate living room",
       image: "/images/tasey-04.jpeg",
-      price: "₹12,999",
+      price: "₹5,400",
       per: "per night + taxes",
       size: "700 sq ft",
       view: "Hill-facing windows",

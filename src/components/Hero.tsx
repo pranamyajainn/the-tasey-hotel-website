@@ -27,7 +27,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
   const [rooms, setRooms] = useState(1);
-  const [experience, setExperience] = useState("Standard Room");
+  const [experience, setExperience] = useState("Executive Room");
 
   // Popover controls
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -222,7 +222,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         {/* Experience Selector Tabs */}
         <div className="flex justify-center sm:justify-start gap-1.5 mb-2 px-2 overflow-x-auto pb-1">
           {[
-            { id: "Standard Room", label: "Rooms and suites", icon: Crown },
+            { id: "Executive Room", label: "Rooms and suites", icon: Crown },
             { id: "Nahargarh Lion Safari", label: "Wildlife safaris", icon: Compass },
             { id: "Elephant Village Excursion", label: "Elephant Village", icon: PawPrint },
             { id: "Haldi Restaurant", label: "Dining and rooftop", icon: UtensilsCrossed },

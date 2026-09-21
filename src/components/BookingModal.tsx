@@ -16,7 +16,7 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose, initialData }: BookingModalProps) {
-  const [category, setCategory] = useState("Standard Room");
+  const [category, setCategory] = useState("Executive Room");
   const [checkIn, setCheckIn] = useState("2026-09-20");
   const [checkOut, setCheckOut] = useState("2026-09-22");
   const [guestsCount, setGuestsCount] = useState("2 Guests");
@@ -99,9 +99,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full bg-[#F8F3EA] border border-[#E5DCCB] rounded px-4 py-3 text-[16px] text-[#011A51] focus:outline-none focus:border-[#A95A01] cursor-pointer"
               >
-                <option value="Standard Room">Standard Room (₹5,499/night)</option>
-                <option value="Executive Room">Executive Room (₹7,999/night)</option>
-                <option value="Suite Room">Suite Room (₹12,999/night)</option>
+                <option value="Executive Room">Executive Room (₹2,900/night)</option>
+                <option value="Luxury Room">Luxury Room (₹3,800/night)</option>
+                <option value="Suite Room">Suite Room (₹5,400/night)</option>
                 <option value="Elephant Village Excursion">Elephant Village Interaction</option>
                 <option value="Jhalana Leopard Safari">Jhalana Leopard Safari</option>
                 <option value="Nahargarh Lion Safari">Nahargarh Lion Safari</option>
