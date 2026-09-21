@@ -13,7 +13,7 @@ export default function Gallery() {
       id: 1,
       title: "Hotel entrance and facade",
       category: "Hotel and views",
-      image: "/images/tasey-01.jpeg",
+      image: "/images/tasey-exterior.jpeg",
     },
     {
       id: 4,
