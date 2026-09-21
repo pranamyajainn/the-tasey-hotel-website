@@ -220,12 +220,12 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       {/* Booking and availability */}
       <div ref={bookingBarRef} className="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 w-full mt-8">
         {/* Experience Selector Tabs */}
-        <div className="flex justify-start gap-1.5 mb-2 px-2 overflow-x-auto snap-x snap-mandatory pb-1">
+        <div className="grid grid-cols-2 sm:flex sm:flex-nowrap justify-start gap-2 sm:gap-1.5 mb-3 sm:mb-2 px-2">
           {[
-            { id: "Executive Room", label: "Rooms and suites", icon: Crown },
-            { id: "Nahargarh Lion Safari", label: "Wildlife safaris", icon: Compass },
-            { id: "Elephant Village Excursion", label: "Elephant Village", icon: PawPrint },
-            { id: "Haldi Restaurant", label: "Dining and rooftop", icon: UtensilsCrossed },
+            { id: "Executive Room", label: "Rooms and suites", shortLabel: "Rooms", icon: Crown },
+            { id: "Nahargarh Lion Safari", label: "Wildlife safaris", shortLabel: "Safaris", icon: Compass },
+            { id: "Elephant Village Excursion", label: "Elephant Village", shortLabel: "Elephants", icon: PawPrint },
+            { id: "Haldi Restaurant", label: "Dining and rooftop", shortLabel: "Dining", icon: UtensilsCrossed },
           ].map((tab) => {
             const Icon = tab.icon;
             const active = experience === tab.id;
@@ -234,14 +234,15 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 key={tab.id}
                 type="button"
                 onClick={() => setExperience(tab.id)}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-t text-[14px] transition-all duration-200 whitespace-nowrap snap-start shrink-0 ${
+                className={`flex items-center justify-center sm:justify-start gap-1.5 px-2 py-2 sm:px-3.5 sm:py-1.5 rounded sm:rounded-t sm:rounded-b-none text-[13px] sm:text-[14px] transition-all duration-200 whitespace-nowrap border sm:border-b-0 shrink-0 ${
                   active
-                    ? "bg-[#FFFDF9] text-[#A95A01] border-t-2 border-x border-[#A95A01] -mb-px z-10"
-                    : "bg-[#F8F3EA]/90 text-[#605A50] hover:text-[#011A51] border-t border-x border-[#E5DCCB]"
+                    ? "bg-[#FFFDF9] text-[#A95A01] border-[#A95A01] sm:border-t-2 sm:-mb-px z-10"
+                    : "bg-[#F8F3EA]/90 text-[#605A50] hover:text-[#011A51] border-[#E5DCCB]"
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${active ? "text-[#A95A01]" : "text-[#605A50]"}`} />
-                <span>{tab.label}</span>
+                <Icon className={`w-3.5 h-3.5 shrink-0 ${active ? "text-[#A95A01]" : "text-[#605A50]"}`} />
+                <span className="sm:hidden">{tab.shortLabel}</span>
+                <span className="hidden sm:inline">{tab.label}</span>
               </button>
             );
           })}
