@@ -40,15 +40,15 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
     {
       id: "suite-room",
       name: "Suite Room",
-      tagline: "700 sq ft with a separate living room",
+      tagline: "700 sq ft with a king bed",
       image: "/images/tasey-04.jpeg",
       price: "₹5,400",
       per: "per night + taxes",
       size: "700 sq ft",
-      view: "Hill-facing windows",
+      view: "Curtained window",
       occupancy: "Up to 4 guests",
-      desc: "The photo shows a separate living room with cane chairs, a bedroom, curtains, and large windows.",
-      specs: "Separate living room, large windows, king bed, bathroom, room service, Wi-Fi.",
+      desc: "The photo shows a leather headboard, a patterned accent wall, curtains, split AC, and a bedside lamp.",
+      specs: "King bed, split AC, bathroom, room service, Wi-Fi.",
     },
   ];
 

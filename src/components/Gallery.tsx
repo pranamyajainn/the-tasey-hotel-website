@@ -71,7 +71,7 @@ export default function Gallery() {
     },
     {
       id: 14,
-      title: "Room lounge seating",
+      title: "Suite bedroom with leather headboard",
       category: "Rooms and suites",
       image: "/images/tasey-04.jpeg",
     },
