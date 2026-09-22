@@ -35,7 +35,12 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
       id: "luxury-room",
       name: "Luxury Room",
       tagline: "450 sq ft with a private balcony",
-      images: ["/images/tasey-16.jpeg", "/images/tasey-16b.jpeg", "/images/tasey-16c.jpeg"],
+      images: [
+        "/images/tasey-16.jpeg",
+        "/images/tasey-16b.jpeg",
+        "/images/tasey-16c.jpeg",
+        "/images/tasey-16d.jpeg",
+      ],
       price: "₹3,800",
       per: "per night + taxes",
       size: "450 sq ft",

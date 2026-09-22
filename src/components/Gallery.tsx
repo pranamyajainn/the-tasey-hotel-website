@@ -100,6 +100,12 @@ export default function Gallery() {
       image: "/images/tasey-16c.jpeg",
     },
     {
+      id: 53,
+      title: "Luxury Room mirror and bathroom",
+      category: "Rooms and suites",
+      image: "/images/tasey-16d.jpeg",
+    },
+    {
       id: 14,
       title: "Suite bedroom with leather headboard",
       category: "Rooms and suites",
