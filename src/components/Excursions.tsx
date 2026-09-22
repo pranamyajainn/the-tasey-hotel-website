@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 
 interface ExcursionsProps {
   onOpenBooking: (experience: string) => void;
@@ -14,6 +15,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       location: "Across the road, 50 m",
       image: "/images/attractions/lion-safari.jpg",
       desc: "Nahargarh Biological Park is across the road. The safari includes lions and other park animals.",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Nahargarh+Biological+Park+Jaipur",
     },
     {
       id: "amer-fort",
@@ -21,6 +23,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       location: "5 km from hotel, 10-minute drive",
       image: "/images/attractions/amber-fort.jpg",
       desc: "The 16th-century fort includes Sheesh Mahal, courtyards, and evening light and sound shows.",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Amber+Fort+Jaipur",
     },
     {
       id: "elephant-village",
@@ -28,6 +31,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       location: "3 km from hotel, 5-minute drive",
       image: "/images/attractions/elephant-portrait.jpg",
       desc: "The photo shows a painted elephant at Elephant Village Amer.",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Elephant+Village+Amer+Jaipur",
     },
     {
       id: "jal-mahal",
@@ -35,6 +39,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       location: "6.5 km from hotel, 12-minute drive",
       image: "/images/attractions/jal-mahal.jpg",
       desc: "Jal Mahal stands in the centre of Man Sagar Lake, 6.5 km from the hotel.",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Jal+Mahal+Jaipur",
     },
     {
       id: "leopard-safari",
@@ -42,6 +47,7 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
       location: "Concierge transfer, 25-minute drive",
       image: "/images/attractions/leopard-safari.jpg",
       desc: "Jhalana is a 25-minute drive for guided leopard safaris in open 4x4 jeeps.",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Jhalana+Leopard+Safari+Jaipur",
     },
   ];
 
@@ -71,13 +77,24 @@ export default function Excursions({ onOpenBooking }: ExcursionsProps) {
               <p className="mt-1 text-[16px] leading-[1.6] text-[#605A50] max-w-md">
                 {exp.location}. {exp.desc}
               </p>
-              <button
-                type="button"
-                onClick={() => onOpenBooking(exp.title)}
-                className="mt-2 text-[16px] text-[#A95A01] hover:underline"
-              >
-                Inquire with concierge
-              </button>
+              <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-1">
+                <a
+                  href={exp.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-[16px] text-[#A95A01] hover:underline"
+                >
+                  <MapPin className="w-4 h-4" />
+                  View on map
+                </a>
+                <button
+                  type="button"
+                  onClick={() => onOpenBooking(exp.title)}
+                  className="text-[16px] text-[#A95A01] hover:underline"
+                >
+                  Inquire with concierge
+                </button>
+              </div>
             </div>
           ))}
         </div>
