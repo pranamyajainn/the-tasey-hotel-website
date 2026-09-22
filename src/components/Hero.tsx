@@ -270,8 +270,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 }`}
               >
                 <Icon className={`w-3.5 h-3.5 shrink-0 hidden sm:block ${active ? "text-[#A95A01]" : "text-[#605A50]"}`} />
-                <span className="sm:hidden">{tab.shortLabel}</span>
-                <span className="hidden sm:inline">{tab.label}</span>
+                <span className="md:hidden">{tab.shortLabel}</span>
+                <span className="hidden md:inline">{tab.label}</span>
               </button>
             );
           })}

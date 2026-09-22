@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { X, MessageCircle, Copy, Check } from "lucide-react";
 import {
@@ -10,6 +10,7 @@ import {
   isoDaysFromToday,
   WHATSAPP_DISPLAY,
 } from "@/lib/whatsapp";
+import { useDialogA11y } from "@/lib/useDialogA11y";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -23,12 +24,16 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose, initialData }: BookingModalProps) {
-  const [category, setCategory] = useState("Executive Room");
-  // Default to the next two nights rather than a hardcoded date, which goes
-  // stale and sends the desk requests for dates already in the past.
-  const [checkIn, setCheckIn] = useState(() => isoDaysFromToday(1));
-  const [checkOut, setCheckOut] = useState(() => isoDaysFromToday(3));
-  const [guestsCount, setGuestsCount] = useState("2 Guests");
+  // Seeded straight from the props. The parent gives this component a fresh
+  // key each time the modal is opened, so it remounts and these initialisers
+  // run again — which is why no effect is needed to copy props into state, and
+  // why every guest starts from a clean form rather than the last one's details.
+  const [category, setCategory] = useState(initialData?.category ?? "Executive Room");
+  // Relative to today, rather than a hardcoded date that goes stale and sends
+  // the desk requests for dates already in the past.
+  const [checkIn, setCheckIn] = useState(() => initialData?.checkIn ?? isoDaysFromToday(1));
+  const [checkOut, setCheckOut] = useState(() => initialData?.checkOut ?? isoDaysFromToday(3));
+  const [guestsCount, setGuestsCount] = useState(initialData?.guests ?? "2 Guests");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -38,12 +43,15 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
   const [whatsAppUrl, setWhatsAppUrl] = useState("");
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    if (initialData?.category) setCategory(initialData.category);
-    if (initialData?.checkIn) setCheckIn(initialData.checkIn);
-    if (initialData?.checkOut) setCheckOut(initialData.checkOut);
-    if (initialData?.guests) setGuestsCount(initialData.guests);
-  }, [initialData]);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  const resetAndClose = () => {
+    setConfirmed(false);
+    setWhatsAppUrl("");
+    onClose();
+  };
+
+  useDialogA11y(isOpen, resetAndClose, dialogRef);
 
   if (!isOpen) return null;
 
@@ -80,20 +88,17 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const resetAndClose = () => {
-    setConfirmed(false);
-    setWhatsAppUrl("");
-    onClose();
-  };
-
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-labelledby="booking-modal-title"
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) resetAndClose();
+      }}
       className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
     >
-      <div className="relative w-full max-w-2xl bg-[#FFFDF9] rounded border border-[#E5DCCB] overflow-hidden my-auto text-[#011A51]">
+      <div ref={dialogRef} className="relative w-full max-w-2xl bg-[#FFFDF9] rounded border border-[#E5DCCB] overflow-hidden my-auto text-[#011A51]">
         {/* Modal Header */}
         <div className="p-6 bg-[#F8F3EA] border-b border-[#E5DCCB] flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -121,10 +126,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6">
             {/* Category Choice */}
             <div>
-              <label className="text-[14px] text-[#605A50] block mb-2">
+              <label htmlFor="bk-category" className="text-[14px] text-[#605A50] block mb-2">
                 Select experience or room
               </label>
               <select
+                id="bk-category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full bg-[#F8F3EA] border border-[#E5DCCB] rounded px-4 py-3 text-[16px] text-[#011A51] focus:outline-none focus:border-[#A95A01] cursor-pointer"
@@ -145,10 +151,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
             {/* Dates & Guests */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1.5">
+                <label htmlFor="bk-checkin" className="text-[14px] text-[#605A50] block mb-1.5">
                   Check-in date
                 </label>
                 <input
+                  id="bk-checkin"
                   type="date"
                   required
                   value={checkIn}
@@ -158,10 +165,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </div>
 
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1.5">
+                <label htmlFor="bk-checkout" className="text-[14px] text-[#605A50] block mb-1.5">
                   Check-out date
                 </label>
                 <input
+                  id="bk-checkout"
                   type="date"
                   required
                   value={checkOut}
@@ -171,10 +179,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </div>
 
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1.5">
+                <label htmlFor="bk-guests" className="text-[14px] text-[#605A50] block mb-1.5">
                   Guest count
                 </label>
                 <select
+                  id="bk-guests"
                   value={guestsCount}
                   onChange={(e) => setGuestsCount(e.target.value)}
                   className="w-full bg-[#F8F3EA] border border-[#E5DCCB] rounded px-3 py-2.5 text-[16px] text-[#011A51] focus:outline-none focus:border-[#A95A01] cursor-pointer"
@@ -196,8 +205,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[14px] text-[#605A50] block mb-1">Full name *</label>
+                  <label htmlFor="bk-name" className="text-[14px] text-[#605A50] block mb-1">Full name *</label>
                   <input
+                    id="bk-name"
                     type="text"
                     required
                     placeholder="e.g. Rahul Sharma"
@@ -208,8 +218,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                 </div>
 
                 <div>
-                  <label className="text-[14px] text-[#605A50] block mb-1">Phone number (WhatsApp) *</label>
+                  <label htmlFor="bk-phone" className="text-[14px] text-[#605A50] block mb-1">Phone number (WhatsApp) *</label>
                   <input
+                    id="bk-phone"
                     type="tel"
                     required
                     placeholder="+91 70738 73670"
@@ -221,8 +232,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </div>
 
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1">Email address</label>
+                <label htmlFor="bk-email" className="text-[14px] text-[#605A50] block mb-1">Email address</label>
                 <input
+                  id="bk-email"
                   type="email"
                   placeholder="rahul@example.com"
                   value={email}
@@ -232,8 +244,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </div>
 
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1">Special requests and excursion preferences</label>
+                <label htmlFor="bk-requests" className="text-[14px] text-[#605A50] block mb-1">Special requests and excursion preferences</label>
                 <textarea
+                  id="bk-requests"
                   rows={2}
                   placeholder="e.g., Elephant feeding slot preference, high-floor hill view room..."
                   value={specialRequests}
