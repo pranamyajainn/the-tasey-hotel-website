@@ -40,7 +40,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     >
       {/* Top Bar */}
       <div className="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-6 mb-2 text-[14px] text-[#605A50] border-b border-[#E5DCCB] pb-2">
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
           <a
             href="https://www.google.com/maps/search/?api=1&query=Amer+Jaipur"
             target="_blank"
@@ -58,6 +58,24 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           >
             <Compass className="w-3.5 h-3.5 text-[#011A51]" />
             50 m from Nahargarh Biological Park
+          </a>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Taj+Amer+Jaipur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-[#A95A01] transition-colors"
+          >
+            <MapPin className="w-3.5 h-3.5 text-[#011A51]" />
+            100 m from Taj Amer
+          </a>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Indana+Place+Hotel+Amer+Jaipur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-[#A95A01] transition-colors"
+          >
+            <Compass className="w-3.5 h-3.5 text-[#011A51]" />
+            80 m from Indana Place Hotel
           </a>
         </div>
         <div className="flex items-center gap-3">
