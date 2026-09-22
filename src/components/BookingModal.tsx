@@ -1,8 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import { X, CheckCircle2, Phone, Copy, Check } from "lucide-react";
+import { X, MessageCircle, Copy, Check } from "lucide-react";
+import {
+  buildBookingMessage,
+  buildWhatsAppUrl,
+  categoryKind,
+  isoDaysFromToday,
+  WHATSAPP_DISPLAY,
+} from "@/lib/whatsapp";
+import { useDialogA11y } from "@/lib/useDialogA11y";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -16,32 +24,61 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose, initialData }: BookingModalProps) {
-  const [category, setCategory] = useState("Executive Room");
-  const [checkIn, setCheckIn] = useState("2026-09-20");
-  const [checkOut, setCheckOut] = useState("2026-09-22");
-  const [guestsCount, setGuestsCount] = useState("2 Guests");
+  // Seeded straight from the props. The parent gives this component a fresh
+  // key each time the modal is opened, so it remounts and these initialisers
+  // run again — which is why no effect is needed to copy props into state, and
+  // why every guest starts from a clean form rather than the last one's details.
+  const [category, setCategory] = useState(initialData?.category ?? "Executive Room");
+  // Relative to today, rather than a hardcoded date that goes stale and sends
+  // the desk requests for dates already in the past.
+  const [checkIn, setCheckIn] = useState(() => initialData?.checkIn ?? isoDaysFromToday(1));
+  const [checkOut, setCheckOut] = useState(() => initialData?.checkOut ?? isoDaysFromToday(3));
+  const [guestsCount, setGuestsCount] = useState(initialData?.guests ?? "2 Guests");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [specialRequests, setSpecialRequests] = useState("");
   const [confirmed, setConfirmed] = useState(false);
   const [bookingId, setBookingId] = useState("");
+  const [whatsAppUrl, setWhatsAppUrl] = useState("");
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    if (initialData?.category) setCategory(initialData.category);
-    if (initialData?.checkIn) setCheckIn(initialData.checkIn);
-    if (initialData?.checkOut) setCheckOut(initialData.checkOut);
-    if (initialData?.guests) setGuestsCount(initialData.guests);
-  }, [initialData]);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  const resetAndClose = () => {
+    setConfirmed(false);
+    setWhatsAppUrl("");
+    onClose();
+  };
+
+  useDialogA11y(isOpen, resetAndClose, dialogRef);
 
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !phone) return;
+
     const generatedId = "TASEY-" + Math.floor(100000 + Math.random() * 900000);
+    const url = buildWhatsAppUrl(
+      buildBookingMessage({
+        reference: generatedId,
+        category,
+        checkIn,
+        checkOut,
+        guests: guestsCount,
+        fullName,
+        phone,
+        email,
+        specialRequests,
+      }),
+    );
+
     setBookingId(generatedId);
+    setWhatsAppUrl(url);
+    // Opened inside the submit gesture so the browser treats it as user-initiated.
+    // If a popup blocker still eats it, the hand-off screen repeats the link.
+    window.open(url, "_blank", "noopener,noreferrer");
     setConfirmed(true);
   };
 
@@ -51,19 +88,17 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const resetAndClose = () => {
-    setConfirmed(false);
-    onClose();
-  };
-
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-labelledby="booking-modal-title"
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) resetAndClose();
+      }}
       className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
     >
-      <div className="relative w-full max-w-2xl bg-[#FFFDF9] rounded border border-[#E5DCCB] overflow-hidden my-auto text-[#011A51]">
+      <div ref={dialogRef} className="relative w-full max-w-2xl bg-[#FFFDF9] rounded border border-[#E5DCCB] overflow-hidden my-auto text-[#011A51]">
         {/* Modal Header */}
         <div className="p-6 bg-[#F8F3EA] border-b border-[#E5DCCB] flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -91,10 +126,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6">
             {/* Category Choice */}
             <div>
-              <label className="text-[14px] text-[#605A50] block mb-2">
+              <label htmlFor="bk-category" className="text-[14px] text-[#605A50] block mb-2">
                 Select experience or room
               </label>
               <select
+                id="bk-category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full bg-[#F8F3EA] border border-[#E5DCCB] rounded px-4 py-3 text-[16px] text-[#011A51] focus:outline-none focus:border-[#A95A01] cursor-pointer"
@@ -115,10 +151,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
             {/* Dates & Guests */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1.5">
+                <label htmlFor="bk-checkin" className="text-[14px] text-[#605A50] block mb-1.5">
                   Check-in date
                 </label>
                 <input
+                  id="bk-checkin"
                   type="date"
                   required
                   value={checkIn}
@@ -128,10 +165,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </div>
 
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1.5">
+                <label htmlFor="bk-checkout" className="text-[14px] text-[#605A50] block mb-1.5">
                   Check-out date
                 </label>
                 <input
+                  id="bk-checkout"
                   type="date"
                   required
                   value={checkOut}
@@ -141,10 +179,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </div>
 
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1.5">
+                <label htmlFor="bk-guests" className="text-[14px] text-[#605A50] block mb-1.5">
                   Guest count
                 </label>
                 <select
+                  id="bk-guests"
                   value={guestsCount}
                   onChange={(e) => setGuestsCount(e.target.value)}
                   className="w-full bg-[#F8F3EA] border border-[#E5DCCB] rounded px-3 py-2.5 text-[16px] text-[#011A51] focus:outline-none focus:border-[#A95A01] cursor-pointer"
@@ -166,8 +205,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[14px] text-[#605A50] block mb-1">Full name *</label>
+                  <label htmlFor="bk-name" className="text-[14px] text-[#605A50] block mb-1">Full name *</label>
                   <input
+                    id="bk-name"
                     type="text"
                     required
                     placeholder="e.g. Rahul Sharma"
@@ -178,8 +218,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                 </div>
 
                 <div>
-                  <label className="text-[14px] text-[#605A50] block mb-1">Phone number (WhatsApp) *</label>
+                  <label htmlFor="bk-phone" className="text-[14px] text-[#605A50] block mb-1">Phone number (WhatsApp) *</label>
                   <input
+                    id="bk-phone"
                     type="tel"
                     required
                     placeholder="+91 70738 73670"
@@ -191,8 +232,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </div>
 
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1">Email address</label>
+                <label htmlFor="bk-email" className="text-[14px] text-[#605A50] block mb-1">Email address</label>
                 <input
+                  id="bk-email"
                   type="email"
                   placeholder="rahul@example.com"
                   value={email}
@@ -202,8 +244,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </div>
 
               <div>
-                <label className="text-[14px] text-[#605A50] block mb-1">Special requests and excursion preferences</label>
+                <label htmlFor="bk-requests" className="text-[14px] text-[#605A50] block mb-1">Special requests and excursion preferences</label>
                 <textarea
+                  id="bk-requests"
                   rows={2}
                   placeholder="e.g., Elephant feeding slot preference, high-floor hill view room..."
                   value={specialRequests}
@@ -214,7 +257,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
             </div>
 
             {/* Action buttons */}
-            <div className="pt-4 border-t border-[#E5DCCB] flex items-center gap-3">
+            <div className="pt-4 border-t border-[#E5DCCB] space-y-3">
+              <p className="text-[14px] text-[#605A50]">
+                This opens WhatsApp with your request already written out. You review it and press Send — nothing is reserved until you do.
+              </p>
+              <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={resetAndClose}
@@ -224,28 +271,33 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
               </button>
               <button
                 type="submit"
-                className="flex-1 py-3.5 rounded bg-[#A95A01] hover:bg-[#8C4A00] text-white text-[16px] font-medium transition-colors"
+                className="flex-1 py-3.5 rounded bg-emerald-600 hover:bg-emerald-700 text-white text-[16px] font-medium transition-colors flex items-center justify-center gap-2"
               >
-                Confirm reservation request
+                <MessageCircle className="w-4 h-4" />
+                Send request on WhatsApp
               </button>
+              </div>
             </div>
           </form>
         ) : (
-          /* Confirmation Receipt View */
+          /* WhatsApp hand-off view */
           <div className="p-8 text-center space-y-6">
-            <div className="w-16 h-16 rounded bg-[#011A51] flex items-center justify-center text-white mx-auto">
-              <CheckCircle2 className="w-9 h-9" />
+            <div className="w-16 h-16 rounded bg-emerald-600 flex items-center justify-center text-white mx-auto">
+              <MessageCircle className="w-9 h-9" />
             </div>
 
             <div>
               <span className="text-[14px] text-[#605A50]">
-                Reservation request received
+                One last step
               </span>
               <h3 className="font-serif-luxury text-[28px] text-[#011A51] mt-1">
-                We look forward to your stay
+                Press Send in WhatsApp
               </h3>
               <p className="text-[16px] leading-[1.6] text-[#605A50] mt-2 max-w-md mx-auto">
-                Thank you, <strong className="text-[#011A51]">{fullName}</strong>. Your reservation request for <strong className="text-[#011A51]">{category}</strong> has been received. This is not a confirmed booking yet. Our reservations desk will call or email you at the details you provided to confirm availability, usually within 24 hours.
+                Thank you, <strong className="text-[#011A51]">{fullName}</strong>. WhatsApp should have opened with your request for{" "}
+                <strong className="text-[#011A51]">{category}</strong> already written out.{" "}
+                <strong className="text-[#011A51]">Your request only reaches us once you press Send there.</strong>{" "}
+                Our reservations desk replies on the same chat, usually within a few hours.
               </p>
             </div>
 
@@ -271,26 +323,35 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                   <span className="text-[#605A50] block text-[14px]">Guests</span>
                   <span className="text-[#011A51]">{guestsCount}</span>
                 </div>
-                <div>
-                  <span className="text-[#605A50] block text-[14px]">Check-in date</span>
-                  <span className="text-[#011A51]">{checkIn}</span>
-                </div>
-                <div>
-                  <span className="text-[#605A50] block text-[14px]">Check-out</span>
-                  <span className="text-[#011A51]">{checkOut}</span>
-                </div>
+                {categoryKind(category) === "room" ? (
+                  <>
+                    <div>
+                      <span className="text-[#605A50] block text-[14px]">Check-in date</span>
+                      <span className="text-[#011A51]">{checkIn}</span>
+                    </div>
+                    <div>
+                      <span className="text-[#605A50] block text-[14px]">Check-out</span>
+                      <span className="text-[#011A51]">{checkOut}</span>
+                    </div>
+                  </>
+                ) : (
+                  <div>
+                    <span className="text-[#605A50] block text-[14px]">Date</span>
+                    <span className="text-[#011A51]">{checkIn}</span>
+                  </div>
+                )}
               </div>
             </div>
 
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-3">
               <a
-                href={`https://wa.me/917073873670?text=Hello%20The%20TASEY,%20I%20have%20submitted%20a%20reservation%20request%20with%20ID%20${bookingId}%20for%20${encodeURIComponent(category)}.`}
+                href={whatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded bg-emerald-600 hover:bg-emerald-700 text-white text-[16px] font-medium flex items-center justify-center gap-2"
               >
-                <Phone className="w-4 h-4" />
-                Connect on WhatsApp
+                <MessageCircle className="w-4 h-4" />
+                Open WhatsApp
               </a>
               <button
                 onClick={resetAndClose}
@@ -299,6 +360,11 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                 Close and return
               </button>
             </div>
+
+            <p className="text-[14px] text-[#605A50] pt-1">
+              WhatsApp did not open? Use the button above, or message us directly at{" "}
+              <span className="text-[#011A51] whitespace-nowrap">{WHATSAPP_DISPLAY}</span>.
+            </p>
           </div>
         )}
       </div>
