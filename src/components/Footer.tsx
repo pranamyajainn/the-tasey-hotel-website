@@ -93,11 +93,38 @@ export default function Footer() {
             <h4 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
               Local excursions
             </h4>
-            <div className="space-y-3 text-[#D5C9B8]">
-              <p>Elephant Village Amer, Amer, Jaipur.</p>
-              <p>Jhalana Leopard Safari. Guided wildlife reserve.</p>
-              <p>Nahargarh Lion Safari, 720 hectare reserve, 50 m from hotel entrance.</p>
-            </div>
+            <ul className="space-y-3 text-[#D5C9B8]">
+              <li>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Elephant+Village+Amer+Jaipur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#FFC76B] transition-colors"
+                >
+                  Elephant Village Amer, Amer, Jaipur.
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Jhalana+Leopard+Safari+Jaipur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#FFC76B] transition-colors"
+                >
+                  Jhalana Leopard Safari. Guided wildlife reserve.
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Nahargarh+Biological+Park+Jaipur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#FFC76B] transition-colors"
+                >
+                  Nahargarh Lion Safari, 720 hectare reserve, 50 m from hotel entrance.
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Contact Details */}
