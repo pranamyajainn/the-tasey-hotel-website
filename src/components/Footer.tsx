@@ -3,14 +3,16 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Share2, Check } from "lucide-react";
+import { MapPin, Phone, Mail, AtSign, Share2, Check } from "lucide-react";
+
+import { HOTEL } from "@/lib/site";
 
 export default function Footer() {
   const [linkCopied, setLinkCopied] = useState(false);
 
   const handleShare = async () => {
     const shareData = {
-      title: "The TASEY Hotel & Excursions, Amer",
+      title: "The Tasey Hotel, Amer, Jaipur",
       url: window.location.href,
     };
     if (navigator.share) {
@@ -151,6 +153,17 @@ export default function Footer() {
                 <Mail className="w-4 h-4 shrink-0" />
                 <a href="mailto:thetaseyhotel@gmail.com" className="hover:text-[#FFC76B] transition-colors">thetaseyhotel@gmail.com</a>
               </li>
+              <li className="flex items-center gap-2">
+                <AtSign className="w-4 h-4 shrink-0" />
+                <a
+                  href={HOTEL.sameAs[0]}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  className="hover:text-[#FFC76B] transition-colors"
+                >
+                  Instagram: {HOTEL.instagramHandle}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -158,7 +171,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-[14px] text-[#A89C8C] gap-4">
           <div>
-            &copy; {new Date().getFullYear()} The Tasey Hotel & Excursions, Amer, Jaipur. All rights reserved.
+            &copy; {new Date().getFullYear()} The Tasey Hotel, Amer, Jaipur. All rights reserved.
           </div>
           <div className="text-[#D5C9B8]">
             Stay at The Tasey. Explore Amer, Jaipur.

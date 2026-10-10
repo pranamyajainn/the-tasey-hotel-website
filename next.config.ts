@@ -53,11 +53,34 @@ const nextConfig: NextConfig = {
     // No remote images are used, so allow none.
     remotePatterns: [],
   },
+  async redirects() {
+    return [
+      {
+        // One host for Google to index. Both hosts currently serve 200, which
+        // splits signals between two copies of the site. If the apex is ever
+        // set to redirect to www in Vercel's Domains settings, remove this or
+        // the two will loop.
+        source: "/:path*",
+        has: [{ type: "host", value: "www.thetaseyhotel.com" }],
+        destination: "https://thetaseyhotel.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+      {
+        // tasey-hotel.vercel.app and every preview deploy serve the same page
+        // as the real domain. Keep them out of the index. This is a header,
+        // not a robots.txt Disallow, because Google has to be able to crawl a
+        // URL to see that it must not be indexed.
+        source: "/:path*",
+        has: [{ type: "host", value: ".*\\.vercel\\.app" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
       {
         // Photos are replaced in place under the same filename when the hotel

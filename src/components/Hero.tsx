@@ -81,22 +81,18 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   const heroSlides = [
     {
       image: "/images/tasey-08.jpeg",
-      subtitle: "The Tasey Hotel in Amer, Jaipur",
       title: "A hotel near Amber Fort",
     },
     {
       image: "/images/tasey-09.jpeg",
-      subtitle: "Jhumka rooftop pool",
       title: "Rooftop pool at Jhumka",
     },
     {
       image: "/images/tasey-17.jpeg",
-      subtitle: "Rooms and suites",
       title: "Rooms with hill-facing windows",
     },
     {
       image: "/images/tasey-03.jpeg",
-      subtitle: "Steps from Amber Fort",
       title: "Welcome to The Tasey Hotel, Amer",
     },
   ];
@@ -216,13 +212,16 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
       {/* Main Hero Banner Content */}
       <div className="relative z-10 max-w-3xl mx-4 sm:mx-auto px-2 sm:px-6 my-auto">
-        <p className="text-[14px] font-medium text-white/80 mb-3">
-          {heroSlides[currentSlide].subtitle}
-        </p>
-
-        <h1 className="font-serif-luxury text-[28px] sm:text-[40px] lg:text-[56px] text-white max-w-2xl leading-[1.15]">
-          {heroSlides[currentSlide].title}
+        {/* The page's only h1 stays the hotel's name on every slide, so search
+            engines read the name rather than whichever caption happened to be
+            first. The rotating caption below is display text, not the heading. */}
+        <h1 className="text-[14px] font-medium text-white/80 mb-3">
+          The Tasey Hotel in Amer, Jaipur
         </h1>
+
+        <p className="font-serif-luxury text-[28px] sm:text-[40px] lg:text-[56px] text-white max-w-2xl leading-[1.15]">
+          {heroSlides[currentSlide].title}
+        </p>
 
         <p className="mt-4 text-[16px] leading-[1.6] text-gray-100 max-w-md">
           Rooms, an indoor restaurant, a rooftop pool, and event halls, 5 km from Amber Fort.

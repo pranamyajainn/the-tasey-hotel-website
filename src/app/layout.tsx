@@ -21,14 +21,20 @@ const instrumentSans = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "The Tasey Hotel | Amer, Jaipur",
+    default: "The Tasey Hotel, Amer, Jaipur | Official Website",
     template: "%s | The Tasey Hotel",
   },
   description: HOTEL.description,
   applicationName: HOTEL.name,
   alternates: { canonical: "/" },
+  // Google Search Console HTML-tag verification. Set GOOGLE_SITE_VERIFICATION
+  // in Vercel to the token Google issues; nothing is emitted while it's unset.
+  // Not needed if ownership is verified with a DNS TXT record instead.
+  ...(process.env.GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+  }),
   keywords: [
-    "The Tasey", "The Tasey Hotel Amer", "Hotel Near Amber Fort Jaipur",
+    "The Tasey", "The Tasey Hotel", "Tasey Hotel", "The Tasey Hotel Amer", "Hotel Near Amber Fort Jaipur",
     "Elephant Village Jaipur", "Jhalana Leopard Safari", "Nahargarh Lion Safari",
     "Rooftop Pool Jaipur", "Haldi Restaurant Jaipur", "Jhumka Rooftop Restaurant"
   ],
@@ -68,10 +74,14 @@ const hotelJsonLd = {
   "@type": "Hotel",
   "@id": `${SITE_URL}/#hotel`,
   name: HOTEL.name,
+  alternateName: HOTEL.alternateNames,
   description: HOTEL.description,
   url: SITE_URL,
   image: `${SITE_URL}${HOTEL.image}`,
+  logo: `${SITE_URL}${HOTEL.logo}`,
+  sameAs: HOTEL.sameAs,
   telephone: HOTEL.phones[0],
+  email: HOTEL.email,
   priceRange: HOTEL.priceRange,
   address: {
     "@type": "PostalAddress",
@@ -100,6 +110,23 @@ const hotelJsonLd = {
   ],
 };
 
+/**
+ * Schema.org WebSite record. Google reads this on the home page to decide the
+ * site name shown above the result, and ties the domain to the hotel entity.
+ */
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: HOTEL.name,
+  alternateName: HOTEL.alternateNames,
+  url: `${SITE_URL}/`,
+  publisher: { "@id": `${SITE_URL}/#hotel` },
+};
+
+/** Escape `<` so a stray "</script>" in any string can't close the tag early. */
+const toJsonLd = (data: object) => JSON.stringify(data).replace(/</g, "\\u003c");
+
 export default function RootLayout({
   children,
 }: {
@@ -118,7 +145,11 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           // Static object, no user input; this is the documented way to emit JSON-LD.
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(hotelJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: toJsonLd(websiteJsonLd) }}
         />
       </body>
     </html>
