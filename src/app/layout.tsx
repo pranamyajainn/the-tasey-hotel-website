@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   description: HOTEL.description,
   applicationName: HOTEL.name,
   alternates: { canonical: "/" },
+  // Token comes from Google Search Console (HTML tag method); set in Vercel env vars.
+  verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION },
   keywords: [
     "The Tasey", "The Tasey Hotel Amer", "Hotel Near Amber Fort Jaipur",
     "Elephant Village Jaipur", "Jhalana Leopard Safari", "Nahargarh Lion Safari",
