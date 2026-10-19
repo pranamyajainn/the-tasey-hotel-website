@@ -93,7 +93,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     },
     {
       image: "/images/tasey-03.jpeg",
-      title: "Welcome to The Tasey Hotel, Amer",
+      title: "Welcome to Amer, Jaipur",
     },
   ];
 
@@ -212,14 +212,18 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
       {/* Main Hero Banner Content */}
       <div className="relative z-10 max-w-3xl mx-4 sm:mx-auto px-2 sm:px-6 my-auto">
-        {/* The page's only h1 stays the hotel's name on every slide, so search
-            engines read the name rather than whichever caption happened to be
-            first. The rotating caption below is display text, not the heading. */}
-        <h1 className="text-[14px] font-medium text-white/80 mb-3">
-          The Tasey Hotel in Amer, Jaipur
+        {/* The page's only h1 is the hotel's name, and it is also the largest
+            text on the page. Google weighs visual prominence when it decides
+            what a page is about; a 14px h1 under a 56px caption read as a page
+            about "A hotel near Amber Fort". The rotating caption below is
+            display text, not the heading. */}
+        <p className="text-[14px] font-medium text-white/80 mb-3">Amer, Jaipur</p>
+
+        <h1 className="font-serif-luxury text-[32px] sm:text-[44px] lg:text-[60px] text-white max-w-2xl leading-[1.1]">
+          The Tasey Hotel
         </h1>
 
-        <p className="font-serif-luxury text-[28px] sm:text-[40px] lg:text-[56px] text-white max-w-2xl leading-[1.15]">
+        <p className="mt-3 font-serif-luxury italic text-[18px] sm:text-[22px] lg:text-[26px] text-white/90 max-w-2xl leading-[1.3]">
           {heroSlides[currentSlide].title}
         </p>
 
