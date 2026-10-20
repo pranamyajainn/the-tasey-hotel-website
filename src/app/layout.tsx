@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Instrument_Sans } from "next/font/google";
 import "./globals.css";
-import { HOTEL, SITE_URL } from "@/lib/site";
+import { HOTEL, HOTEL_MAP_URL, SITE_URL } from "@/lib/site";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -96,6 +96,7 @@ const hotelJsonLd = {
     latitude: HOTEL.latitude,
     longitude: HOTEL.longitude,
   },
+  hasMap: HOTEL_MAP_URL,
   amenityFeature: [
     "Rooftop swimming pool",
     "Indoor restaurant",

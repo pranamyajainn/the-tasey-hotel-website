@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## 📦 Deployment
 
-This project is deployed on **[Vercel](https://vercel.com/)** and served at [thetaseyhotel.com](https://thetaseyhotel.com). The `*.vercel.app` addresses redirect there and are marked `noindex`; never share them.
+This project is deployed on **[Vercel](https://vercel.com/)** and served at [thetaseyhotel.com](https://thetaseyhotel.com). Share the official domain. The legacy `tasey-hotel.vercel.app` alias permanently redirects there; other Vercel preview hosts receive an `X-Robots-Tag: noindex, nofollow` response header from `next.config.ts` when served by this app. Check hosting settings and live responses when adding aliases or previews.
 
 To deploy manually via Vercel CLI:
 ```bash
