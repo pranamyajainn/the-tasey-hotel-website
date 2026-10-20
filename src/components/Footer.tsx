@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, AtSign, Share2, Check } from "lucide-react";
 
-import { HOTEL } from "@/lib/site";
+import { HOTEL, HOTEL_MAP_URL } from "@/lib/site";
 
 export default function Footer() {
   const [linkCopied, setLinkCopied] = useState(false);
@@ -139,6 +139,14 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>
                   The Tasey Hotel, Amer, 50 m from Nahargarh Biological Park, near Amber Fort, Jaipur
+                  <a
+                    href={HOTEL_MAP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block underline underline-offset-4 hover:text-[#FFC76B] transition-colors"
+                  >
+                    View hotel location on Google Maps
+                  </a>
                 </span>
               </li>
               <li className="flex items-center gap-2">

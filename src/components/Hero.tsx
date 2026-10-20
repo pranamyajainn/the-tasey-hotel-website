@@ -212,11 +212,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
       {/* Main Hero Banner Content */}
       <div className="relative z-10 max-w-3xl mx-4 sm:mx-auto px-2 sm:px-6 my-auto">
-        {/* The page's only h1 is the hotel's name, and it is also the largest
-            text on the page. Google weighs visual prominence when it decides
-            what a page is about; a 14px h1 under a 56px caption read as a page
-            about "A hotel near Amber Fort". The rotating caption below is
-            display text, not the heading. */}
+        {/* Keep the hotel's name as the prominent, stable h1. Rotating captions
+            remain secondary display text rather than replacing the heading. */}
         <p className="text-[14px] font-medium text-white/80 mb-3">Amer, Jaipur</p>
 
         <h1 className="font-serif-luxury text-[32px] sm:text-[44px] lg:text-[60px] text-white max-w-2xl leading-[1.1]">

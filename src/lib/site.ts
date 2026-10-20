@@ -14,9 +14,9 @@ export const HOTEL = {
   region: "Rajasthan",
   postalCode: "302028",
   country: "IN",
-  // Amer, Jaipur. Approximate — replace with the exact pin from Google Business.
-  latitude: 26.9855,
-  longitude: 75.8513,
+  // Hotel location supplied by the client on 20 October 2026.
+  latitude: 27.0131268,
+  longitude: 75.8787436,
   phones: ["+917073873670", "+919145824248"],
   priceRange: "₹₹",
   image: "/images/tasey-01.jpeg",
@@ -27,3 +27,6 @@ export const HOTEL = {
   // Profile, Booking.com, MakeMyTrip, TripAdvisor URLs here as they go live.
   sameAs: ["https://www.instagram.com/thetasey_hotel/"],
 } as const;
+
+/** Exact location pin; this does not imply a verified Google Business Profile. */
+export const HOTEL_MAP_URL = `https://www.google.com/maps/search/?api=1&query=${HOTEL.latitude},${HOTEL.longitude}`;
