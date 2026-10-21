@@ -138,7 +138,7 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>
-                  The Tasey Hotel, Amer, 50 m from Nahargarh Biological Park, near Amber Fort, Jaipur
+                  {HOTEL.name}, {HOTEL.street}, {HOTEL.locality}, {HOTEL.region}
                   <a
                     href={HOTEL_MAP_URL}
                     target="_blank"

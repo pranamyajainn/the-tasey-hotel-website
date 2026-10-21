@@ -9,7 +9,7 @@ export const HOTEL = {
   alternateNames: ["Tasey Hotel", "The Tasey", "Tasey Hotel Amer", "The Tasey Hotel Jaipur"],
   description:
     "The Tasey Hotel in Amer, Jaipur, with rooms, Haldi restaurant, Jhumka rooftop pool, event spaces, and nearby safaris.",
-  street: "Amer",
+  street: "Near Nahargarh Biological Park, Kunda, Delhi-Jaipur Highway, Amer",
   locality: "Jaipur",
   region: "Rajasthan",
   postalCode: "302028",
