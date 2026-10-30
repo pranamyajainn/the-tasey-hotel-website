@@ -17,7 +17,10 @@ export const HOTEL = {
   alternateNames: ["Tasey Hotel", "The Tasey", "Tasey Hotel Amer", "The Tasey Hotel Jaipur"],
   description:
     "The Tasey Hotel in Amer, Jaipur, with rooms, Haldi restaurant, Jhumka rooftop pool, event spaces, and nearby safaris.",
-  street: "Near Nahargarh Biological Park, Kunda, Delhi-Jaipur Highway, Amer",
+  // Locality matches the hotel's Google listing (Sisiyawas), confirmed by the
+  // client on 30 October 2026. Keep the two identical so Google reads the site
+  // and the listing as one business.
+  street: "Near Nahargarh Biological Park, Sisiyawas, Delhi-Jaipur Highway, Amer",
   locality: "Jaipur",
   region: "Rajasthan",
   postalCode: "302028",
