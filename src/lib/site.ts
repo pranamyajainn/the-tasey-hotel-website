@@ -1,6 +1,14 @@
 /** Canonical origin. Used by metadata, robots, sitemap and structured data. */
 export const SITE_URL = "https://thetaseyhotel.com";
 
+/**
+ * The hotel's Google listing, addressed by its Knowledge Graph id. Linking to it
+ * from structured data ties this site to the listing so Google treats both as
+ * one business. A kgmid URL opens the listing directly, so it is never
+ * spell-corrected to "taste" the way a typed search for the name can be.
+ */
+export const GOOGLE_LISTING_URL = "https://www.google.com/search?kgmid=/g/11z_0qjm62";
+
 export const HOTEL = {
   name: "The Tasey Hotel",
   legalName: "The Tasey Hotel",
@@ -23,9 +31,10 @@ export const HOTEL = {
   logo: "/logo.png",
   email: "thetaseyhotel@gmail.com",
   instagramHandle: "thetasey_hotel",
-  // Official profiles, emitted as schema.org `sameAs`. Add the Google Business
-  // Profile, Booking.com, MakeMyTrip, TripAdvisor URLs here as they go live.
-  sameAs: ["https://www.instagram.com/thetasey_hotel/"],
+  // Official profiles, emitted as schema.org `sameAs`. Instagram stays first:
+  // the footer links it by index. Add Booking.com, MakeMyTrip, TripAdvisor URLs
+  // here as they go live.
+  sameAs: ["https://www.instagram.com/thetasey_hotel/", GOOGLE_LISTING_URL],
 } as const;
 
 /** Exact location pin; this does not imply a verified Google Business Profile. */

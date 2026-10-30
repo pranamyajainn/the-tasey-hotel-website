@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, AtSign, Share2, Check } from "lucide-react";
 
-import { HOTEL, HOTEL_MAP_URL } from "@/lib/site";
+import { GOOGLE_LISTING_URL, HOTEL, HOTEL_MAP_URL } from "@/lib/site";
 
 export default function Footer() {
   const [linkCopied, setLinkCopied] = useState(false);
@@ -146,6 +146,14 @@ export default function Footer() {
                     className="mt-1 block underline underline-offset-4 hover:text-[#FFC76B] transition-colors"
                   >
                     View hotel location on Google Maps
+                  </a>
+                  <a
+                    href={GOOGLE_LISTING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block underline underline-offset-4 hover:text-[#FFC76B] transition-colors"
+                  >
+                    Reviews and directions on Google
                   </a>
                 </span>
               </li>
