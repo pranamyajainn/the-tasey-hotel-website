@@ -33,11 +33,6 @@ export const metadata: Metadata = {
   ...(process.env.GOOGLE_SITE_VERIFICATION && {
     verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
   }),
-  keywords: [
-    "The Tasey", "The Tasey Hotel", "Tasey Hotel", "The Tasey Hotel Amer", "Hotel Near Amber Fort Jaipur",
-    "Elephant Village Jaipur", "Jhalana Leopard Safari", "Nahargarh Lion Safari",
-    "Rooftop Pool Jaipur", "Haldi Restaurant Jaipur", "Jhumka Rooftop Restaurant"
-  ],
   robots: {
     index: true,
     follow: true,
@@ -50,7 +45,8 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "The Tasey Hotel, Amer, Jaipur",
     description: "Rooms, dining, a rooftop pool, event spaces, and nearby excursions.",
-    images: [{ url: HOTEL.image, width: 1600, height: 1067, alt: "The Tasey Hotel, Amer, Jaipur" }],
+    // The photo is portrait; the declared size must match the file.
+    images: [{ url: HOTEL.image, width: 1067, height: 1600, alt: "The Tasey Hotel, Amer, Jaipur" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -102,8 +98,10 @@ const hotelJsonLd = {
     "Indoor restaurant",
     "Banquet and event halls",
     "Wildlife safari booking",
-    "Free WiFi",
+    "Wi-Fi",
   ].map((name) => ({ "@type": "LocationFeatureSpecification", name, value: true })),
+  // All three rates are also printed in the Rooms section, so the markup
+  // describes what a visitor can read on the page.
   makesOffer: [
     { "@type": "Offer", name: "Executive Room", price: "2900", priceCurrency: "INR" },
     { "@type": "Offer", name: "Luxury Room", price: "3800", priceCurrency: "INR" },

@@ -81,6 +81,16 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
         <p className="mt-3 text-[16px] leading-[1.6] text-[#605A50] max-w-md">
           Room sizes, bed types, and visible furnishings are listed with each room.
         </p>
+        {/* Every rate in plain text, so the page shows what the structured data says. */}
+        <p className="mt-2 text-[16px] leading-[1.6] text-[#605A50] max-w-xl">
+          {rooms.map((room, idx) => (
+            <span key={room.id}>
+              {idx > 0 && " · "}
+              {room.name} {room.price}
+            </span>
+          ))}{" "}
+          per night + taxes.
+        </p>
 
         {/* Room Tabs */}
         <div className="flex flex-wrap gap-2 mt-8 mb-10 border-b border-[#E5DCCB]">

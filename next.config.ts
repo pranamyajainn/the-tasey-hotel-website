@@ -65,6 +65,18 @@ const nextConfig: NextConfig = {
         destination: "https://thetaseyhotel.com/:path*",
         permanent: true,
       },
+      {
+        // The production alias Vercel gives this project serves the same page
+        // as the real domain. Google asks for a permanent redirect on a
+        // duplicate host, not noindex, so the copy passes its signals to the
+        // .com instead of being thrown away. Exact host only: preview deploys
+        // keep working and keep their noindex header below. The dots are
+        // escaped because the value is a regular expression.
+        source: "/:path*",
+        has: [{ type: "host", value: "hotel-tasey\\.vercel\\.app" }],
+        destination: "https://thetaseyhotel.com/:path*",
+        permanent: true,
+      },
     ];
   },
   async headers() {
@@ -74,10 +86,11 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       {
-        // tasey-hotel.vercel.app and every preview deploy serve the same page
-        // as the real domain. Keep them out of the index. This is a header,
-        // not a robots.txt Disallow, because Google has to be able to crawl a
-        // URL to see that it must not be indexed.
+        // Every preview deploy serves the same page as the real domain. Keep
+        // them out of the index. This is a header, not a robots.txt Disallow,
+        // because Google has to be able to crawl a URL to see that it must not
+        // be indexed. (The production alias and tasey-hotel.vercel.app
+        // redirect instead; see redirects() and the Vercel Domains settings.)
         source: "/:path*",
         has: [{ type: "host", value: ".*\\.vercel\\.app" }],
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],

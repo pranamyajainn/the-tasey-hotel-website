@@ -35,9 +35,14 @@ export const HOTEL = {
   email: "thetaseyhotel@gmail.com",
   instagramHandle: "thetasey_hotel",
   // Official profiles, emitted as schema.org `sameAs`. Instagram stays first:
-  // the footer links it by index. Add Booking.com, MakeMyTrip, TripAdvisor URLs
-  // here as they go live.
-  sameAs: ["https://www.instagram.com/thetasey_hotel/", GOOGLE_LISTING_URL],
+  // the footer links it by index. The hotel runs two Instagram accounts; both
+  // are listed so Google ties them to one business. Add Booking.com,
+  // MakeMyTrip, TripAdvisor URLs here as they go live.
+  sameAs: [
+    "https://www.instagram.com/thetasey_hotel/",
+    GOOGLE_LISTING_URL,
+    "https://www.instagram.com/the_tasey_hotel/",
+  ],
 } as const;
 
 /** Exact location pin; this does not imply a verified Google Business Profile. */

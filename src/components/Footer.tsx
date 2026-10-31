@@ -62,9 +62,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
+            <h3 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
               Navigation and experiences
-            </h4>
+            </h3>
             <ul className="space-y-2 text-[#D5C9B8]">
               <li>
                 <a href="#overview" className="hover:text-[#FFC76B] transition-colors">Hotel overview and location</a>
@@ -92,9 +92,9 @@ export default function Footer() {
 
           {/* Safaris & Excursions Info */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
+            <h3 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
               Local excursions
-            </h4>
+            </h3>
             <ul className="space-y-3 text-[#D5C9B8]">
               <li>
                 <a
@@ -131,14 +131,14 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
+            <h3 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
               Location and concierge
-            </h4>
+            </h3>
             <ul className="space-y-2.5 text-[#D5C9B8]">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>
-                  {HOTEL.name}, {HOTEL.street}, {HOTEL.locality}, {HOTEL.region}
+                  {HOTEL.name}, {HOTEL.street}, {HOTEL.locality}, {HOTEL.region} {HOTEL.postalCode}
                   <a
                     href={HOTEL_MAP_URL}
                     target="_blank"
@@ -203,7 +203,7 @@ export default function Footer() {
           <a
             href="https://sahajta.com"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="hover:text-[#FFC76B] transition-colors"
           >
             Sahajta AI
