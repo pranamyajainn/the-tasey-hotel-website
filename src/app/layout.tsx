@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Instrument_Sans } from "next/font/google";
 import "./globals.css";
-import { HOTEL, SITE_URL } from "@/lib/site";
+import { HOTEL, HOTEL_MAP_URL, SITE_URL } from "@/lib/site";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -21,19 +21,18 @@ const instrumentSans = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "The Tasey Hotel | Amer, Jaipur",
+    default: "The Tasey Hotel, Amer, Jaipur | Official Website",
     template: "%s | The Tasey Hotel",
   },
   description: HOTEL.description,
   applicationName: HOTEL.name,
   alternates: { canonical: "/" },
-  // Token comes from Google Search Console (HTML tag method); set in Vercel env vars.
-  verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION },
-  keywords: [
-    "The Tasey", "The Tasey Hotel Amer", "Hotel Near Amber Fort Jaipur",
-    "Elephant Village Jaipur", "Jhalana Leopard Safari", "Nahargarh Lion Safari",
-    "Rooftop Pool Jaipur", "Haldi Restaurant Jaipur", "Jhumka Rooftop Restaurant"
-  ],
+  // Google Search Console HTML-tag verification. Set GOOGLE_SITE_VERIFICATION
+  // in Vercel to the token Google issues; nothing is emitted while it's unset.
+  // Not needed if ownership is verified with a DNS TXT record instead.
+  ...(process.env.GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+  }),
   robots: {
     index: true,
     follow: true,
@@ -46,7 +45,8 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "The Tasey Hotel, Amer, Jaipur",
     description: "Rooms, dining, a rooftop pool, event spaces, and nearby excursions.",
-    images: [{ url: HOTEL.image, width: 1600, height: 1067, alt: "The Tasey Hotel, Amer, Jaipur" }],
+    // The photo is portrait; the declared size must match the file.
+    images: [{ url: HOTEL.image, width: 1067, height: 1600, alt: "The Tasey Hotel, Amer, Jaipur" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -70,10 +70,14 @@ const hotelJsonLd = {
   "@type": "Hotel",
   "@id": `${SITE_URL}/#hotel`,
   name: HOTEL.name,
+  alternateName: HOTEL.alternateNames,
   description: HOTEL.description,
   url: SITE_URL,
   image: `${SITE_URL}${HOTEL.image}`,
+  logo: `${SITE_URL}${HOTEL.logo}`,
+  sameAs: HOTEL.sameAs,
   telephone: HOTEL.phones[0],
+  email: HOTEL.email,
   priceRange: HOTEL.priceRange,
   address: {
     "@type": "PostalAddress",
@@ -88,19 +92,46 @@ const hotelJsonLd = {
     latitude: HOTEL.latitude,
     longitude: HOTEL.longitude,
   },
+  hasMap: HOTEL_MAP_URL,
+  // Check-in, check-out and payment match the "Good to know" list in the Rooms section.
+  checkinTime: "11:00",
+  checkoutTime: "13:00",
+  paymentAccepted: "Cash, UPI, Credit Card, Debit Card",
   amenityFeature: [
     "Rooftop swimming pool",
     "Indoor restaurant",
     "Banquet and event halls",
     "Wildlife safari booking",
-    "Free WiFi",
+    "Free Wi-Fi",
+    "Free parking",
+    "Air conditioning",
+    "Room service",
   ].map((name) => ({ "@type": "LocationFeatureSpecification", name, value: true })),
+  // All three rates are also printed in the Rooms section, so the markup
+  // describes what a visitor can read on the page.
   makesOffer: [
-    { "@type": "Offer", name: "Executive Room", price: "2900", priceCurrency: "INR" },
-    { "@type": "Offer", name: "Luxury Room", price: "3800", priceCurrency: "INR" },
-    { "@type": "Offer", name: "Suite Room", price: "5400", priceCurrency: "INR" },
+    { "@type": "Offer", name: "Executive Room", price: "4200", priceCurrency: "INR" },
+    { "@type": "Offer", name: "Luxury Room", price: "4800", priceCurrency: "INR" },
+    { "@type": "Offer", name: "Suite Room", price: "7200", priceCurrency: "INR" },
   ],
 };
+
+/**
+ * Schema.org WebSite record. Google reads this on the home page to decide the
+ * site name shown above the result, and ties the domain to the hotel entity.
+ */
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: HOTEL.name,
+  alternateName: HOTEL.alternateNames,
+  url: `${SITE_URL}/`,
+  publisher: { "@id": `${SITE_URL}/#hotel` },
+};
+
+/** Escape `<` so a stray "</script>" in any string can't close the tag early. */
+const toJsonLd = (data: object) => JSON.stringify(data).replace(/</g, "\\u003c");
 
 export default function RootLayout({
   children,
@@ -120,7 +151,11 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           // Static object, no user input; this is the documented way to emit JSON-LD.
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(hotelJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: toJsonLd(websiteJsonLd) }}
         />
       </body>
     </html>

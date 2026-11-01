@@ -95,7 +95,7 @@ export default function Gallery() {
     },
     {
       id: 33,
-      title: "Luxury Room wardrobe and minibar",
+      title: "Luxury Room wardrobe and mini fridge",
       category: "Rooms and suites",
       image: "/images/tasey-16c.jpeg",
     },

@@ -2,6 +2,8 @@
 
 Read-only audit. No application files were changed to produce this document.
 
+> **Correction, 31 October 2026.** This audit calls `tasey-hotel.vercel.app` the project's Vercel alias. It is not. The project's alias is `hotel-tasey.vercel.app`. `tasey-hotel.vercel.app` was a separate copy of the site in an intern's personal Vercel account; it was deleted on 11 October and, since 13 October, is a domain on this project that sends a 308 redirect to `https://thetaseyhotel.com`. Keep that domain; removing it frees the name. Items D-1 and D-2 below are resolved: `www` redirects to the apex, `hotel-tasey.vercel.app` redirects to the apex (both in `next.config.ts`), and every other `*.vercel.app` preview host gets `X-Robots-Tag: noindex, nofollow`.
+
 - Canonical URL: `https://thetaseyhotel.com` (from `src/lib/site.ts`, `SITE_URL`)
 - Brand: The Tasey Hotel
 - GSC property type recommendation: **Domain property** (`thetaseyhotel.com`) — DNS is on GoDaddy nameservers pointed at Vercel, so a DNS TXT record is straightforward and a domain property automatically covers `www`, `http`, and any future subdomain in one verification, instead of re-verifying per URL-prefix.

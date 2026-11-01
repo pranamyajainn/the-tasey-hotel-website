@@ -1,6 +1,8 @@
-# The Tasey - Luxury Boutique Hotel & Restaurant 🏔️🏰
+# The Tasey Hotel - Luxury Boutique Hotel & Restaurant 🏔️🏰
 
-Welcome to the official repository for **The Tasey**, a lavish boutique hotel and restaurant single-page web application located near Amber Fort, Jaipur, nestled in the scenic Aravali Hills.
+Live site: **[https://thetaseyhotel.com](https://thetaseyhotel.com)**
+
+Welcome to the official repository for **The Tasey Hotel**, a lavish boutique hotel and restaurant single-page web application located near Amber Fort, Jaipur, nestled in the scenic Aravali Hills.
 
 ## 🏨 About The Tasey
 Located just 100 meters from Taj Amber & Indiana Place, 50 meters from Nahargarh Zoological Park, and 5 km from historic Amber Fort, **The Tasey** offers royal Rajasthani hospitality with serene hill views.
@@ -45,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## 📦 Deployment
 
-This project is optimized for deployment on **[Vercel](https://vercel.com/)**.
+This project is deployed on **[Vercel](https://vercel.com/)** and served at [thetaseyhotel.com](https://thetaseyhotel.com). Share the official domain. The legacy `tasey-hotel.vercel.app` alias permanently redirects there; other Vercel preview hosts receive an `X-Robots-Tag: noindex, nofollow` response header from `next.config.ts` when served by this app. Check hosting settings and live responses when adding aliases or previews.
 
 To deploy manually via Vercel CLI:
 ```bash

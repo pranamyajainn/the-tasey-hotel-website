@@ -3,14 +3,16 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Share2, Check } from "lucide-react";
+import { MapPin, Phone, Mail, AtSign, Share2, Check } from "lucide-react";
+
+import { GOOGLE_LISTING_URL, GOOGLE_REVIEW_URL, HOTEL, HOTEL_MAP_URL } from "@/lib/site";
 
 export default function Footer() {
   const [linkCopied, setLinkCopied] = useState(false);
 
   const handleShare = async () => {
     const shareData = {
-      title: "The TASEY Hotel & Excursions, Amer",
+      title: "The Tasey Hotel, Amer, Jaipur",
       url: window.location.href,
     };
     if (navigator.share) {
@@ -60,9 +62,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
+            <h3 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
               Navigation and experiences
-            </h4>
+            </h3>
             <ul className="space-y-2 text-[#D5C9B8]">
               <li>
                 <a href="#overview" className="hover:text-[#FFC76B] transition-colors">Hotel overview and location</a>
@@ -90,9 +92,9 @@ export default function Footer() {
 
           {/* Safaris & Excursions Info */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
+            <h3 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
               Local excursions
-            </h4>
+            </h3>
             <ul className="space-y-3 text-[#D5C9B8]">
               <li>
                 <a
@@ -129,14 +131,38 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
+            <h3 className="font-serif-luxury text-[16px] text-[#FDFBF7]">
               Location and concierge
-            </h4>
+            </h3>
             <ul className="space-y-2.5 text-[#D5C9B8]">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>
-                  The Tasey Hotel, Amer, 50 m from Nahargarh Biological Park, near Amber Fort, Jaipur
+                  {HOTEL.name}, {HOTEL.street}, {HOTEL.locality}, {HOTEL.region} {HOTEL.postalCode}
+                  <a
+                    href={HOTEL_MAP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block underline underline-offset-4 hover:text-[#FFC76B] transition-colors"
+                  >
+                    View hotel location on Google Maps
+                  </a>
+                  <a
+                    href={GOOGLE_LISTING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block underline underline-offset-4 hover:text-[#FFC76B] transition-colors"
+                  >
+                    Reviews and directions on Google
+                  </a>
+                  <a
+                    href={GOOGLE_REVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block underline underline-offset-4 hover:text-[#FFC76B] transition-colors"
+                  >
+                    Review us on Google
+                  </a>
                 </span>
               </li>
               <li className="flex items-center gap-2">
@@ -151,6 +177,17 @@ export default function Footer() {
                 <Mail className="w-4 h-4 shrink-0" />
                 <a href="mailto:thetaseyhotel@gmail.com" className="hover:text-[#FFC76B] transition-colors">thetaseyhotel@gmail.com</a>
               </li>
+              <li className="flex items-center gap-2">
+                <AtSign className="w-4 h-4 shrink-0" />
+                <a
+                  href={HOTEL.sameAs[0]}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  className="hover:text-[#FFC76B] transition-colors"
+                >
+                  Instagram: {HOTEL.instagramHandle}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -158,7 +195,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-[14px] text-[#A89C8C] gap-4">
           <div>
-            &copy; {new Date().getFullYear()} The Tasey Hotel & Excursions, Amer, Jaipur. All rights reserved.
+            &copy; {new Date().getFullYear()} The Tasey Hotel, Amer, Jaipur. All rights reserved.
           </div>
           <div className="text-[#D5C9B8]">
             Stay at The Tasey. Explore Amer, Jaipur.
@@ -174,7 +211,7 @@ export default function Footer() {
           <a
             href="https://sahajta.com"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="hover:text-[#FFC76B] transition-colors"
           >
             Sahajta AI

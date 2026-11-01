@@ -81,23 +81,19 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   const heroSlides = [
     {
       image: "/images/tasey-08.jpeg",
-      subtitle: "The Tasey Hotel in Amer, Jaipur",
       title: "A hotel near Amber Fort",
     },
     {
       image: "/images/tasey-09.jpeg",
-      subtitle: "Jhumka rooftop pool",
       title: "Rooftop pool at Jhumka",
     },
     {
       image: "/images/tasey-17.jpeg",
-      subtitle: "Rooms and suites",
       title: "Rooms with hill-facing windows",
     },
     {
       image: "/images/tasey-03.jpeg",
-      subtitle: "Steps from Amber Fort",
-      title: "Welcome to The Tasey Hotel, Amer",
+      title: "Welcome to Amer, Jaipur",
     },
   ];
 
@@ -216,13 +212,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
       {/* Main Hero Banner Content */}
       <div className="relative z-10 max-w-3xl mx-4 sm:mx-auto px-2 sm:px-6 my-auto">
-        <p className="text-[14px] font-medium text-white/80 mb-3">
-          {heroSlides[currentSlide].subtitle}
-        </p>
+        {/* Keep the hotel's name as the prominent, stable h1. Rotating captions
+            remain secondary display text rather than replacing the heading. */}
+        <p className="text-[14px] font-medium text-white/80 mb-3">Amer, Jaipur</p>
 
-        <h1 className="font-serif-luxury text-[28px] sm:text-[40px] lg:text-[56px] text-white max-w-2xl leading-[1.15]">
-          {heroSlides[currentSlide].title}
+        <h1 className="font-serif-luxury text-[32px] sm:text-[44px] lg:text-[60px] text-white max-w-2xl leading-[1.1]">
+          The Tasey Hotel
         </h1>
+
+        <p className="mt-3 font-serif-luxury italic text-[18px] sm:text-[22px] lg:text-[26px] text-white/90 max-w-2xl leading-[1.3]">
+          {heroSlides[currentSlide].title}
+        </p>
 
         <p className="mt-4 text-[16px] leading-[1.6] text-gray-100 max-w-md">
           Rooms, an indoor restaurant, a rooftop pool, and event halls, 5 km from Amber Fort.

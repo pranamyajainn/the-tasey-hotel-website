@@ -53,11 +53,47 @@ const nextConfig: NextConfig = {
     // No remote images are used, so allow none.
     remotePatterns: [],
   },
+  async redirects() {
+    return [
+      {
+        // One host for Google to index. Both hosts currently serve 200, which
+        // splits signals between two copies of the site. If the apex is ever
+        // set to redirect to www in Vercel's Domains settings, remove this or
+        // the two will loop.
+        source: "/:path*",
+        has: [{ type: "host", value: "www.thetaseyhotel.com" }],
+        destination: "https://thetaseyhotel.com/:path*",
+        permanent: true,
+      },
+      {
+        // The production alias Vercel gives this project serves the same page
+        // as the real domain. Google asks for a permanent redirect on a
+        // duplicate host, not noindex, so the copy passes its signals to the
+        // .com instead of being thrown away. Exact host only: preview deploys
+        // keep working and keep their noindex header below. The dots are
+        // escaped because the value is a regular expression.
+        source: "/:path*",
+        has: [{ type: "host", value: "hotel-tasey\\.vercel\\.app" }],
+        destination: "https://thetaseyhotel.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+      {
+        // Every preview deploy serves the same page as the real domain. Keep
+        // them out of the index. This is a header, not a robots.txt Disallow,
+        // because Google has to be able to crawl a URL to see that it must not
+        // be indexed. (The production alias and tasey-hotel.vercel.app
+        // redirect instead; see redirects() and the Vercel Domains settings.)
+        source: "/:path*",
+        has: [{ type: "host", value: ".*\\.vercel\\.app" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
       {
         // Photos are replaced in place under the same filename when the hotel
