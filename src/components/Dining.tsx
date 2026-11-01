@@ -51,7 +51,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
       ],
       ambience: "Open rooftop with a pool and steel railing",
       timings: "5:00 PM to midnight daily",
-      highlights: "Rooftop pool with a steel railing. Open-air seating beside the pool. Views of nearby buildings and a transmission tower. Cocktails, mocktails and vegetarian tandoori dishes. Multi-cuisine vegetarian menu.",
+      highlights: "Rooftop pool with a steel railing. Open-air seating beside the pool. Views of nearby buildings and a transmission tower. Mocktails and vegetarian tandoori dishes. Multi-cuisine vegetarian menu.",
       specialty: "Poolside dining",
       ctaText: "Reserve a table at Jhumka",
     },
