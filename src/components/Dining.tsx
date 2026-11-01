@@ -51,7 +51,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
       ],
       ambience: "Open rooftop with a pool and steel railing",
       timings: "5:00 PM to midnight daily",
-      highlights: "Rooftop pool with a steel railing. Open-air seating beside the pool. Views of nearby buildings and a transmission tower. Cocktails, mocktails and tandoori grills. Multi-cuisine menu.",
+      highlights: "Rooftop pool with a steel railing. Open-air seating beside the pool. Views of nearby buildings and a transmission tower. Cocktails, mocktails and vegetarian tandoori dishes. Multi-cuisine vegetarian menu.",
       specialty: "Poolside dining",
       ctaText: "Reserve a table at Jhumka",
     },
@@ -66,7 +66,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
           Two dining spaces
         </h2>
         <p className="mt-3 text-[16px] leading-[1.6] text-[#605A50] max-w-md">
-          Haldi is an indoor restaurant. Jhumka is a rooftop restaurant beside the pool.
+          Haldi is an indoor restaurant. Jhumka is a rooftop restaurant beside the pool. Both serve pure vegetarian food.
         </p>
 
         {/* Restaurant Tabs */}
