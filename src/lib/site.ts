@@ -9,6 +9,14 @@ export const SITE_URL = "https://thetaseyhotel.com";
  */
 export const GOOGLE_LISTING_URL = "https://www.google.com/search?kgmid=/g/11z_0qjm62";
 
+/**
+ * Opens Google's "write a review" box for the listing. The place id is the
+ * listing's own id (it opens "The Tasey Hotel" in Google Maps), so the link
+ * never depends on a typed search for the name.
+ */
+export const GOOGLE_REVIEW_URL =
+  "https://search.google.com/local/writereview?placeid=ChIJP3B1WyqxbTkROyWe-jVb9fY";
+
 export const HOTEL = {
   name: "The Tasey Hotel",
   legalName: "The Tasey Hotel",
