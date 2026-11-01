@@ -135,9 +135,9 @@ export default function BookingModal({ isOpen, onClose, initialData }: BookingMo
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full bg-[#F8F3EA] border border-[#E5DCCB] rounded px-4 py-3 text-[16px] text-[#011A51] focus:outline-none focus:border-[#A95A01] cursor-pointer"
               >
-                <option value="Executive Room">Executive Room (₹2,900/night)</option>
-                <option value="Luxury Room">Luxury Room (₹3,800/night)</option>
-                <option value="Suite Room">Suite Room (₹5,400/night)</option>
+                <option value="Executive Room">Executive Room (₹4,200/night)</option>
+                <option value="Luxury Room">Luxury Room (₹4,800/night)</option>
+                <option value="Suite Room">Suite Room (₹7,200/night)</option>
                 <option value="Elephant Village Excursion">Elephant Village Interaction</option>
                 <option value="Jhalana Leopard Safari">Jhalana Leopard Safari</option>
                 <option value="Nahargarh Lion Safari">Nahargarh Lion Safari</option>

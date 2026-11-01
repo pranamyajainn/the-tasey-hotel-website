@@ -103,9 +103,9 @@ const hotelJsonLd = {
   // All three rates are also printed in the Rooms section, so the markup
   // describes what a visitor can read on the page.
   makesOffer: [
-    { "@type": "Offer", name: "Executive Room", price: "2900", priceCurrency: "INR" },
-    { "@type": "Offer", name: "Luxury Room", price: "3800", priceCurrency: "INR" },
-    { "@type": "Offer", name: "Suite Room", price: "5400", priceCurrency: "INR" },
+    { "@type": "Offer", name: "Executive Room", price: "4200", priceCurrency: "INR" },
+    { "@type": "Offer", name: "Luxury Room", price: "4800", priceCurrency: "INR" },
+    { "@type": "Offer", name: "Suite Room", price: "7200", priceCurrency: "INR" },
   ],
 };
 
