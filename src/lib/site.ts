@@ -17,6 +17,14 @@ export const GOOGLE_LISTING_URL = "https://www.google.com/search?kgmid=/g/11z_0q
 export const GOOGLE_REVIEW_URL =
   "https://search.google.com/local/writereview?placeid=ChIJP3B1WyqxbTkROyWe-jVb9fY";
 
+/**
+ * Opens the hotel's place page in Google Maps via the Maps URLs API, keyed by the
+ * same place id as the review link. (The share.google short link lands on a
+ * Google search results page instead of Maps.)
+ */
+export const GOOGLE_MAPS_PLACE_URL =
+  "https://www.google.com/maps/search/?api=1&query=The+Tasey+Hotel&query_place_id=ChIJP3B1WyqxbTkROyWe-jVb9fY";
+
 export const HOTEL = {
   name: "The Tasey Hotel",
   legalName: "The Tasey Hotel",

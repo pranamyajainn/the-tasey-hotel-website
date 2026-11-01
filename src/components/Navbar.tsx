@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { GOOGLE_MAPS_PLACE_URL } from "@/lib/site";
 import { Phone, Menu, X, MapPin, Compass } from "lucide-react";
 
 interface NavbarProps {
@@ -41,7 +42,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       <div className="hidden lg:flex justify-between items-center max-w-7xl mx-auto px-6 mb-2 text-[14px] text-[#605A50] border-b border-[#E5DCCB] pb-2">
         <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Amer+Jaipur"
+            href={GOOGLE_MAPS_PLACE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-[#A95A01] transition-colors"
@@ -92,7 +93,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 sm:gap-6">
         {/* Logo & Brand */}
         <a
-          href="https://share.google/vZH2g3RVu1FrwchfL"
+          href={GOOGLE_MAPS_PLACE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 shrink-0"
