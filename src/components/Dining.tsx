@@ -32,7 +32,7 @@ export default function Dining({ onOpenBooking }: DiningProps) {
         "/images/tasey-11m.jpeg",
       ],
       ambience: "Indoor dining room with ceiling fans and opening-day balloons",
-      timings: "7:00 AM to 11:00 PM daily",
+      timings: "8:00 AM to 10:30 PM daily",
       highlights: "Rajasthani thali served in brassware. Ker Sangri and Dal Baati Churma. North Indian curries and tandoori breads. Indoor seating with ceiling fans.",
       specialty: "Saffron phirni",
       ctaText: "Reserve a table at Haldi",

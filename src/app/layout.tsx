@@ -93,12 +93,19 @@ const hotelJsonLd = {
     longitude: HOTEL.longitude,
   },
   hasMap: HOTEL_MAP_URL,
+  // Check-in, check-out and payment match the "Good to know" list in the Rooms section.
+  checkinTime: "11:00",
+  checkoutTime: "13:00",
+  paymentAccepted: "Cash, UPI, Credit Card, Debit Card",
   amenityFeature: [
     "Rooftop swimming pool",
     "Indoor restaurant",
     "Banquet and event halls",
     "Wildlife safari booking",
-    "Wi-Fi",
+    "Free Wi-Fi",
+    "Free parking",
+    "Air conditioning",
+    "Room service",
   ].map((name) => ({ "@type": "LocationFeatureSpecification", name, value: true })),
   // All three rates are also printed in the Rooms section, so the markup
   // describes what a visitor can read on the page.

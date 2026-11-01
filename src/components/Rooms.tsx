@@ -47,7 +47,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
       view: "Balcony and hill view",
       occupancy: "Up to 3 guests",
       desc: "A larger room with a private balcony, seating area, curtains, and a tiled bathroom.",
-      specs: "Private balcony, king bed, bathroom, tea and coffee, seating area, Wi-Fi.",
+      specs: "Private balcony, king bed, AC, bathroom, tea and coffee, seating area, Wi-Fi.",
     },
     {
       id: "suite-room",
@@ -199,6 +199,18 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
               </button>
             </div>
           </div>
+        </div>
+
+        {/* House rules a guest needs before booking. The Hotel structured data in layout.tsx repeats these. */}
+        <div className="mt-12 pt-8 border-t border-[#E5DCCB]">
+          <h3 className="font-serif-luxury text-[22px] text-[#011A51]">Good to know</h3>
+          <ul className="mt-3 space-y-1.5 text-[16px] leading-[1.6] text-[#605A50] list-disc pl-5">
+            <li>Check-in 11:00 AM, check-out 1:00 PM</li>
+            <li>Free Wi-Fi and free parking for guests</li>
+            <li>Breakfast at Haldi, paid separately</li>
+            <li>Room service from 8:30 AM to 10:30 PM</li>
+            <li>We accept cash, UPI, and credit and debit cards</li>
+          </ul>
         </div>
       </div>
     </section>
